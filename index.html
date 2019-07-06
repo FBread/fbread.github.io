@@ -146,6 +146,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-for循环-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/06/for循环-2/">for循环(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/06/for循环-2/" class="archive-article-date">
+  	<time datetime="2019-07-06T02:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-for循环嵌套练习"><a href="#1-for循环嵌套练习" class="headerlink" title="1.for循环嵌套练习"></a>1.for循环嵌套练习</h5><p>例1:打印图案</p>
+<pre><code>      *
+    ***
+  *****
+*******</code></pre>
+        
+          <a class="article-more-a" href="/2019/07/06/for循环-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/06/for循环-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-for循环-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,199 +246,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-循环的种类"><a href="#1-循环的种类" class="headerlink" title="1.循环的种类"></a>1.循环的种类</h4><pre><code>for    while    do...while        forEach        forLable</code></pre><h4 id="2-for循环-最重要的"><a href="#2-for循环-最重要的" class="headerlink" title="2.for循环(最重要的)"></a>2.for循环(最重要的)</h4><p>语法:</p>
-<pre><code>for(a;b;c){
-         d;
-     循环体//
- }</code></pre><p>a    循环的起始条件,一般是一个变量的定义,标识符一般设置为i(index).<br>b    循环的判断条件,是一个具有布尔值的表达式,通常和起始条件有关.<br>c    循环趋向于结束的条件,一般是自增自减运算或者复合赋值运算.<br>d    b为真的时候要执行的代码,成为循环体或循环代码块.</p>
-<pre><code>例:
-public class ForDemo {
-    public static void main(String[] args) {
-        // 打印三遍 带牌儿
-        // 起始条件 判断条件 趋向于结束的条件
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.println(&quot;带牌儿&quot;);
-        }
-    }
-}</code></pre><p><img src="/assets/img/20190705-1.png" alt="for循环的执行步骤" title="for循环的执行步骤"></p>
-<h4 id="3-for循环的应用"><a href="#3-for循环的应用" class="headerlink" title="3.for循环的应用"></a>3.for循环的应用</h4><p>例1:计算1-100的和</p>
-<pre><code>public class ForDemo2 {
-    public static void main(String[] args) {
-        // 计算1-100的和
-        // 设置一个变量,存储每一步的加和
-        int sum = 0;
-        for (int i = 1; i &lt;= 100; i++) {
-            sum += i;//sum = sum + i;
-        }
-        //输出sum即可
-        System.out.println(sum);
-    }
-}</code></pre><p>ext:看看<br><a href="https://www.cnblogs.com/raichen/p/5772056.html" title="动态规划" target="_blank" rel="noopener">分治算法,动态规划</a></p>
-<p>例2:计算5的阶乘</p>
-<pre><code>//5! = 5*4*3*2*1;
-//n! = n*(n-1)*(n-2)*...*1;
-
-public class ForDemo3 {
-    public static void main(String[] args) {
-    //计算5的阶乘
-    //设置一个记录变量,最好的选择是1(0*n=0)
-        int result = 1;
-        for (int i = 1; i &lt;= 5; i++) {
-            result *= i;
-        }
-        System.out.println(result);
-    }
-}</code></pre><p>例3:计算1-100之内3的倍数的和</p>
-<pre><code>public class ForDemo4 {
-    public static void main(String[] args) {
-        int sum = 0;
-        // 计算1-100以内3的倍数的和
-        for (int i = 3; i &lt;= 100; i++) {
-            // 如果一个数%3=0代表整除;
-            if (i % 3 == 0) {
-                sum += i;
-            }
-        }
-        System.out.println(sum);
-    }
-}</code></pre><p>或:</p>
-<pre><code>public class ForDemo4 {
-    public static void main(String[] args) {
-        int sum = 0;
-        // 计算1-100以内3的倍数的和
-        for (int i = 3; i &lt;= 100; i+=3) {
-            // 如果一个数%3=0代表整除;
-                sum += i;
-        }
-        System.out.println(sum);
-    }
-}</code></pre><p>例4:计算1-100内所有能被3和7整除的数字的和</p>
-<pre><code>public class ForDemo5 {
-    public static void main(String[] args) {
-//计算1-100内所有能被3和7整除的数字的和
-        int sum = 0;
-        for (int i = 1; i &lt;= 100; i += 21) {
-        //能同时被3和7整除的最小数是21,并且一定都是21的倍数
-            sum += i;
-        }
-        System.out.println(sum);
-    }
-}</code></pre><p>例5:找到并输出1000以内所有能被3整除的数字</p>
-<pre><code>public class ForDemo6 {
-    public static void main(String[] args) {
-        // 找到并输出1000以内所有能被3整除的数字
-        for (int i = 1; i &lt;= 1000; i++) {
-            if (i % 3 == 0) {
-                System.out.println(i);
-            }
-        }
-    }
-}</code></pre><p>例6:找到并输出500以内第12个被1整除的数字</p>
-<pre><code>public class ForDemo7 {
-    public static void main(String[] args) {
-        //设置一个记录当前值的位置的变量
-        int count = 0;
-        //找到并输出500以内第12个被1整除的数字
-        for (int i = 17; i &lt;= 500; i += 17) {
-            count++;
-            //统计个数
-            if (count == 12) {
-                //当个数为12时输出当前的数字
-                System.out.println(i);
-            }
-        }
-    }
-}</code></pre><h4 id="4-循环中的break"><a href="#4-循环中的break" class="headerlink" title="4.循环中的break"></a>4.循环中的break</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;break在循环中表示一旦执行之后,后续尚未执行的循环部分全部放弃,不再执行.<br>效果:<br>&nbsp;&nbsp;&nbsp;&nbsp;提前结束循环<br>注意:<br>&nbsp;&nbsp;&nbsp;&nbsp;break必须位于循环体中可运行部分代码的最后一行,否则后续的代码标记不可达,报错.</p>
-<p>如上例6:找到并输出500以内第12个被1整除的数字</p>
-<pre><code>public class BreakDemo01 {
-    public static void main(String[] args) {
-        // 设置一个记录当前值的位置的变量
-        int count = 0;
-        // 找到并输出500以内第12个被1整除的数字
-        for (int i = 1; i &lt;= 500; i++) {
-            if (i % 17 == 0) {
-                count++;
-                // 统计个数
-            }
-            if (count == 12) {
-                // 当个数为12时输出当前的数字
-                System.out.println(i);
-                break;
-            }
-        }
-    }
-}</code></pre><h4 id="5-break在for循环中的应用"><a href="#5-break在for循环中的应用" class="headerlink" title="5.break在for循环中的应用"></a>5.break在for循环中的应用</h4><p>例7:找到并输出500以内所有偶数个能被13整除的数字的和.</p>
-<pre><code>public class BreakDemo02 {
-    public static void main(String[] args) {
-        int count = 0;// 记录位置
-        int sum = 0;// 统计和
-        for (int i = 1; i &lt;= 500; i++) {
-            if (i % 13 == 0) {
-                count++;
-                // 筛选偶数
-                if (count % 2 == 0) {
-                    sum += i;
-                }
-            }
-        }
-        System.out.println(sum);
-    }
-}</code></pre><h4 id="6-for循环的嵌套"><a href="#6-for循环的嵌套" class="headerlink" title="6.for循环的嵌套"></a>6.for循环的嵌套</h4><p>语法:</p>
-<pre><code>//外层循环
-for(a1;b1;c1){
-    //内层循环
-    for(a2;b2;c2){
-        //循环体
-    }
-}</code></pre><p>注意:</p>
-<ol>
-<li>外层循环的循环变量从i开始,内层依次是j,k</li>
-<li>循环最多嵌套三次(允许3次)</li>
-</ol>
-<p>循环的执行次数:<br>外层循环的执行次数取决于外层循环的三个条件<br>内层循环的执行次数是外层循环的次数和内层循环的次数的乘积</p>
-<h4 id="7-双层for循环的执行流程"><a href="#7-双层for循环的执行流程" class="headerlink" title="7.双层for循环的执行流程"></a>7.双层for循环的执行流程</h4><p><img src="%22%E5%8F%8C%E5%B1%82for%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%22" alt="双层for循环的执行流程"></p>
-<p>先执行外层循环,再执行内层循环,此时内层要执行完毕所有的次数,再执行外层循环,以此类推…</p>
-<p>结论:<br>外层循环执行一次,内层循环执行全部<br>外层循环像是分针,内层循环是秒针</p>
-<h4 id="双层for循环的应用"><a href="#双层for循环的应用" class="headerlink" title="双层for循环的应用"></a>双层for循环的应用</h4><p>例1:输出100以内所有的质数</p>
-<pre><code>//质数(素数):只能被1和它本身整除的数字    
-public class DoubleForDemo02 {
-    public static void main(String[] args) {
-        // 输出100以内所有的质数/素数
-        for (int i = 2; i &lt; 100; i++) {
-            // 设置一个布尔值
-            boolean status = true;
-            // 质数的判断
-            for (int j = 2; j &lt; i; j++) {
-                if (i % j == 0) {
-            //当前的值能被2或自身之外的数整除时,将布尔值变为false并跳出当前循环
-                    status = false;
-                    break;
-                }
-            }
-            //如果布尔值为真,即除了2或自身之外没有能整除的数时是质数,输出
-            if (status) {
-                System.out.println(i);
-            }
-        }
-    }
-}</code></pre><p>例2:计算1-100之内所有合数的和</p>
-<pre><code>public class DoubleForDemo04 {
-    public static void main(String[] args) {
-        //计算1-100之内所有合数的和
-        int sum = 0;
-        for (int i = 2; i &lt;= 100; i++) {
-            for (int j = 2; j &lt; i; j++) {
-                if (i % j == 0) {
-                    //如果存在被1或自身之外的数整除,就是合数,输出并退出循环
-                    sum+=i;
-                    break;
-                }
-            }
-        }
-        System.out.println(sum);
-    }
-}</code></pre><p>//练习写注释,所以要多写”废话”=_=;</p>
-
+        <h4 id="1-循环的种类"><a href="#1-循环的种类" class="headerlink" title="1.循环的种类"></a>1.循环的种类</h4><pre><code>for    while    do...while        forEach        forLable</code></pre>
+        
+          <a class="article-more-a" href="/2019/07/05/for循环-1/#more">more >></a>
+        
       
 
       
@@ -432,19 +323,9 @@ public class DoubleForDemo02 {
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2019/07/04/hello-world/#more">more >></a>
+        
       
 
       
@@ -576,10 +457,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>

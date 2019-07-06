@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | FBread的博客</title>
+  <title>for循环(2) | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一下有生之年">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,html,java,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FBread的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="1.for循环嵌套练习例1:打印图案       *     ***   ***** *******">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="for循环(2)">
+<meta property="og:url" content="http://yoursite.com/2019/07/06/for循环-2/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="记录一下有生之年">
+<meta property="og:description" content="1.for循环嵌套练习例1:打印图案       *     ***   ***** *******">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-06T02:47:52.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FBread的博客">
-<meta name="twitter:description" content="记录一下有生之年">
+<meta name="twitter:title" content="for循环(2)">
+<meta name="twitter:description" content="1.for循环嵌套练习例1:打印图案       *     ***   ***** *******">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -144,36 +145,253 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-for循环-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      for循环(2)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/for循环-2/" class="archive-article-date">
+
+        
+        <a href="/2019/07/06/for循环-2/" class="archive-article-date">
   	<time datetime="2019-07-06T02:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/for循环-2/">for循环(2)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-for循环嵌套练习"><a href="#1-for循环嵌套练习" class="headerlink" title="1.for循环嵌套练习"></a>1.for循环嵌套练习</h5><p>例1:打印图案</p>
+<pre><code>      *
+    ***
+  *****
+*******</code></pre><a id="more"></a>
+<pre><code>--------------------------------------------
+public class DoubleFor001 {
+    public static void main(String[] args) {
+        for (int i = 1; i &lt;= 4; i++) {
+            for (int j = 1; j &lt;= 7; j++) {
+                if (j &lt;= (8 - 2 * i)) {
+                    System.out.print(&quot; &quot;);
+                } else {
+                    System.out.print(&quot;*&quot;);
+                }
+            }
+            System.out.println(&quot;&quot;);
+        }
+    }
+}    </code></pre><p>或:</p>
+<pre><code>public class DoubleFor001 {
+    public static void main(String[] args) {
+        // 外层控制行,总共四行
+        for (int i = 1; i &lt; 5; i++) {
+            // 内层循环控制列 负责打印空格
+            for (int j = 2 * (4 - i); j &gt; 0; j--) {
 
-        <div class="article-info info-on-right">
-          
+                System.out.print(&quot; &quot;);
+            }
+            for (int j = 1; j &lt;= 2 * i - 1; j++) {
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println(&quot;&quot;);
+        }
+    }
+}</code></pre><h4 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2.while循环"></a>2.while循环</h4><p>语法:</p>
+<pre><code>while(具有布尔值的表达式){
+    //循环体
+}</code></pre><p>一般而言,需要在循环体里面去控制循环的次数<br>可以使用之前for中的i循环变量的写法或者break</p>
+<h4 id="3-for和while的区别"><a href="#3-for和while的区别" class="headerlink" title="3.for和while的区别"></a>3.for和while的区别</h4><ol>
+<li>for有3个条件,while有1个<br>for可以进行循环次数的精确控制,while适用于不明确需要循环多少次的情况</li>
+<li>趋向于结束的方式<br>for使用循环变量i使得循环结束,while使用break使得循环结束</li>
+</ol>
+<h4 id="4-do…while"><a href="#4-do…while" class="headerlink" title="4.do…while"></a>4.do…while</h4><p>语法:</p>
+<pre><code>do{
+    //循环体
+}while();</code></pre><p>注意:while()后面的;绝对不能省略</p>
+<p>结论:<br>    1. 如果判断条件为真,do循环体可以执行;<br>    2. 如果判断条件为假,do循环体可以执行;最多执行一次;<br>即使判断条件为假,dowhile循环也会执行一次</p>
+<h4 id="5-forLabel"><a href="#5-forLabel" class="headerlink" title="5.forLabel"></a>5.forLabel</h4><p>语法:</p>
+<pre><code>label:for(a;b;c){
+    //循环体
+    break label;
+}</code></pre><p>label相当于给for循环起名字,必须符合标识符命名规范<br>break label:可以结束指定名称的循环</p>
+<h4 id="6-双层for中的break"><a href="#6-双层for中的break" class="headerlink" title="6.双层for中的break"></a>6.双层for中的break</h4><p>break的执行和判断条件无关,只取决于break所在的循环.<br>如果break位于内层循环,提前结束内层循环<br>如果break位于外层循环,提前结束外层循环</p>
+<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>1.求1至1000之间满足“用3除余2；用5除余3；用7除余2”的数，且一行只打印5个数</p>
+<pre><code>public class Test01 {
+    public static void main(String[] args) {
+        int count = 0;
+        for (int i = 1; i &lt;= 1000; i++) {
+            if (i % 3 == 2 &amp;&amp; i % 5 == 3 &amp; i % 7 == 2) {
+                count++;
+                if (count % 5 == 0) {
+                    System.out.println(i);
+                } else {
+                    System.out.print(i+&quot; &quot;);
+                }
+            }
+        }
+    }
+}</code></pre><p>2.求1-3+5-7+ …… -99+101的值</p>
+<pre><code>public class Test02 {
+    public static void main(String[] args) {
+        int sum = 0;
+        int count = 0;
+        for (int i = 1; i &lt; 102; i += 2) {
+            count++;
+            if (count % 2 == 0) {
+                sum -= i;
+            } else {
+                sum += i;
+            }
+        }
+        System.out.println(sum);
+    }
+}</code></pre><p>3.打印出所有的“水仙花数”，所谓“水仙花数”是指一个三位数，其各位数字立方和等于该数本身</p>
+<pre><code>public class Test03 {
+    public static void main(String[] args) {
+        for (int i = 100; i &lt; 1000; i++) {
+            int il = i / 100;
+            int im = i / 10 % 10;
+            int ir = i % 10;
+            if (i == (il*il*il+im*im*im+ir*ir*ir)) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+//!!我居然连立方和,立方差都不记得了</code></pre><p>4.输入两个正整数m和n，求其最大公约数和最小公倍数</p>
+<pre><code>import java.util.Scanner;
+public class Test04 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(&quot;输入第一个正整数&quot;);
+        int m = sc.nextInt();
+        System.out.println(&quot;输入第二个正整数&quot;);
+        int n = sc.nextInt();
+        int pro = m * n;
+        // 公约数,用的是欧几里得算法(辗转相除法)
+        do {
+            if (n &gt; m) {
+                m = m + n;
+                n = m - n;
+                m = m - n;
+            }//判断m,n大小,大的值给m,小的给n
+            m = m % n;//大的数对小的数取余,再用小的数和余数比较,再取余,直到整除为止
+        } while (m != 0);
+        System.out.printf(&quot;最大公约数是%d,&quot;, n);
+        // 公倍数
+        int result = pro / n;
+        System.out.printf(&quot;最小公倍数是%d&quot;, result);
+        sc.close();
+    }
+}</code></pre><p>5.百元百鸡问题：公鸡5元一只，母鸡3元一只，3只小鸡1元，如果用100元钱，买100只鸡，不佘不欠，可以买公鸡，母鸡，小鸡，各多少只。</p>
+<pre><code>public class Test05 {
+    public static void main(String[] args) {
+         for (int male = 0; male &lt;= 20; male++) {//公鸡
+            for (int female = 0; female &lt;= 34; female++) {//母鸡
+                for (int child = 0; child &lt;= 300; child += 3) {//小鸡
+                    int pay = 5 * male + 3 * female + child / 3;
+                    if (pay == 100) {
+                        System.out.printf(&quot;公鸡%d只,母鸡%d只,小鸡%d只&quot;, male, female, child);
+                        System.out.println();
+                    }
+                }
+            }
+        }
+    }
+}</code></pre><p>6.编写一个Java应用程序，用循环结构打印如下的数值列表：<br>N        10*N        100*N        1000*N<br>1         10             100         1000<br>2         20             200         2000<br>3         30             300         3000<br>4         40             400         4000<br>5         50             500         5000</p>
+<pre><code>public class Test06 {
+    public static void main(String[] args) {
+        System.out.println(&quot;N  10*N  100*N  1000*N&quot;);
+        for (int n = 1; n &lt;= 5; n++) {
+            System.out.println(n + &quot;  &quot; + 10 * n + &quot;  &quot; + 100 * n + &quot;  &quot; + 1000 * n);
+        }
+    }
+}</code></pre><p>7.打印2到10000的所有素数，每行显示8个素数</p>
+<pre><code>public class Test07 {
+    public static void main(String[] args) {
+        int count = 0;//计数
+        for (int i = 2; i &lt;= 10000; i++) {
+            boolean status = true;//给定状态
+            for (int j = 2; j &lt; i; j++) {
+                if (i % j == 0) {
+                    status = false;//有能被整除的数,状态改为false,退出循环
+                    break;
+                }
+            }
+            if (status) {//如果没有能被整除的数,及状态没被改变,为true时
+                count++;//计数
+                if (count % 8 == 0) {
+                    System.out.println(i);
+                } else {
+                    System.out.print(i+&quot; &quot;);
+                }
+            }
+        }
+    }
+}</code></pre><p>8.商品价格表<br>(1)用户从控制台输入需要查询的商品编号，根据编号现实对应商品价格。<br>(2)循环查询商品价格  （商品名称 单价）<br>(3)输入n退出循环 </p>
+<pre><code>//这是什么奇怪的题
+import java.util.Scanner;
+public class Test08 {
+    public static void main(String[] args) {
+        System.out.println(&quot;input num&quot;);
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            String num = sc.next();
+            if (num.equals(&quot;n&quot;)) {
+                break;
+            }
+            switch (num) {
+            case &quot;101&quot;: {
+                System.out.println(num + &quot;苹果 1.5元&quot;);
+                break;
+            }
+            case &quot;102&quot;: {
+                System.out.println(num + &quot;Switch 4500元&quot;);
+                break;
+            }
+            case &quot;103&quot;: {
+                System.out.println(num + &quot;Xperia1 5999元&quot;);
+                break;
+            }
+            default: {
+                System.out.println(&quot;商品不存在&quot;);
+                break;
+            }
+            }
+        }
+        sc.close();
+    }
+}</code></pre><p><a href="https://blog.csdn.net/m0_37695351/article/details/79254221" title="关于next()、nextLine()、nextInt()" target="_blank" rel="noopener">关于next()、nextLine()、nextInt()</a><br>1.nextLine()方法，不将空格看做是两个字符串的间隔，而是看作字符串的一部分，返回时，它作为String类型一并返回<br>输入23 24 25<br>输出”23 24 25”<br>2.使用next()方法时，将空格看作是两个字符串的间隔<br>输入23 24 25<br>输出”23”输出”24”输出”25”<br>3.nextInt()方法，与next()方法类似，只是它的返回值是int类型的，依旧将空格看作是两个输入的数据的间隔<br>输入23 24 25<br>输出23输出24输出25<br>只能输入int类型的</p>
+<p>9.开发一个标题为”FilpFlop”的游戏程序。它从1计数到100，遇到3的倍数就替换为单词Filp,5的倍数就替换为单词Flop,既为3的倍数又为5的倍数则替换单词FilpFlop.</p>
+<pre><code>public class Test09 {
+    public static void main(String[] args) {
+        for (int i = 1; i &lt;= 100; i++) {
+            if (i % 3 == 0 &amp;&amp; i % 5 == 0) {
+                System.out.println(&quot;FilpFlop&quot;);
+            } else if (i % 3 == 0) {
+                System.out.println(&quot;Filp&quot;);
+            } else if (i % 5 == 0) {
+                System.out.println(&quot;Flop&quot;);
+            } else {
+                System.out.println(i);
+            }
+        }
+    }
+}</code></pre><p>面试题:<br>1.什么时候用for循环，什么时候用while循环<br>for可以进行循环次数的精确控制,while适用于不明确需要循环多少次的情况</p>
+<p>2.while循环和do-while循环的区别<br>while先判断,符合条件后才执行;do-while先执行再判断,即便判断条件为假,do-while循环也会执行一次</p>
+<p>3.break、continue、return的区别<br>break在for循环中退出当前层循环或指定循环,switch循环中退出循环执行下一条语句,<br>continue退出本次循环直接进入下一次循环,<br>return退出函数返回到调用位置</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,84 +403,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/06/for循环-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/05/for循环-1/" class="archive-article-date">
-  	<time datetime="2019-07-05T09:06:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/05/for循环-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">for循环(1)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/05/for循环-1/">for循环(1)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/04/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-04T05:21:38.183Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/04/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -288,8 +528,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
