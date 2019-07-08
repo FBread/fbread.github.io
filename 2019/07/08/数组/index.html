@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>for循环(2) | FBread的博客</title>
+  <title>数组 | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.for循环嵌套练习例1:打印图案       *     ***   ***** *******">
+  <meta name="description" content="数组1.数组是相同数据类型的多个数据组成的一个集合.">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="for循环(2)">
-<meta property="og:url" content="http://yoursite.com/2019/07/06/for循环-2/index.html">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://yoursite.com/2019/07/08/数组/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="1.for循环嵌套练习例1:打印图案       *     ***   ***** *******">
+<meta property="og:description" content="数组1.数组是相同数据类型的多个数据组成的一个集合.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-06T02:47:52.417Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190708-1.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190708-2.png">
+<meta property="og:updated_time" content="2019-07-08T11:17:56.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="for循环(2)">
-<meta name="twitter:description" content="1.for循环嵌套练习例1:打印图案       *     ***   ***** *******">
+<meta name="twitter:title" content="数组">
+<meta name="twitter:description" content="数组1.数组是相同数据类型的多个数据组成的一个集合.">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/20190708-1.png">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -145,246 +148,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-for循环-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      for循环(2)
+      数组
     </h1>
   
 
         
-        <a href="/2019/07/06/for循环-2/" class="archive-article-date">
-  	<time datetime="2019-07-06T02:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+        <a href="/2019/07/08/数组/" class="archive-article-date">
+  	<time datetime="2019-07-08T00:52:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-for循环嵌套练习"><a href="#1-for循环嵌套练习" class="headerlink" title="1.for循环嵌套练习"></a>1.for循环嵌套练习</h5><p>例1:打印图案</p>
-<pre><code>      *
-    ***
-  *****
-*******</code></pre><a id="more"></a>
-<pre><code>--------------------------------------------
-public class DoubleFor001 {
-    public static void main(String[] args) {
-        for (int i = 1; i &lt;= 4; i++) {
-            for (int j = 1; j &lt;= 7; j++) {
-                if (j &lt;= (8 - 2 * i)) {
-                    System.out.print(&quot; &quot;);
-                } else {
-                    System.out.print(&quot;*&quot;);
-                }
-            }
-            System.out.println(&quot;&quot;);
-        }
-    }
-}    </code></pre><p>或:</p>
-<pre><code>public class DoubleFor001 {
-    public static void main(String[] args) {
-        // 外层控制行,总共四行
-        for (int i = 1; i &lt; 5; i++) {
-            // 内层循环控制列 负责打印空格
-            for (int j = 2 * (4 - i); j &gt; 0; j--) {
+        <h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h5 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h5><p>是相同数据类型的多个数据组成的一个集合.</p>
+<a id="more"></a>
 
-                System.out.print(&quot; &quot;);
-            }
-            for (int j = 1; j &lt;= 2 * i - 1; j++) {
-                System.out.print(&quot;*&quot;);
-            }
-            System.out.println(&quot;&quot;);
-        }
-    }
-}</code></pre><h4 id="2-while循环"><a href="#2-while循环" class="headerlink" title="2.while循环"></a>2.while循环</h4><p>语法:</p>
-<pre><code>while(具有布尔值的表达式){
-    //循环体
-}</code></pre><p>一般而言,需要在循环体里面去控制循环的次数<br>可以使用之前for中的i循环变量的写法或者break</p>
-<h4 id="3-for和while的区别"><a href="#3-for和while的区别" class="headerlink" title="3.for和while的区别"></a>3.for和while的区别</h4><ol>
-<li>for有3个条件,while有1个<br>for可以进行循环次数的精确控制,while适用于不明确需要循环多少次的情况</li>
-<li>趋向于结束的方式<br>for使用循环变量i使得循环结束,while使用break使得循环结束</li>
-</ol>
-<h4 id="4-do…while"><a href="#4-do…while" class="headerlink" title="4.do…while"></a>4.do…while</h4><p>语法:</p>
-<pre><code>do{
-    //循环体
-}while();</code></pre><p>注意:while()后面的;绝对不能省略</p>
-<p>结论:<br>    1. 如果判断条件为真,do循环体可以执行;<br>    2. 如果判断条件为假,do循环体可以执行;最多执行一次;<br>即使判断条件为假,dowhile循环也会执行一次</p>
-<h4 id="5-forLabel"><a href="#5-forLabel" class="headerlink" title="5.forLabel"></a>5.forLabel</h4><p>语法:</p>
-<pre><code>label:for(a;b;c){
-    //循环体
-    break label;
-}</code></pre><p>label相当于给for循环起名字,必须符合标识符命名规范<br>break label:可以结束指定名称的循环</p>
-<h4 id="6-双层for中的break"><a href="#6-双层for中的break" class="headerlink" title="6.双层for中的break"></a>6.双层for中的break</h4><p>break的执行和判断条件无关,只取决于break所在的循环.<br>如果break位于内层循环,提前结束内层循环<br>如果break位于外层循环,提前结束外层循环</p>
-<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>1.求1至1000之间满足“用3除余2；用5除余3；用7除余2”的数，且一行只打印5个数</p>
-<pre><code>public class Test01 {
-    public static void main(String[] args) {
-        int count = 0;
-        for (int i = 1; i &lt;= 1000; i++) {
-            if (i % 3 == 2 &amp;&amp; i % 5 == 3 &amp; i % 7 == 2) {
-                count++;
-                if (count % 5 == 0) {
-                    System.out.println(i);
-                } else {
-                    System.out.print(i+&quot; &quot;);
-                }
-            }
-        }
-    }
-}</code></pre><p>2.求1-3+5-7+ …… -99+101的值</p>
-<pre><code>public class Test02 {
-    public static void main(String[] args) {
-        int sum = 0;
-        int count = 0;
-        for (int i = 1; i &lt; 102; i += 2) {
-            count++;
-            if (count % 2 == 0) {
-                sum -= i;
-            } else {
-                sum += i;
-            }
-        }
-        System.out.println(sum);
-    }
-}</code></pre><p>3.打印出所有的“水仙花数”，所谓“水仙花数”是指一个三位数，其各位数字立方和等于该数本身</p>
-<pre><code>public class Test03 {
-    public static void main(String[] args) {
-        for (int i = 100; i &lt; 1000; i++) {
-            int il = i / 100;
-            int im = i / 10 % 10;
-            int ir = i % 10;
-            if (i == (il*il*il+im*im*im+ir*ir*ir)) {
-                System.out.println(i);
-            }
-        }
-    }
+<h5 id="2-定义语法"><a href="#2-定义语法" class="headerlink" title="2.定义语法"></a>2.定义语法</h5><p>方案一:<br>注意:<br>1)数据中的每个数据称为元素,元素允许重复<br>2)元素的数据类型必须和数组类型一致<br>3)多个元素之前使用逗号隔开,最后一个元素后面的’,’可以省略</p>
+<pre><code>数据类型[] 标识符 = {数据1,数据2,数据3,...};
+int[] arr01 = { -1, 2, 3, 412, 41, 1 };</code></pre><p>方案二:</p>
+<pre><code>数据类型[] 标识符 = new 数据类型[数组长度];
+//6是数组长度--当前数组允许存储元素最多的个数
+int[] arr02 = new int[6];</code></pre><p>方案三:(很少使用)</p>
+<pre><code>数据类型[] 标识符 = new 数据类型[]{数据1,数据2,数据3,...};
+double[] arr = new double[] {12.3,421.1,2,1};</code></pre><p>省略了数组的长度,数组长度通过后面{}里面元素的个数自行确定.</p>
+<h5 id="3-获取数组元素的值"><a href="#3-获取数组元素的值" class="headerlink" title="3.获取数组元素的值"></a>3.获取数组元素的值</h5><p>语法:<br>数组的标识符[下标];<br>下标是一个整型数据,从0开始,最后一个元素下标是数组长度-1</p>
+<pre><code>char[] cc = { &apos;h&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;,&apos;o&apos; };
+System.out.println(cc[0]);//h
+System.out.println(cc[1]);//e
+System.out.println(cc[2]);//l
+System.out.println(cc[3]);//l
+System.out.println(cc[4]);//o</code></pre><p>如果下标是负数或者大于等于数组长度,会导致ArrayIndexOutOfBoundException错误.</p>
+<h5 id="4-数组的遍历"><a href="#4-数组的遍历" class="headerlink" title="4.数组的遍历"></a>4.数组的遍历</h5><p>使用for循环访问数组元素—&gt;数组的遍历<br>我们可以通过  数组变量.length  的方式获取数组的长度<br>注意:<br>1)循环变量i必须是整型;<br>2)i从0开始,最大到数组长度-1;<br>看见数组第一件事先写个for循环</p>
+<h5 id="5-数组遍历的简单方式"><a href="#5-数组遍历的简单方式" class="headerlink" title="5.数组遍历的简单方式"></a>5.数组遍历的简单方式</h5><p>语法:</p>
+<pre><code>for(数据类型 标识符 : 数组的名字){
+//循环体中使用标识符去访问数据
+}</code></pre><p>数据类型必须和数组中存放的数据类型一致<br>注意:数组元素中没有全部赋值,未赋值的元素采用默认值:<br>整数    0<br>浮点    0.0<br>char    ‘ ‘<br>String    null<br>boolean    false</p>
+<p>相比for的区别:<br>1)forEach永远不会出现数组下标越界问题<br>2)forEach中循环变量i代表具体的元素,<br>for中循环变量i代表下标.<br>3)在需要用到数组下标的地方,forEach不如for好用</p>
+<pre><code>double[] arr = new double[5];
+// 设置数组的初始值
+arr[0] = 1.1;
+arr[1] = 12.2;
+arr[3] = 1;
+//数组的遍历
+for (int i = 0; i &lt; arr.length; i++) {
+    System.out.println(arr[i] + &quot; &quot;);
 }
-//!!我居然连立方和,立方差都不记得了</code></pre><p>4.输入两个正整数m和n，求其最大公约数和最小公倍数</p>
-<pre><code>import java.util.Scanner;
-public class Test04 {
+// 只有一个条件
+for (double number : arr) {
+    // 使用number直接访问元素即可
+    // number不是下标,是数组当前的元素
+    System.out.println(number + &quot; &quot;);
+}</code></pre><h5 id="6-冒泡排序-面试必问"><a href="#6-冒泡排序-面试必问" class="headerlink" title="6.冒泡排序(面试必问)"></a>6.冒泡排序(面试必问)</h5><p>对一堆无序的数字进行排序的方案,<br><img src="/assets/img/20190708-1.png" alt="冒泡排序" title="冒泡排序"><br>每一次比较相邻的两个元素(相邻比较),根据需要决定是否进行交换(合规交换)<br>每一轮比较交换完毕之后,总能把最值放到最后<br>下一轮比较时,之前的最值不再参与,剩下的元素按照规则比较,以此类推…<br>需要的轮数=元素的个数-1<br>每一轮中比较的次数=待比较的元素个数-1</p>
+<pre><code>public class BubbleSort {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println(&quot;输入第一个正整数&quot;);
-        int m = sc.nextInt();
-        System.out.println(&quot;输入第二个正整数&quot;);
-        int n = sc.nextInt();
-        int pro = m * n;
-        // 公约数,用的是欧几里得算法(辗转相除法)
-        do {
-            if (n &gt; m) {
-                m = m + n;
-                n = m - n;
-                m = m - n;
-            }//判断m,n大小,大的值给m,小的给n
-            m = m % n;//大的数对小的数取余,再用小的数和余数比较,再取余,直到整除为止
-        } while (m != 0);
-        System.out.printf(&quot;最大公约数是%d,&quot;, n);
-        // 公倍数
-        int result = pro / n;
-        System.out.printf(&quot;最小公倍数是%d&quot;, result);
-        sc.close();
-    }
-}</code></pre><p>5.百元百鸡问题：公鸡5元一只，母鸡3元一只，3只小鸡1元，如果用100元钱，买100只鸡，不佘不欠，可以买公鸡，母鸡，小鸡，各多少只。</p>
-<pre><code>public class Test05 {
-    public static void main(String[] args) {
-         for (int male = 0; male &lt;= 20; male++) {//公鸡
-            for (int female = 0; female &lt;= 34; female++) {//母鸡
-                for (int child = 0; child &lt;= 300; child += 3) {//小鸡
-                    int pay = 5 * male + 3 * female + child / 3;
-                    if (pay == 100) {
-                        System.out.printf(&quot;公鸡%d只,母鸡%d只,小鸡%d只&quot;, male, female, child);
-                        System.out.println();
-                    }
+        // 定义数组存放所有的待排序数字
+        int[] arr = { 3, 1, 5, 2, 6, 7, -1, 3, 9 };
+        //外层循环处理好边界到length-1
+        for (int i = 0; i &lt; arr.length - 1; i++) {
+            //内层循环控制具体每一行的比较
+            for (int j = 0; j &lt; arr.length - 1 - i; j++) {
+                //比较相邻元素
+                if (arr[j] &gt; arr[j + 1]) {
+                    int t = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
                 }
             }
         }
-    }
-}</code></pre><p>6.编写一个Java应用程序，用循环结构打印如下的数值列表：<br>N        10*N        100*N        1000*N<br>1         10             100         1000<br>2         20             200         2000<br>3         30             300         3000<br>4         40             400         4000<br>5         50             500         5000</p>
-<pre><code>public class Test06 {
-    public static void main(String[] args) {
-        System.out.println(&quot;N  10*N  100*N  1000*N&quot;);
-        for (int n = 1; n &lt;= 5; n++) {
-            System.out.println(n + &quot;  &quot; + 10 * n + &quot;  &quot; + 100 * n + &quot;  &quot; + 1000 * n);
+        for (int a : arr) {
+            System.out.println(a);
         }
     }
-}</code></pre><p>7.打印2到10000的所有素数，每行显示8个素数</p>
-<pre><code>public class Test07 {
+}</code></pre><h5 id="7-选择排序-面试可能会问"><a href="#7-选择排序-面试可能会问" class="headerlink" title="7.选择排序(面试可能会问)"></a>7.选择排序(面试可能会问)</h5><p>预先选择一个位置,假设该位置是最值,必须指定一个顺序(从前往后,从后往前).把后面所有的待比较的数和当前位置的数比较,合规之后使用第三方的index记录合规数值的位置(数组中元素的下标),等到最后一个元素比较完毕后,再进行交换.一次比较重,交换只发生一次<br>选择排序比冒泡排序效率高.<br><img src="/assets/img/20190708-2.png" alt="冒泡排序" title="冒泡排序"></p>
+<pre><code>public class SelectSort {
     public static void main(String[] args) {
-        int count = 0;//计数
-        for (int i = 2; i &lt;= 10000; i++) {
-            boolean status = true;//给定状态
-            for (int j = 2; j &lt; i; j++) {
-                if (i % j == 0) {
-                    status = false;//有能被整除的数,状态改为false,退出循环
-                    break;
+        int[] arr = { 3, 1, 5, 2, 6, 7, -1, 3, 9 };
+        // 外层循环控制轮数
+        for (int i = 0; i &lt; arr.length - 1; i++) {
+            // 假设的最小值
+            int t = i;
+            // 内层循环负责找到一个最小值放到从前面数第一个待排序的位置
+            for (int j = i; j &lt; arr.length - 1; j++) {
+                // 如果记录比最小值arr[t]还小,更新t
+                if (arr[t] &gt; arr[j]) {
+                    t = j;
                 }
             }
-            if (status) {//如果没有能被整除的数,及状态没被改变,为true时
-                count++;//计数
-                if (count % 8 == 0) {
-                    System.out.println(i);
-                } else {
-                    System.out.print(i+&quot; &quot;);
-                }
+            if (t != i) {
+                int temp = arr[i];
+                arr[i] = arr[t];
+                arr[t] = temp;
             }
         }
-    }
-}</code></pre><p>8.商品价格表<br>(1)用户从控制台输入需要查询的商品编号，根据编号现实对应商品价格。<br>(2)循环查询商品价格  （商品名称 单价）<br>(3)输入n退出循环 </p>
-<pre><code>//这是什么奇怪的题
-import java.util.Scanner;
-public class Test08 {
-    public static void main(String[] args) {
-        System.out.println(&quot;input num&quot;);
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            String num = sc.next();
-            if (num.equals(&quot;n&quot;)) {
-                break;
-            }
-            switch (num) {
-            case &quot;101&quot;: {
-                System.out.println(num + &quot;苹果 1.5元&quot;);
-                break;
-            }
-            case &quot;102&quot;: {
-                System.out.println(num + &quot;Switch 4500元&quot;);
-                break;
-            }
-            case &quot;103&quot;: {
-                System.out.println(num + &quot;Xperia1 5999元&quot;);
-                break;
-            }
-            default: {
-                System.out.println(&quot;商品不存在&quot;);
-                break;
-            }
-            }
-        }
-        sc.close();
-    }
-}</code></pre><p><a href="https://blog.csdn.net/m0_37695351/article/details/79254221" title="关于next()、nextLine()、nextInt()" target="_blank" rel="noopener">关于next()、nextLine()、nextInt()</a><br>1.nextLine()方法，不将空格看做是两个字符串的间隔，而是看作字符串的一部分，返回时，它作为String类型一并返回<br>输入23 24 25<br>输出”23 24 25”<br>2.使用next()方法时，将空格看作是两个字符串的间隔<br>输入23 24 25<br>输出”23”输出”24”输出”25”<br>3.nextInt()方法，与next()方法类似，只是它的返回值是int类型的，依旧将空格看作是两个输入的数据的间隔<br>输入23 24 25<br>输出23输出24输出25<br>只能输入int类型的</p>
-<p>9.开发一个标题为”FilpFlop”的游戏程序。它从1计数到100，遇到3的倍数就替换为单词Filp,5的倍数就替换为单词Flop,既为3的倍数又为5的倍数则替换单词FilpFlop.</p>
-<pre><code>public class Test09 {
-    public static void main(String[] args) {
-        for (int i = 1; i &lt;= 100; i++) {
-            if (i % 3 == 0 &amp;&amp; i % 5 == 0) {
-                System.out.println(&quot;FilpFlop&quot;);
-            } else if (i % 3 == 0) {
-                System.out.println(&quot;Filp&quot;);
-            } else if (i % 5 == 0) {
-                System.out.println(&quot;Flop&quot;);
-            } else {
-                System.out.println(i);
-            }
+        for (int a : arr) {
+            System.out.println(a);
         }
     }
-}</code></pre><p>面试题:<br>1.什么时候用for循环，什么时候用while循环<br>for可以进行循环次数的精确控制,while适用于不明确需要循环多少次的情况</p>
-<p>2.while循环和do-while循环的区别<br>while先判断,符合条件后才执行;do-while先执行再判断,即便判断条件为假,do-while循环也会执行一次</p>
-<p>3.break、continue、return的区别<br>break在for循环中退出当前层循环或指定循环,switch循环中退出循环执行下一条语句,<br>continue退出本次循环直接进入下一次循环,<br>return退出函数返回到调用位置</p>
+}</code></pre><h5 id="8-二维数组"><a href="#8-二维数组" class="headerlink" title="8.二维数组"></a>8.二维数组</h5><p>类似于矩阵,用于手机硬件开发和设计,例如相机,指纹识别模块<br>在线选座,电影院等</p>
+<h6 id="8-1二维数组的定义"><a href="#8-1二维数组的定义" class="headerlink" title="8.1二维数组的定义"></a>8.1二维数组的定义</h6>
+方案一:
+数据类型[][] 变量名 = {{},{},{}};
 
+
+<pre><code>int[][] arr = { { 1, 2, 3 }, { 4, 5 }, { 12, 22, 33 } };</code></pre><p>二维数组的每一个元素又是一个一维数组<br>方案二:<br>数据类型[][] 变量名 = new int[2][3];<br>[2][3] 是二维数组的长度,2是宽度,3是高度;<br>即这个二维数组一共有两个元素,每个元素都是一个一维数组,里面存放3个元素</p>
+<pre><code>int[][] arr1 = new int[3][4];
+//给元素赋值
+arr[0][0] = 12;
+arr[0][1] = 13;
+arr[0][2] = 11;</code></pre><p>方案三:<br>数据类型[][] 变量名 = new 数据类型[][]{};</p>
+<pre><code>String[][] arr2 = new String[][] { { &quot;如果&quot;, &quot;有西瓜&quot; }, { &quot;我要吃&quot;, &quot;雪糕&quot;, &quot;喝可乐&quot; } };</code></pre><h6 id="8-2二维数组的遍历"><a href="#8-2二维数组的遍历" class="headerlink" title="8.2二维数组的遍历"></a>8.2二维数组的遍历</h6><pre><code>for(){
+    //拆分出的每个数组
+}
+
+String[][] arr2 = new String[][] { { &quot;如果&quot;, &quot;有西瓜&quot; }, { &quot;我要吃&quot;, &quot;雪糕&quot;, &quot;喝可乐&quot; } };
+// 遍历
+for (int i = 0; i &lt; arr2.length; i++) {
+    //获取里面的每一个元素---&gt;是一个一维数组
+    String[] innerArr = arr2[i];
+    for(String s:innerArr) {
+        System.out.print(s+&quot; &quot;);
+    }
+    System.out.println();
+}</code></pre>
       
 
       
@@ -453,7 +346,7 @@ public class Test08 {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/06/for循环-2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/08/数组/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -467,18 +360,9 @@ public class Test08 {
   
 <nav id="article-nav">
   
-    <a href="/2019/07/08/数组/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数组
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/05/for循环-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">for循环(1)</div>
+    <a href="/2019/07/06/for循环-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">for循环(2)</div>
       <i class="icon-circle-right"></i>
     </a>
   
