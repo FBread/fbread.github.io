@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Java | FBread的博客</title>
+  <title>抽象封装继承多态-2 | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一下有生之年">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,html,java,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FBread的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
+  <meta name="description" content="1.回顾1.类代码:.java文件,Java中代码的存放位置创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中类中有两类成员:1)属性:成员变量,私有的在方法的外部,类的内部">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="抽象封装继承多态-2">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/抽象封装继承多态-2/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="记录一下有生之年">
+<meta property="og:description" content="1.回顾1.类代码:.java文件,Java中代码的存放位置创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中类中有两类成员:1)属性:成员变量,私有的在方法的外部,类的内部">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-15T12:09:50.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FBread的博客">
-<meta name="twitter:description" content="记录一下有生之年">
+<meta name="twitter:title" content="抽象封装继承多态-2">
+<meta name="twitter:description" content="1.回顾1.类代码:.java文件,Java中代码的存放位置创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中类中有两类成员:1)属性:成员变量,私有的在方法的外部,类的内部">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -144,36 +145,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-抽象封装继承多态-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      抽象封装继承多态-2
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/抽象封装继承多态-2/" class="archive-article-date">
+
+        
+        <a href="/2019/07/15/抽象封装继承多态-2/" class="archive-article-date">
   	<time datetime="2019-07-15T00:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/抽象封装继承多态-2/">抽象封装继承多态-2</a>
-    </h1>
-  
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-回顾"><a href="#1-回顾" class="headerlink" title="1.回顾"></a>1.回顾</h4><p>1.类<br>代码:.java文件,Java中代码的存放位置<br>创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中<br>类中有两类成员:<br>1)属性:成员变量,私有的<br>在方法的外部,类的内部</p>
+<a id="more"></a>
+<pre><code>private String name;</code></pre><p>2)行为:方法    特定功能的代码块,可以复用.</p>
+<pre><code>public int sum(int num1, int num2){
+    int count= 0;
+    count=num1+num2;
+    return count;
+}</code></pre><p>2.类中的代码,不能自动运行的.(不是放在内存中的)<br>对象:内存中存放代码的空间(地址)<br>需要将类中的的代码加载到内存中,才可以被执行.—&gt;创建对象的过程<br>类名 变量(对象)=new 类();</p>
+<p>3.面对对象的3大特征<br>封装:属性私有,通过公共的setxxx,getxxx方法对属性进行操作,在赋值过程中,对值得有效性进行判断,从而保证数据的合理性.<br>继承:描述的是类和类之间的一种关系,通过继承关系,子类可以使用父类中可以允许使用的那些成员<br>好处:代码复用–重复的代码放在父类中即可, 子类中仅存放自己独有的代码即可.<br>有利于程序的变更及维护<br>Java中继承的特点:<br>1.单根性(只允许有一个父类),基类(父类)单继承<br>2.传递性(孙子类可以用爷爷类的东西)</p>
+<h4 id="2-多态的概念及实现"><a href="#2-多态的概念及实现" class="headerlink" title="2.多态的概念及实现"></a>2.多态的概念及实现</h4><p>目前编程会出现的问题:<br>案例:电子宠物系统<br>dog:Strain品种    eat()<br>cat:play()<br>pet:name,age,sex</p>
+<p>问题：当程序业务有变更时，增加代码的同时，还需要修改原有代码，带来大量的工作量<br>解决办法：使用多态</p>
+<p>多态的使用步骤:<br>1.在父类中编写共同的方法,有方法体{}但是方法体是空的,称为虚方法.<br>2.在子类中重写父类的虚方法<br>重写:在子类中,方法头和父类中被重写的方法的头相同,也成为方法覆盖<br>3.在使用时,用父类做类型,具体使用子类对象.在调用时方法的参数是父类类型,传递实参时,可以传递其子类类型<br><strong>里氏替换原则LSP</strong>：任何父类出现的位置，都可以使用其子类对象进行替换</p>
+<p>什么是多态?同一父类类型,调用其同一方法后,表现出不同的状态,成为多态<br>//就是父类写一个空方法(虚方法),子类根据各自不同的特性重写该方法,在使用时形参写父类类型,调用时可以写子类类型.</p>
+<p>多态特点:<br>父类:方法(虚方法)<br>子类:重写父类中的虚方法<br>多态的实现方式,区别:<br>1)方法重载实现:静态方式实现多态,在程序编译的过程中,重载的方法就已经确定了,重载的若干个方式同时都加载到内存中.在执行时,根据参数的情况决定调用哪一个方法.<br>2)方法重写/方法覆盖:在编译时,及在内存加载时,子类的方法并没有覆盖掉父类中被重写的方法.只有在调用过程中,判断是哪个子类调用的,然后用这个子类的方法来覆盖父类的方法.<br>由于参数的类型是父类类型,所以调用的是父类空间中的方法,根据具体传递的参数,判断参数是哪个子类类型,就使用这个子类中的方法体去滴覆盖掉父类的虚方法.</p>
+<h4 id="3-多态的应用-对象数组"><a href="#3-多态的应用-对象数组" class="headerlink" title="3.多态的应用:对象数组"></a>3.多态的应用:对象数组</h4><p>变量 数组 集合框架<br>数组特点:<br>1)数据类型相同<br>2)内存空间连续<br>3)长度固定</p>
+<p>new一个父类数组,存入子类对象;由于数组是父类类型,存入数组的元素都由原类型隐式转换为了父类类型.转换为父类类型后,就只能访问父类中的成员,不能访问子类中独有的成员.<br>根据LSP，数据类型是Pet，数组中的元素可以是Pet的子类<br>需要判断数组中元素的原始类型,然后强制转换为原始类型后,就可以访问子类的独有属性.<br>1)判断数组元素的原始类型<br>语法:<br>对象 instanceof 类 —-返回Boolean值,true:是这个类型;false:不是这个类型</p>
+<pre><code>if(p instanceof Pig){
+    Pig pig = (Pig)p;
+}</code></pre><p>父类的类型指向子类的引用;通过p只能访问Pet类中的成员,Cat的独有成员不能访问:</p>
+<pre><code>//Pet 是Cat和Dog的父类
+Pet p = new Cat();
+//考虑多态,程序的拓展,更灵活
+p = new Dog();</code></pre><p>说明:局部变量不能重名(声明在方法内部或方法中语句块内部的变量</p>
+<h4 id="4-多态应用-设计模式"><a href="#4-多态应用-设计模式" class="headerlink" title="4.多态应用:设计模式"></a>4.多态应用:设计模式</h4><p>模式:做一件事情的比较好的方法<br>设计模式:开发中完成一个功能的比较好的实现方式.共有23种设计模式<br>1.创建对象的方式:自行new来创建对象,哪里需要就在哪里new. new对象的代码分布在各个类中</p>
+<p>声明一个工厂,生产对象,在需要对象时,找工厂生产即可.解决集中创建对象的问题就称为简单工厂模式.<br>1)各个类中添加构造函数<br>2)创建一个工厂类<br>3)在工厂类中,编写创建对象的方法:<br>-1方法的返回值是父类类型;<br>-2方法的参数,包括所有子类需要的所有参数，额外 char type:创建哪个子类对象<br>-3判断类型，创建对象<br>-4返回父类类型<br>-5创建对象时，无需自己new   而是调用工厂方法即可<br>好处：当子类没有确定：类名、参数频繁变化的时候，只需要修改工厂类一处即可. 整个改动是最少的</p>
+<p>由于工厂方式是static修饰的,所以访问时语法:类名.静态方法名</p>
+<h4 id="5-static"><a href="#5-static" class="headerlink" title="5. static"></a>5. static</h4><p>static 静态的<br>修饰的成员：<br>1、属性–静态变量<br>2、方法–静态方法<br>3、内部类–静态内部类<br>4、代码块<br>static{<br>}</p>
+<p>内存划分:<br>1.堆        存放new出的内容:属性,方法代码<br>2.栈        存放局部变量<br>3.常量    存放常量<br>4.静态区域    存放static修饰的内容<br>static作用:Java的jvm在运行程序时,检测程序中所有使用static修饰的成员,把static修饰的内容直接存放到内存的静态区域中<br>static的访问方式:类名.成员<br>本质:静态成员属于类,不属于对象,是公共的<br>静态成员的生命周期:当程序运行时,在内存的静态区域;当程序关闭后,静态成员在内存大静态区域中销毁<br>使用场合:对于所有对象都可以共同使用</p>
+<p>总结:<br>1.多态<br>好处:当程序有业务拓展时,使用多态,代码的改动量最小<br>概念:同一类型,调用同一方法,表现出不同的状态.<br>2.实现方法:<br>方法重载:静态方式实现多态;<br>方法重写:动态方式实现多态<br>实现步骤：<br>3、多态的应用<br>数组/变量是父类类型  ，赋值是子类对象<br>instanceof<br>简单工厂的应用<br>4、static</p>
 
-        <div class="article-info info-on-right">
-          
+		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,213 +216,107 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/抽象封装继承多态-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/12/抽象封装继承多态/" class="archive-article-date">
-  	<time datetime="2019-07-12T00:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/12/抽象封装继承多态/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">抽象封装继承多态</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/12/抽象封装继承多态/">抽象封装继承多态</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/11/面向对象-2/" class="archive-article-date">
-  	<time datetime="2019-07-11T03:18:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/11/面向对象-2/">面向对象(2)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/面向对象/" class="archive-article-date">
-  	<time datetime="2019-07-10T00:52:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/面向对象/">面向对象</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/09/方法/" class="archive-article-date">
-  	<time datetime="2019-07-09T00:38:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/09/方法/">方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/08/数组/" class="archive-article-date">
-  	<time datetime="2019-07-08T00:52:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/08/数组/">数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/Java/page/2/">2</a><a class="extend next" rel="next" href="/tags/Java/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -419,9 +344,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
