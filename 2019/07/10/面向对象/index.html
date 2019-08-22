@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面向对象 | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.编程思维发展史基于过程:从计算机角度 解决问题 机械思维 c面向过程:上帝视角 解决问题干预问题    c++ c#面向对象    c++面向接口">
+  <meta name="description" content="description:面向对象,类,方法,属性,对象,构造方法,断点调试">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象">
 <meta property="og:url" content="http://yoursite.com/2019/07/10/面向对象/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="1.编程思维发展史基于过程:从计算机角度 解决问题 机械思维 c面向过程:上帝视角 解决问题干预问题    c++ c#面向对象    c++面向接口">
+<meta property="og:description" content="description:面向对象,类,方法,属性,对象,构造方法,断点调试">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-11T09:20:36.587Z">
+<meta property="og:updated_time" content="2019-08-01T11:23:45.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象">
-<meta name="twitter:description" content="1.编程思维发展史基于过程:从计算机角度 解决问题 机械思维 c面向过程:上帝视角 解决问题干预问题    c++ c#面向对象    c++面向接口">
+<meta name="twitter:description" content="description:面向对象,类,方法,属性,对象,构造方法,断点调试">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -166,9 +166,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-编程思维发展史"><a href="#1-编程思维发展史" class="headerlink" title="1.编程思维发展史"></a>1.编程思维发展史</h4><p>基于过程:从计算机角度 解决问题 机械思维 c<br>面向过程:上帝视角 解决问题干预问题    c++ c#<br>面向对象    c++<br>面向接口</p>
+        <p>description:<strong>面向对象,类,方法,属性,对象,构造方法,断点调试</strong></p>
 <a id="more"></a>
-<p>面向切面<br>面向微服务和分布式</p>
+
+<h4 id="1-编程思维发展史"><a href="#1-编程思维发展史" class="headerlink" title="1.编程思维发展史"></a>1.编程思维发展史</h4><p>基于过程:从计算机角度 解决问题 机械思维 c<br>面向过程:上帝视角 解决问题干预问题    c++ c#<br>面向对象    c++<br>面向接口<br>面向切面<br>面向微服务和分布式</p>
 <h4 id="2-语言发展史"><a href="#2-语言发展史" class="headerlink" title="2.语言发展史"></a>2.语言发展史</h4><p>机器语言(01) —&gt; 汇编语言 —&gt; 高级语言(c/c++/Java) —&gt; 超高级语言(Python)</p>
 <h4 id="3-面向对象"><a href="#3-面向对象" class="headerlink" title="3.面向对象"></a>3.面向对象</h4><p>面试必问(通常作为第一个问题)<br>—–谈谈你对面向对象的理解?<br>从程序员的角度把世界上所有的东西用代码进行合理的呈现,java引入了类的概念.类是对具有相同或者相似特征以及行为的一些对象的抽象,对象是类的具体化.<br>我们改变了传统一步一步按部就班编写代码的思维,把对象抽象成类表示属性和方法的集合体.属性描述的是类的名词特征,方法描述的是类的行为特征.<br>面向对象包含四大基本特征:抽象/封装/继承/多态</p>
 <h4 id="4-类"><a href="#4-类" class="headerlink" title="4.类"></a>4.类</h4><p>Java中万物皆类<br>类是对具有相同或者相似特征以及行为的一些个体的抽象化.<br>金毛    京巴    博美    柴犬    德牧<br>犬类<br>类是抽象的概念,我们把相同或者相似的特征称为<strong>属性</strong>,属性是名词,比如人类的年龄/性别/姓名/身高…都是属性.把行为称为<strong>动作</strong>,动作是动词,比如人类的工作/学习/吃饭/睡觉…都是动作.<br>属性用变量来表示,动作用方法来表示</p>
@@ -209,7 +210,26 @@ book01.address = &quot;清华大学出版社&quot;;
 book01.price = 20.55;
 book01.number = 9821;</code></pre><p>获取属性的值:<br>注意:如果不设置值,获取值的时候采用默认值.<br>属性的类型 变量名 = 对象的名字.属性的名字;</p>
 <pre><code>String name = book01.name;
-System.out,println(book01.name); </code></pre><h4 id="9-class和Java文件的关系"><a href="#9-class和Java文件的关系" class="headerlink" title="9.class和Java文件的关系"></a>9.class和Java文件的关系</h4><p>一个Java文件中允许包含多个class,但是开发规范不允许(内部类和lambda除外)<br>有且只有一个被public修饰的类,且该class的名字要和Java文件的名字完全一致(大小写也一样)</p>
+System.out,println(book01.name); </code></pre><h5 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h5><ul>
+<li>A:什么是匿名对象<ul>
+<li>new Person(“张三”, 46).tell();//通过匿名对象调用方法</li>
+<li>没有名字的对象 </li>
+</ul>
+</li>
+<li>B:匿名对象应用场景<ul>
+<li>a:调用方法，仅仅只调用一次的时候。<ul>
+<li>那么，这种匿名调用有什么好处吗?<ul>
+<li>节省代码 </li>
+</ul>
+</li>
+<li>注意：调用多次的时候，不适合。匿名对象调用完毕就是垃圾。可以被垃圾回收器回收。</li>
+</ul>
+</li>
+<li>b:匿名对象可以作为实际参数传递</li>
+</ul>
+</li>
+</ul>
+<h4 id="9-class和Java文件的关系"><a href="#9-class和Java文件的关系" class="headerlink" title="9.class和Java文件的关系"></a>9.class和Java文件的关系</h4><p>一个Java文件中允许包含多个class,但是开发规范不允许(内部类和lambda除外)<br>有且只有一个被public修饰的类,且该class的名字要和Java文件的名字完全一致(大小写也一样)</p>
 <h4 id="10-面向对象中类的设计"><a href="#10-面向对象中类的设计" class="headerlink" title="10.面向对象中类的设计"></a>10.面向对象中类的设计</h4><p>1)明确类的名字,必须是个名词,命名规范和标识符命名规范相同,特别注意首字母要求大写<br>2)明确属性的类型/个数和名字,根据需要确定<br>3)明确方法的返回值类型/参数列表和名字,根据需要确定</p>
 <h4 id="11-对象方法的调用"><a href="#11-对象方法的调用" class="headerlink" title="11.对象方法的调用"></a>11.对象方法的调用</h4><p>语法:<br>对象名.普通的方法调用的语法();</p>
 <h4 id="12-类中代码的复用"><a href="#12-类中代码的复用" class="headerlink" title="12.类中代码的复用"></a>12.类中代码的复用</h4><p>类里面的属性和方法,可以被当前类的所有对象共享.<br>但是A对象关于a属性的值专属于A对象的,B对象关于b属性的值专属于B对象.<br>代码的复用性和对象之间的隔离性共存.</p>
@@ -218,7 +238,22 @@ System.out,println(book01.name); </code></pre><h4 id="9-class和Java文件的关
 <p>语法:</p>
 <pre><code>类名(参数列表){
     方法体
-}</code></pre><h4 id="15-eclipse断点调试"><a href="#15-eclipse断点调试" class="headerlink" title="15.eclipse断点调试"></a>15.eclipse断点调试</h4><p>场景(允许调试的位置):<br>1)出现bug或者未知的错误的可能位置;<br>2)方法的调用位置;<br>3)System.out.println()输出位置<br>4)其他任何合理的位置</p>
+}</code></pre><p>可以在构造方法中的<strong>第一行</strong>使用this来调用本类其他重载的构造方法</p>
+<pre><code>Public Person(){
+    System.out.println(&quot;1&quot;);
+}
+
+Person(String name,int age){
+    this.();
+    this.name = name;
+    this.age = age;
+    System.out.println(&quot;2&quot;);
+}
+Person(String name,int age,int num){
+    this(name,age);
+    this.num = num;
+    System.out.println(&quot;3&quot;);
+} </code></pre><h4 id="15-eclipse断点调试"><a href="#15-eclipse断点调试" class="headerlink" title="15.eclipse断点调试"></a>15.eclipse断点调试</h4><p>场景(允许调试的位置):<br>1)出现bug或者未知的错误的可能位置;<br>2)方法的调用位置;<br>3)System.out.println()输出位置<br>4)其他任何合理的位置</p>
 <p>断点就是代码执行到该位置”之前”暂时停顿,之后我们可以根据实际情况手动放行该代码.</p>
 <h4 id="16-构造方法的重载"><a href="#16-构造方法的重载" class="headerlink" title="16.构造方法的重载"></a>16.构造方法的重载</h4><p>我们在某些情况下可以使用构造方法对类的属性进行初始化<br>在构建对象的时候需要在new className();的小括号里面指定参数的值来决定调用哪个构造方法</p>
 <pre><code>public class Doctor {
@@ -487,6 +522,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -536,7 +579,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖,早日xxx</div>
   	  	
     	</section>
     

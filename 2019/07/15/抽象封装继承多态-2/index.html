@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>抽象封装继承多态-2 | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.回顾1.类代码:.java文件,Java中代码的存放位置创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中类中有两类成员:1)属性:成员变量,私有的在方法的外部,类的内部">
+  <meta name="description" content="description:工厂设计模式,static,对象数组,多态">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="抽象封装继承多态-2">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/抽象封装继承多态-2/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="1.回顾1.类代码:.java文件,Java中代码的存放位置创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中类中有两类成员:1)属性:成员变量,私有的在方法的外部,类的内部">
+<meta property="og:description" content="description:工厂设计模式,static,对象数组,多态">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-15T12:09:50.218Z">
+<meta property="og:updated_time" content="2019-07-19T13:16:24.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="抽象封装继承多态-2">
-<meta name="twitter:description" content="1.回顾1.类代码:.java文件,Java中代码的存放位置创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中类中有两类成员:1)属性:成员变量,私有的在方法的外部,类的内部">
+<meta name="twitter:description" content="description:工厂设计模式,static,对象数组,多态">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -166,8 +166,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-回顾"><a href="#1-回顾" class="headerlink" title="1.回顾"></a>1.回顾</h4><p>1.类<br>代码:.java文件,Java中代码的存放位置<br>创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中<br>类中有两类成员:<br>1)属性:成员变量,私有的<br>在方法的外部,类的内部</p>
+        <p>description:<strong>工厂设计模式,static,对象数组,多态</strong></p>
 <a id="more"></a>
+
+<h4 id="1-回顾"><a href="#1-回顾" class="headerlink" title="1.回顾"></a>1.回顾</h4><p>1.类<br>代码:.java文件,Java中代码的存放位置<br>创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中<br>类中有两类成员:<br>1)属性:成员变量,私有的<br>在方法的外部,类的内部</p>
 <pre><code>private String name;</code></pre><p>2)行为:方法    特定功能的代码块,可以复用.</p>
 <pre><code>public int sum(int num1, int num2){
     int count= 0;
@@ -189,10 +191,30 @@
 Pet p = new Cat();
 //考虑多态,程序的拓展,更灵活
 p = new Dog();</code></pre><p>说明:局部变量不能重名(声明在方法内部或方法中语句块内部的变量</p>
-<h4 id="4-多态应用-设计模式"><a href="#4-多态应用-设计模式" class="headerlink" title="4.多态应用:设计模式"></a>4.多态应用:设计模式</h4><p>模式:做一件事情的比较好的方法<br>设计模式:开发中完成一个功能的比较好的实现方式.共有23种设计模式<br>1.创建对象的方式:自行new来创建对象,哪里需要就在哪里new. new对象的代码分布在各个类中</p>
+<h4 id="4-多态应用-设计模式"><a href="#4-多态应用-设计模式" class="headerlink" title="4.多态应用:设计模式"></a>4.多态应用:设计模式</h4><p>模式:做一件事情的比较好的方法<br>设计模式:开发中完成一个功能的比较好的实现方式.共有23种设计模式</p>
+<h4 id="4-1工厂设计模式"><a href="#4-1工厂设计模式" class="headerlink" title="4.1工厂设计模式"></a>4.1工厂设计模式</h4><p>1.创建对象的方式:自行new来创建对象,哪里需要就在哪里new. new对象的代码分布在各个类中</p>
 <p>声明一个工厂,生产对象,在需要对象时,找工厂生产即可.解决集中创建对象的问题就称为简单工厂模式.<br>1)各个类中添加构造函数<br>2)创建一个工厂类<br>3)在工厂类中,编写创建对象的方法:<br>-1方法的返回值是父类类型;<br>-2方法的参数,包括所有子类需要的所有参数，额外 char type:创建哪个子类对象<br>-3判断类型，创建对象<br>-4返回父类类型<br>-5创建对象时，无需自己new   而是调用工厂方法即可<br>好处：当子类没有确定：类名、参数频繁变化的时候，只需要修改工厂类一处即可. 整个改动是最少的</p>
 <p>由于工厂方式是static修饰的,所以访问时语法:类名.静态方法名</p>
-<h4 id="5-static"><a href="#5-static" class="headerlink" title="5. static"></a>5. static</h4><p>static 静态的<br>修饰的成员：<br>1、属性–静态变量<br>2、方法–静态方法<br>3、内部类–静态内部类<br>4、代码块<br>static{<br>}</p>
+<pre><code>public class PetFact {
+    public static Pet createPet(String name, int age, String sex, String strain, String color, char type) {
+        Pet pet = null;
+        switch (type) {
+        case &apos;c&apos;: {
+            pet = new Cat(name, age, sex);
+            break;
+        }
+        case &apos;d&apos;: {
+            pet = new Dog(name, age, sex, strain);
+            break;
+        }
+        case &apos;p&apos;: {
+            pet = new Pig(name, age, sex, color);
+            break;
+        }
+        }
+        return pet;
+    }
+}</code></pre><h4 id="5-static"><a href="#5-static" class="headerlink" title="5. static"></a>5. static</h4><p>static 静态的<br>修饰的成员：<br>1、属性–静态变量<br>2、方法–静态方法<br>3、内部类–静态内部类<br>4、代码块<br>static{<br>}</p>
 <p>内存划分:<br>1.堆        存放new出的内容:属性,方法代码<br>2.栈        存放局部变量<br>3.常量    存放常量<br>4.静态区域    存放static修饰的内容<br>static作用:Java的jvm在运行程序时,检测程序中所有使用static修饰的成员,把static修饰的内容直接存放到内存的静态区域中<br>static的访问方式:类名.成员<br>本质:静态成员属于类,不属于对象,是公共的<br>静态成员的生命周期:当程序运行时,在内存的静态区域;当程序关闭后,静态成员在内存大静态区域中销毁<br>使用场合:对于所有对象都可以共同使用</p>
 <p>总结:<br>1.多态<br>好处:当程序有业务拓展时,使用多态,代码的改动量最小<br>概念:同一类型,调用同一方法,表现出不同的状态.<br>2.实现方法:<br>方法重载:静态方式实现多态;<br>方法重写:动态方式实现多态<br>实现步骤：<br>3、多态的应用<br>数组/变量是父类类型  ，赋值是子类对象<br>instanceof<br>简单工厂的应用<br>4、static</p>
 
@@ -279,6 +301,15 @@ p = new Dog();</code></pre><p>说明:局部变量不能重名(声明在方法内
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/07/16/static、抽象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          static、抽象
+        
+      </div>
+    </a>
   
   
     <a href="/2019/07/12/抽象封装继承多态/" id="article-nav-older" class="article-nav-link-wrap">
@@ -412,6 +443,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -461,7 +500,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖,早日xxx</div>
   	  	
     	</section>
     

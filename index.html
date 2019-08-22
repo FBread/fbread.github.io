@@ -146,20 +146,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-抽象封装继承多态-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-database" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/15/抽象封装继承多态-2/">抽象封装继承多态-2</a>
+      <a class="article-title" href="/2019/08/14/database/">database</a>
     </h1>
   
 
         
-        <a href="/2019/07/15/抽象封装继承多态-2/" class="archive-article-date">
-  	<time datetime="2019-07-15T00:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+        <a href="/2019/08/14/database/" class="archive-article-date">
+  	<time datetime="2019-08-14T02:06:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
 </a>
         
 		
@@ -167,10 +167,79 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-回顾"><a href="#1-回顾" class="headerlink" title="1.回顾"></a>1.回顾</h4><p>1.类<br>代码:.java文件,Java中代码的存放位置<br>创建类是有原则的:具有相同(相似)属性/行为的代码放在一个类中<br>类中有两类成员:<br>1)属性:成员变量,私有的<br>在方法的外部,类的内部</p>
-        
-          <a class="article-more-a" href="/2019/07/15/抽象封装继承多态-2/#more">more >></a>
-        
+        <h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><p>数据库是储存数据的仓库,带有访问权限限制不同的人员有不同的操作<br>E-R图也称实体-联系图(Entity Relationship Diagram),方框-实体,椭圆-属性,菱形-关系</p>
+<p>登陆数据库:<br>mysql -uroot -proot;</p>
+<h4 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类:"></a>SQL分类:</h4><p>DDL:数据库定义语言,与数据库/表结构:create,drop,alter<br>DML:数据库操作语言,操作表数据:insert update delete<br>DCL:数据控制语言:设置用户的访问权限 安全<br>DQL:数据查询语言:select from where</p>
+<h4 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作:"></a>数据库操作:</h4><p>创建数据库<br>create database 数据库名 character set 字符集 collate 校对规则;<br>查看所有数据库:<br>show database;<br>查看数据库定义:<br>show create database 数据库名;<br>查看当前正在使用的数据库:<br>select database();<br>修改数据库:alter database character set 字符集<br>删除数据库:drop database;<br>选中数据库:use database;</p>
+<p>列的类型:char varchar int</p>
+<p>表结构的操作:<br>创建表:create table 表名(字段名 类型 约束,字段名 类型 约束);<br>    主键约束:primary key<br>    唯一约束:unique<br>    非空约束:not null</p>
+<pre><code>自动增长:auto_increment</code></pre><p>修改表:<br>    添加列(add):<br>    alter table student(表名) add score(列名) int(类型) not null(约束);<br>    修改列(modify):<br>    alter table student modify sex varchar(2);<br>    修改列名(change):<br>    alter table student change sex(旧列名) gender(新列名) varchar(2);<br>    删除列(drop):<br>    alter table student drop score;</p>
+<pre><code>修改表名(rename):
+rename table student to teacher;
+修改表的字符集
+alter table teacher character set gbk;
+删除表:
+drop table teacher;</code></pre><p>查看表:<br>show tables;<br>show create table 表名;    – 查看表的定义结构/创建语句<br>desc 表名;    – 查看表的结构</p>
+<h4 id="数据操作-增删改查"><a href="#数据操作-增删改查" class="headerlink" title="数据操作:增删改查"></a>数据操作:增删改查</h4><ul>
+<li><p>1.插入记录<br>  insert into 表名(列名1,列名2) values(值1,值2);<br>  insert into 表名 values(值1,值2); – 如果插入的是全列的数据,列名可以省略</p>
+<p>  批量插入:<br>  insert into 表名(列名1,列名2) values(值1,值2),(值1,值2),(值1,值2); </p>
+</li>
+<li><p>2.删除记录<br>  delete from 表名 [where 条件]<br>  – 如果没有指定条件 会将表中数据一条一条全部删除掉</p>
+<p>  问题:delete和truncate删除数据有什么差别?<br>  delete:DML,一条一条一条删除表中的数据;<br>  truncate:DDL,先删除表再重建表.<br>  关于哪条执行效率高:具体要看表中的数据量<br>  如果数据比较少,delete比较高效<br>  如果数据比较多,truncate比较高效</p>
+</li>
+<li><p>3.更新记录<br>  update 表名 set 列名=列值,列名2=列值2 [where 条件];<br>   – 如果没加条件会把表中所有的数据修改</p>
+</li>
+<li><p>4.查看记录</p>
+<ul>
+<li><p>select * from 表名;<br>select [distinct] [*] [列名,列名2] from 表名 [where 条件];<br>distinct:去除重复的条件</p>
+</li>
+<li><p>运算查询:<br>  select * ,price*1.5 as 折上价 from product;</p>
+</li>
+<li><p>条件查询[where]<br>  select * from product where price &gt; 60;</p>
+</li>
+<li><p>关系运算符:    &gt; &gt;= &lt; &lt;= = != &lt;&gt;<br>  != 不等于    标准sql语法<br>  &lt;&gt; 不等于    非标准sql语法<br>  between…and<br>  判断某一列是否为空:is null,is not null</p>
+</li>
+<li><p>逻辑运算:and or not<br>  select * from product where price &gt; 60 and price &lt; 100;</p>
+</li>
+<li><p>模糊查询 like<br>  _ 代表一个字符<br>  %代表多个字符<br>  select * from product where pname like’%饼%’;</p>
+<p>  in    在某个范围中<br>  select * from product where cno in (1,3,5);</p>
+</li>
+<li><p>排序查询 order by<br>  asc:ascend    升序<br>  desc:descend    降序<br>  select * from product order by price desc;</p>
+</li>
+<li><p>聚合函数<br>  注意:where条件后面不能接聚合函数<br>  max()最大值<br>  min()最小值<br>  avg()平均值<br>  sum()求和<br>  count()统计数量<br>  select sum(price) from product;<br>  – 子查询<br>  select * from product where price &gt; (select avg(price) from product);</p>
+</li>
+<li><p>分组 group by<br>select cno,count(*) from product group by cno;<br>select cno,avg(price) from product group by cno having avg(price) &gt; 60;</p>
+</li>
+</ul>
+<p>  – having关键字可以接聚合函数,出现在分组之后<br>  – where 关键字不可以接聚合函数,出现在分组之前<br>  编写顺序:<br>  select…from…where…group by…having…order by<br>  执行顺序:<br>  from…where…group by…having…select…order by</p>
+</li>
+</ul>
+<h4 id="多表操作"><a href="#多表操作" class="headerlink" title="多表操作"></a>多表操作</h4><ul>
+<li><p>外键约束:foreign key<br>alter table product add foreign key(cno) references category(cid);</p>
+</li>
+<li><p>建数据库原则:<br>通常情况下一个项目建立一个数据库</p>
+</li>
+<li><p>多表之间的建表原则:</p>
+</li>
+</ul>
+<ol>
+<li>一对多:在多的一方添加外键指向一方的主键</li>
+<li>多对多:建立一张中间表,将多对多的的关系拆分成一对多的关系,中间表至少有两个外键,分别指向原来的两张表</li>
+</ol>
+<p>JDBC对象:<br>DriverManager    创建连接通道<br>Connection    通道<br>Statement    发送并执行SQL<br>            缺点:1.不安全,能SQL注入<br>                2.效率低<br>PreparedStatement:</p>
+<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><ul>
+<li>特点:<ul>
+<li>1、原子性：事务中的语句是最小单位，不能再分割</li>
+<li>2、隔离性：事务和事务之间是隔离的，没有任何关系</li>
+<li>3、一致性：事务中的若干条语句，要么都执行，要么都不执行</li>
+<li>4、永久性：事务一旦提交后，将无法回滚。</li>
+</ul>
+</li>
+</ul>
+
+		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
       
       
     </div>
@@ -182,7 +251,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		
 		</ul>
@@ -192,7 +261,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/15/抽象封装继承多态-2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/14/database/">展开全文 >></a>
         </p>
       
 
@@ -222,20 +291,20 @@
 
 
   
-    <article id="post-抽象封装继承多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-二分法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/抽象封装继承多态/">抽象封装继承多态</a>
+      <a class="article-title" href="/2019/08/06/二分法/">二分法</a>
     </h1>
   
 
         
-        <a href="/2019/07/12/抽象封装继承多态/" class="archive-article-date">
-  	<time datetime="2019-07-12T00:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+        <a href="/2019/08/06/二分法/" class="archive-article-date">
+  	<time datetime="2019-08-06T01:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
 </a>
         
 		
@@ -243,10 +312,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>面向对象三大特征或四大特征都可以.</p>
-<h4 id="1-抽象"><a href="#1-抽象" class="headerlink" title="1.抽象"></a>1.抽象</h4><p>设计类的过程称为抽象<br>类是对象的抽象,类是具有相同或相似的特征和行为的对象的抽象</p>
+        <p>description:<strong>二分法,BigInteger</strong></p>
         
-          <a class="article-more-a" href="/2019/07/12/抽象封装继承多态/#more">more >></a>
+          <a class="article-more-a" href="/2019/08/06/二分法/#more">more >></a>
         
       
       
@@ -269,7 +337,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/12/抽象封装继承多态/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/06/二分法/">展开全文 >></a>
         </p>
       
 
@@ -299,20 +367,20 @@
 
 
   
-    <article id="post-面向对象-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-正则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/面向对象-2/">面向对象(2)</a>
+      <a class="article-title" href="/2019/08/05/正则/">post</a>
     </h1>
   
 
         
-        <a href="/2019/07/11/面向对象-2/" class="archive-article-date">
-  	<time datetime="2019-07-11T03:18:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+        <a href="/2019/08/05/正则/" class="archive-article-date">
+  	<time datetime="2019-08-05T00:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
 </a>
         
 		
@@ -320,9 +388,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-1语义语境拆分"><a href="#1-1语义语境拆分" class="headerlink" title="1.1语义语境拆分"></a>1.1语义语境拆分</h4><p>小美    在朝阳公园    溜      旺财<br>小明   穿着    白色的  特步  运动   鞋      在奥林匹克公园跑步<br>赵老师   在讲台上讲    课，小刚    认真的听    课    做    笔记<br>张阿姨和李阿姨    在物美超市   买    红富士</p>
+        <p>desciption:<strong>正则表达式</strong></p>
         
-          <a class="article-more-a" href="/2019/07/11/面向对象-2/#more">more >></a>
+          <a class="article-more-a" href="/2019/08/05/正则/#more">more >></a>
         
       
       
@@ -345,7 +413,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/11/面向对象-2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/05/正则/">展开全文 >></a>
         </p>
       
 
@@ -375,20 +443,20 @@
 
 
   
-    <article id="post-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/10/面向对象/">面向对象</a>
+      <a class="article-title" href="/2019/07/23/集合/">集合</a>
     </h1>
   
 
         
-        <a href="/2019/07/10/面向对象/" class="archive-article-date">
-  	<time datetime="2019-07-10T00:52:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
+        <a href="/2019/07/23/集合/" class="archive-article-date">
+  	<time datetime="2019-07-23T01:59:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
 </a>
         
 		
@@ -396,9 +464,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-编程思维发展史"><a href="#1-编程思维发展史" class="headerlink" title="1.编程思维发展史"></a>1.编程思维发展史</h4><p>基于过程:从计算机角度 解决问题 机械思维 c<br>面向过程:上帝视角 解决问题干预问题    c++ c#<br>面向对象    c++<br>面向接口</p>
+        <p><strong>description:集合框架</strong></p>
         
-          <a class="article-more-a" href="/2019/07/10/面向对象/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/23/集合/#more">more >></a>
         
       
       
@@ -421,7 +489,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/10/面向对象/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/23/集合/">展开全文 >></a>
         </p>
       
 
@@ -451,20 +519,20 @@
 
 
   
-    <article id="post-方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/方法/">方法</a>
+      <a class="article-title" href="/2019/07/22/线程/">线程</a>
     </h1>
   
 
         
-        <a href="/2019/07/09/方法/" class="archive-article-date">
-  	<time datetime="2019-07-09T00:38:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+        <a href="/2019/07/22/线程/" class="archive-article-date">
+  	<time datetime="2019-07-22T13:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
 </a>
         
 		
@@ -472,10 +540,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-方法"><a href="#1-方法" class="headerlink" title="1.方法"></a>1.方法</h4><p><strong>–Java中没有函数这个概念,只有方法</strong>.</p>
-<p>方法是一段代码,可以有很多条语句,通过{}进行修饰,可以在需要使用的地方进行代码的使用.</p>
+        <p><strong>description:进城,线程</strong></p>
         
-          <a class="article-more-a" href="/2019/07/09/方法/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/22/线程/#more">more >></a>
         
       
       
@@ -498,7 +565,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/方法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/22/线程/">展开全文 >></a>
         </p>
       
 
@@ -528,20 +595,20 @@
 
 
   
-    <article id="post-数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-内部类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/08/数组/">数组</a>
+      <a class="article-title" href="/2019/07/22/内部类/">内部类</a>
     </h1>
   
 
         
-        <a href="/2019/07/08/数组/" class="archive-article-date">
-  	<time datetime="2019-07-08T00:52:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
+        <a href="/2019/07/22/内部类/" class="archive-article-date">
+  	<time datetime="2019-07-22T12:02:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
 </a>
         
 		
@@ -549,9 +616,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h5 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h5><p>是相同数据类型的多个数据组成的一个集合.</p>
+        <p><strong>description:内部类,匿名内部类</strong></p>
         
-          <a class="article-more-a" href="/2019/07/08/数组/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/22/内部类/#more">more >></a>
         
       
       
@@ -574,7 +641,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/08/数组/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/22/内部类/">展开全文 >></a>
         </p>
       
 
@@ -604,20 +671,20 @@
 
 
   
-    <article id="post-for循环-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-I-O" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/for循环-2/">for循环(2)</a>
+      <a class="article-title" href="/2019/07/20/I-O/">I/O</a>
     </h1>
   
 
         
-        <a href="/2019/07/06/for循环-2/" class="archive-article-date">
-  	<time datetime="2019-07-06T02:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+        <a href="/2019/07/20/I-O/" class="archive-article-date">
+  	<time datetime="2019-07-20T03:34:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
 </a>
         
 		
@@ -625,13 +692,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-for循环嵌套练习"><a href="#1-for循环嵌套练习" class="headerlink" title="1.for循环嵌套练习"></a>1.for循环嵌套练习</h5><p>例1:打印图案</p>
-<pre><code>      *
-    ***
-  *****
-*******</code></pre>
+        <p>description:<strong>I/O操作目标,I/O分类,读入写入,XML文件,NIO,properties,文件操作</strong></p>
         
-          <a class="article-more-a" href="/2019/07/06/for循环-2/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/20/I-O/#more">more >></a>
         
       
       
@@ -654,7 +717,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/for循环-2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/20/I-O/">展开全文 >></a>
         </p>
       
 
@@ -684,20 +747,20 @@
 
 
   
-    <article id="post-for循环-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-idea使用笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/for循环-1/">for循环(1)</a>
+      <a class="article-title" href="/2019/07/18/idea使用笔记/">idea使用笔记</a>
     </h1>
   
 
         
-        <a href="/2019/07/05/for循环-1/" class="archive-article-date">
-  	<time datetime="2019-07-05T09:06:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+        <a href="/2019/07/18/idea使用笔记/" class="archive-article-date">
+  	<time datetime="2019-07-18T07:09:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
 </a>
         
 		
@@ -705,9 +768,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-循环的种类"><a href="#1-循环的种类" class="headerlink" title="1.循环的种类"></a>1.循环的种类</h4><pre><code>for    while    do...while        forEach        forLable</code></pre>
+        <p>description:<strong>idea基本使用及快捷键</strong></p>
         
-          <a class="article-more-a" href="/2019/07/05/for循环-1/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/18/idea使用笔记/#more">more >></a>
         
       
       
@@ -722,6 +785,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -730,7 +797,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/for循环-1/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/18/idea使用笔记/">展开全文 >></a>
         </p>
       
 
@@ -760,20 +827,20 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-装箱" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/07/18/装箱/">装箱</a>
     </h1>
   
 
         
-        <a href="/2019/07/04/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-04T05:21:38.183Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+        <a href="/2019/07/18/装箱/" class="archive-article-date">
+  	<time datetime="2019-07-18T02:02:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
 </a>
         
 		
@@ -781,9 +848,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>description:<strong>装箱,拆箱,包装类,String相关方法,时间相关方法,math方法,system方法,枚举,日历类,DateFormat,Scanner</strong></p>
         
-          <a class="article-more-a" href="/2019/07/04/hello-world/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/18/装箱/#more">more >></a>
         
       
       
@@ -791,11 +858,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/04/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/18/装箱/">展开全文 >></a>
         </p>
       
 
@@ -825,20 +903,20 @@
 
 
   
-    <article id="post-类型转换与基本运算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-异常处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/类型转换与基本运算/">类型转换与基本运算</a>
+      <a class="article-title" href="/2019/07/17/异常处理/">异常处理</a>
     </h1>
   
 
         
-        <a href="/2019/07/03/类型转换与基本运算/" class="archive-article-date">
-  	<time datetime="2019-07-03T07:36:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-03</time>
+        <a href="/2019/07/17/异常处理/" class="archive-article-date">
+  	<time datetime="2019-07-17T01:14:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
 </a>
         
 		
@@ -846,9 +924,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-绿色版软件"><a href="#1-绿色版软件" class="headerlink" title="1.绿色版软件"></a>1.绿色版软件</h4><p>java中大部分的软件都有绿色版本<br>解压缩即可,解压之后的放到你希望的位置</p>
+        <p><strong>description:final,异常处理</strong></p>
         
-          <a class="article-more-a" href="/2019/07/03/类型转换与基本运算/#more">more >></a>
+          <a class="article-more-a" href="/2019/07/17/异常处理/#more">more >></a>
         
       
       
@@ -871,7 +949,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/03/类型转换与基本运算/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/17/异常处理/">展开全文 >></a>
         </p>
       
 
@@ -903,7 +981,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1001,6 +1079,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1050,7 +1136,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖,早日xxx</div>
   	  	
     	</section>
     

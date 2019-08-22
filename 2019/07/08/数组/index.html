@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数组 | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组1.数组是相同数据类型的多个数据组成的一个集合.">
+  <meta name="description" content="description:数组,二维数组,冒泡排序,选择排序">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组">
 <meta property="og:url" content="http://yoursite.com/2019/07/08/数组/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="数组1.数组是相同数据类型的多个数据组成的一个集合.">
+<meta property="og:description" content="description:数组,二维数组,冒泡排序,选择排序">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/assets/img/20190708-1.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/20190708-2.png">
-<meta property="og:updated_time" content="2019-07-10T09:06:51.823Z">
+<meta property="og:updated_time" content="2019-07-23T12:13:44.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组">
-<meta name="twitter:description" content="数组1.数组是相同数据类型的多个数据组成的一个集合.">
+<meta name="twitter:description" content="description:数组,二维数组,冒泡排序,选择排序">
 <meta name="twitter:image" content="http://yoursite.com/assets/img/20190708-1.png">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
@@ -169,12 +169,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h5 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h5><p>是相同数据类型的多个数据组成的一个集合.</p>
+        <p>description:<strong>数组,二维数组,冒泡排序,选择排序</strong></p>
 <a id="more"></a>
 
-<h5 id="2-定义语法"><a href="#2-定义语法" class="headerlink" title="2.定义语法"></a>2.定义语法</h5><p>方案一:<br>注意:<br>1)数据中的每个数据称为元素,元素允许重复<br>2)元素的数据类型必须和数组类型一致<br>3)多个元素之前使用逗号隔开,最后一个元素后面的’,’可以省略</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h5 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h5><p>是相同数据类型的多个数据组成的一个集合.</p>
+<h5 id="2-定义语法"><a href="#2-定义语法" class="headerlink" title="2.定义语法"></a>2.定义语法</h5><p>方案一:(数组的静态声明法)<br>注意:<br>1)数据中的每个数据称为元素,元素允许重复<br>2)元素的数据类型必须和数组类型一致<br>3)多个元素之前使用逗号隔开,最后一个元素后面的’,’可以省略</p>
 <pre><code>数据类型[] 标识符 = {数据1,数据2,数据3,...};
-int[] arr01 = { -1, 2, 3, 412, 41, 1 };</code></pre><p>方案二:</p>
+int[] arr01 = { -1, 2, 3, 412, 41, 1 };</code></pre><p>方案二:(数组的动态声明法)</p>
 <pre><code>数据类型[] 标识符 = new 数据类型[数组长度];
 //6是数组长度--当前数组允许存储元素最多的个数
 int[] arr02 = new int[6];</code></pre><p>方案三:(很少使用)</p>
@@ -259,7 +260,7 @@ for (double number : arr) {
 数据类型[][] 变量名 = {{},{},{}};
 
 
-<pre><code>int[][] arr = { { 1, 2, 3 }, { 4, 5 }, { 12, 22, 33 } };</code></pre><p>二维数组的每一个元素又是一个一维数组<br>方案二:<br>数据类型[][] 变量名 = new int[2][3];<br>[2][3] 是二维数组的长度,2是宽度,3是高度;<br>即这个二维数组一共有两个元素,每个元素都是一个一维数组,里面存放3个元素</p>
+<pre><code>int[][] arr = { { 1, 2, 3 }, { 4, 5 }, { 12, 22, 33 } };</code></pre><p><strong>二维数组的每一个元素又是一个一维数组</strong><br>方案二:<br>数据类型[][] 变量名 = new int[2][3];<br>[2][3] 是二维数组的长度,2是宽度,3是高度;<br>即这个二维数组一共有两个元素,每个元素都是一个一维数组,里面存放3个元素</p>
 <pre><code>int[][] arr1 = new int[3][4];
 //给元素赋值
 arr[0][0] = 12;
@@ -504,6 +505,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -553,7 +562,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖,早日xxx</div>
   	  	
     	</section>
     

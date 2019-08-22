@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面向对象(2) | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.1语义语境拆分小美    在朝阳公园    溜      旺财小明   穿着    白色的  特步  运动   鞋      在奥林匹克公园跑步赵老师   在讲台上讲    课，小刚    认真的听    课    做    笔记张阿姨和李阿姨    在物美超市   买    红富士">
+  <meta name="description" content="description:访问限定符,访问器,this,包,面向对象思维">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象(2)">
 <meta property="og:url" content="http://yoursite.com/2019/07/11/面向对象-2/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="1.1语义语境拆分小美    在朝阳公园    溜      旺财小明   穿着    白色的  特步  运动   鞋      在奥林匹克公园跑步赵老师   在讲台上讲    课，小刚    认真的听    课    做    笔记张阿姨和李阿姨    在物美超市   买    红富士">
+<meta property="og:description" content="description:访问限定符,访问器,this,包,面向对象思维">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-12T00:34:46.471Z">
+<meta property="og:updated_time" content="2019-07-19T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象(2)">
-<meta name="twitter:description" content="1.1语义语境拆分小美    在朝阳公园    溜      旺财小明   穿着    白色的  特步  运动   鞋      在奥林匹克公园跑步赵老师   在讲台上讲    课，小刚    认真的听    课    做    笔记张阿姨和李阿姨    在物美超市   买    红富士">
+<meta name="twitter:description" content="description:访问限定符,访问器,this,包,面向对象思维">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -166,9 +166,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-1语义语境拆分"><a href="#1-1语义语境拆分" class="headerlink" title="1.1语义语境拆分"></a>1.1语义语境拆分</h4><p>小美    在朝阳公园    溜      旺财<br>小明   穿着    白色的  特步  运动   鞋      在奥林匹克公园跑步<br>赵老师   在讲台上讲    课，小刚    认真的听    课    做    笔记<br>张阿姨和李阿姨    在物美超市   买    红富士</p>
+        <p>description:<strong>访问限定符,访问器,this,包,面向对象思维</strong></p>
 <a id="more"></a>
-<p>把主语和宾语做成类,把形容词作为宾语的属性.<br>如果对象的属性作为方法参数必须把该属性所在的对象传递过来,否则不合理.</p>
+
+<h4 id="1-1语义语境拆分"><a href="#1-1语义语境拆分" class="headerlink" title="1.1语义语境拆分"></a>1.1语义语境拆分</h4><p>小美    在朝阳公园    溜      旺财<br>小明   穿着    白色的  特步  运动   鞋      在奥林匹克公园跑步<br>赵老师   在讲台上讲    课，小刚    认真的听    课    做    笔记<br>张阿姨和李阿姨    在物美超市   买    红富士<br>把主语和宾语做成类,把形容词作为宾语的属性.<br>如果对象的属性作为方法参数必须把该属性所在的对象传递过来,否则不合理.</p>
 <h4 id="1-2逻辑思维变换"><a href="#1-2逻辑思维变换" class="headerlink" title="1.2逻辑思维变换"></a>1.2逻辑思维变换</h4><p>李晓    在家里开party，向朋友介绍家中的黄色的宠物狗【彩彩】<br>具有两条腿走路的特异功能。</p>
 <p>人     属性:名字                 行为:开party/介绍宠物<br>宠物   属性: 颜色/狗/名字        行为:两条腿走路 </p>
 <p>拆分主语,在后面的所有的描述中找到主语参加的活动.<br>主语主导的活动,主语对象是方法的调用者.<br>主语参与并非主导的活动,主语对象是其他对象方法的参数.</p>
@@ -185,10 +186,11 @@ import com.tencent.www.Student;
 //导包,如果要使用的类和当前的类不位于同一个包下,此时需要导入待使用的类的包所在的包</code></pre><p>Ctrl shift O(英文)合理的调整包(需要的包导入,不需要的移除);<br>多个类位于同一个包下,可以对导包进行简写:<br>import com.baidu.www.*    代表com.baidu.www下所有的类<br>注意:<br>*一般在超过3个类以上的时候才建议使用,否则性能低.</p>
 <h4 id="4-四大访问限定符"><a href="#4-四大访问限定符" class="headerlink" title="4.四大访问限定符"></a>4.四大访问限定符</h4><p><strong>private public protected package</strong><br>都可以修饰属性和方法,其中只有public和package可以修饰类.<br>修饰属性语法:<br>访问限定符 属性的类型 属性的名字;</p>
 <p>修饰方法的语法:<br>访问限定符 返回值的类型 方法的名字(参数列表){<br>    //方法体<br>}</p>
-<p>PRIVATE(私有):<br>可以修饰方法和属性,不能修饰类.<br>除了在当前类里面,其他任何位置都无法访问被PRIVATE修饰的属性,也无法调用被PRIVATE修饰的方法<br>称为私有方法和私有属性</p>
-<p>PROTECTED(受保护的):<br>可以修饰方法和属性,不能修饰类.<br>在当前类以及同一个包下面的其他类中可以访问,在不同包下的其他类中无法访问.<br>称为受保护的方法和受保护的属性.</p>
-<p>PUBLIC(公有的):<br>可以修饰方法和属性以及类.<br>被PUBLIC修饰的属性和方法,在任何位置都可以访问</p>
-<p>PACKAGE(默认的):<br>可以修饰方法和属性以及类.<br>效果和PROTECTED完全一致.<br>被称为默认的方法和默认的属性.<br>注意:不写修饰符代表PACKAGE.又称DEFAULT</p>
+<p>PRIVATE(私有):<br>可以修饰<strong>方法和属性</strong>,不能修饰类.<br>除了在<strong>当前类</strong>里面,其他任何位置都无法访问被PRIVATE修饰的属性,也无法调用被PRIVATE修饰的方法<br>称为私有方法和私有属性</p>
+<p>PROTECTED(受保护的):<br>可以修饰<strong>方法和属性</strong>,不能修饰类.<br>在当前类以及<strong>同一个包</strong>下面的其他类中可以访问,在不同包下的其他类中无法访问.<strong>可以跨包继承</strong>,只能在子类中使用<br>称为受保护的方法和受保护的属性.</p>
+<p>PUBLIC(公有的):<br>可以修饰<strong>方法和属性以及类</strong>.<br>被PUBLIC修饰的属性和方法,在任何位置都可以访问</p>
+<p>PACKAGE(默认的):<br>可以修饰<strong>方法和属性以及类</strong>.<br>效果和PROTECTED完全一致.<br>被称为默认的方法和默认的属性.<br>注意:不写修饰符代表PACKAGE.又称DEFAULT</p>
+<p>//如果子类和父类不在同一包中,子类可以继承父类的默认成员变量,属性,但是由于权限不够,无法使用.</p>
 <table>
     <thead>
         <th></th>
@@ -476,6 +478,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -525,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">努力搬砖,早日xxx</div>
   	  	
     	</section>
     
