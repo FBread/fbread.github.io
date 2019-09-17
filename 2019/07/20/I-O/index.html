@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="FBread的博客">
 <meta property="og:description" content="description:I/O操作目标,I/O分类,读入写入,XML文件,NIO,properties,文件操作">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T11:03:37.654Z">
+<meta property="og:updated_time" content="2019-08-22T14:46:42.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I&#x2F;O">
 <meta name="twitter:description" content="description:I/O操作目标,I/O分类,读入写入,XML文件,NIO,properties,文件操作">
@@ -277,9 +277,14 @@ public class BufferReaderTest {
 
     }
 }</code></pre><h4 id="二进制文件读写"><a href="#二进制文件读写" class="headerlink" title="二进制文件读写"></a>二进制文件读写</h4><p>DataInputStream</p>
-<h4 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h4><p>以键值对存放的properties文件</p>
+<h4 id="资源文件properties"><a href="#资源文件properties" class="headerlink" title="资源文件properties"></a>资源文件properties</h4><p>以键值对存放的properties文件</p>
 <pre><code>key1=value1
-key2=value2</code></pre><h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><p>持久化:把数据从瞬时状态向永久状态转变的过程<br>方式:    文件操作,数据量较小,格式件单<br>        数据库操作,数据量大,数据复杂</p>
+key2=value2
+
+//读取文件
+Properties properties = new Properties();
+InputStream is = new FileInputStream(&quot;&quot;);
+properties.load(is);</code></pre><h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><p>持久化:把数据从瞬时状态向永久状态转变的过程<br>方式:    文件操作,数据量较小,格式件单<br>        数据库操作,数据量大,数据复杂</p>
 <pre><code>File file = new file(&quot;路径&quot;);//创建文件
 boolean isExist = file.exists();
 try{
@@ -611,11 +616,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
             
             <div class="clearfix"></div>
