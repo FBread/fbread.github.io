@@ -8,18 +8,29 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>servlet | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="desciption:数据">
+  <meta name="description" content="desciption: EL表达式,Servlet">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="servlet">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/servlet/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="desciption:数据">
+<meta property="og:description" content="desciption: EL表达式,Servlet">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-17T05:20:54.496Z">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img01.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img02.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img03.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img04.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img06.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img07.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img08.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img09.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img10.png">
+<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img11.png">
+<meta property="og:updated_time" content="2019-09-24T00:25:47.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="servlet">
-<meta name="twitter:description" content="desciption:数据">
+<meta name="twitter:description" content="desciption: EL表达式,Servlet">
+<meta name="twitter:image" content="e:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img01.png">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -166,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>desciption:<strong>数据</strong></p>
+        <p>desciption: <strong>EL表达式,Servlet</strong></p>
 <a id="more"></a>
 
 <h4 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h4><ul>
@@ -174,11 +185,215 @@
 <li>JSP页面内置了EL表达式<br>优先到pageContext request session application</li>
 </ul>
 <ul>
-<li>JSTL    JSP Standard Tag Library JSP标准标签库<blockquote>
+<li><p>JSTL    JSP Standard Tag Library JSP标准标签库</p>
+<blockquote>
 <p>提供了大量标签,简化页面操作</p>
 </blockquote>
 </li>
 </ul>
+<h2 id="HttpServletRequest-和-HttpServletResponse"><a href="#HttpServletRequest-和-HttpServletResponse" class="headerlink" title="HttpServletRequest  和 HttpServletResponse"></a>HttpServletRequest  和 HttpServletResponse</h2><h3 id="Servlet配置方式"><a href="#Servlet配置方式" class="headerlink" title="Servlet配置方式"></a>Servlet配置方式</h3><ul>
+<li><ol>
+<li>全路径匹配</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>以 / 开始   /a /aa/bb</p>
+</blockquote>
+<blockquote>
+<p>localhost:8080/项目名称/aa/bb </p>
+</blockquote>
+<ul>
+<li><ol start="2">
+<li>路径匹配 , 前半段匹配</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>以  / 开始 ， 但是以 * 结束  /a/* /*  </p>
+</blockquote>
+<blockquote>
+<ul>
+<li>其实是一个通配符，匹配任意文字</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>localhost:8080/项目名称/aa/bb </p>
+</blockquote>
+<ul>
+<li><ol start="3">
+<li>以扩展名匹配</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>写法： 没有/  以 * 开始   *.扩展名    *.aa *.bb </p>
+</blockquote>
+<h3 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h3><blockquote>
+<p>Servlet 上下文</p>
+</blockquote>
+<blockquote>
+<p>每个web工程都只有一个ServletContext对象。 说白了也就是不管在哪个servlet里面，获取到的这个类的对象都是同一个。</p>
+</blockquote>
+<h3 id="如何得到对象"><a href="#如何得到对象" class="headerlink" title="如何得到对象"></a>如何得到对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//1. 获取对象</span><br><span class="line">	ServletContext context = getServletContext();</span><br></pre></td></tr></table></figure>
+
+<h3 id="有什么作用"><a href="#有什么作用" class="headerlink" title="有什么作用"></a>有什么作用</h3><ol>
+<li>获取全局配置参数</li>
+<li>获取web工程中的资源</li>
+<li>存取数据，servlet间共享数据  域对象</li>
+</ol>
+<h4 id="可以获取全局配置参数"><a href="#可以获取全局配置参数" class="headerlink" title=".可以获取全局配置参数"></a>.可以获取全局配置参数</h4><p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img01.png" alt="icon"></p>
+<p>获取全局参数</p>
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img02.png" alt="icon"></p>
+<h4 id="可以获取Web应用中的资源"><a href="#可以获取Web应用中的资源" class="headerlink" title=". 可以获取Web应用中的资源"></a>. 可以获取Web应用中的资源</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 获取资源在tomcat里面的绝对路径</span><br><span class="line"></span><br><span class="line">	先得到路径，然后自己new InpuStream</span><br><span class="line"></span><br><span class="line">		context.getRealPath(&quot;&quot;) //这里得到的是项目在tomcat里面的根目录。</span><br><span class="line"></span><br><span class="line">		D:\tomcat\apache-tomcat-7.0.52\apache-tomcat-7.0.52\wtpwebapps\Demo03\</span><br><span class="line">	</span><br><span class="line">	 	String path = context.getRealPath(&quot;file/config.properties&quot;);</span><br><span class="line"></span><br><span class="line">		D:\tomcat\apache-tomcat-7.0.52\apache-tomcat-7.0.52\wtpwebapps\Demo03\file\config.properties</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2. getResourceAsStream 获取资源 流对象</span><br><span class="line"></span><br><span class="line">	直接给相对的路径，然后获取流对象。</span><br></pre></td></tr></table></figure>
+
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img03.png" alt="icon"></p>
+<h3 id="通过classloader去获取web工程下的资源"><a href="#通过classloader去获取web工程下的资源" class="headerlink" title="通过classloader去获取web工程下的资源"></a>通过classloader去获取web工程下的资源</h3><p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img04.png" alt="icon"></p>
+<h3 id="使用ServletContext存取数据。"><a href="#使用ServletContext存取数据。" class="headerlink" title="使用ServletContext存取数据。"></a>使用ServletContext存取数据。</h3><ol>
+<li>定义一个登陆的html页面， 定义一个form表单</li>
+</ol>
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img06.png" alt="icon"></p>
+<ol start="2">
+<li>定义一个Servlet，名为LoginServlet</li>
+</ol>
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img07.png" alt="icon"></p>
+<ol start="3">
+<li>针对成功或者失败，进行判断，然后跳转到不一样的网页</li>
+</ol>
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img08.png" alt="icon"></p>
+<h3 id="ServletContext存取值分析"><a href="#ServletContext存取值分析" class="headerlink" title="ServletContext存取值分析"></a>ServletContext存取值分析</h3><p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img09.png" alt="icon"></p>
+<h2 id="细节："><a href="#细节：" class="headerlink" title="细节："></a>细节：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 	</span><br><span class="line">A路径： Servlet的路径</span><br><span class="line">	http://localhost:8080/Demo4/login</span><br><span class="line"></span><br><span class="line">B路径： 当前这个html的路径：</span><br><span class="line">	http://localhost:8080/Demo4/login.html --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;login&quot; method=&quot;get&quot;&gt;</span><br><span class="line">	账号:&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;&lt;br&gt;</span><br><span class="line">	密码:&lt;input type=&quot;text&quot; name=&quot;password&quot;/&gt;&lt;br&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ServletContext-何时创建，-何时销毁"><a href="#ServletContext-何时创建，-何时销毁" class="headerlink" title="ServletContext 何时创建， 何时销毁?"></a>ServletContext 何时创建， 何时销毁?</h3><p>服务器启动的时候，会为托管的每一个web应用程序，创建一个ServletContext对象</p>
+<p>从服务器移除托管，或者是关闭服务器。 </p>
+<ul>
+<li>ServletContext 的作用范围</li>
+</ul>
+<blockquote>
+<p>只要在这个项目里面，都可以取。 只要同一个项目。 A项目 存， 在B项目取，是取不到的？ ServletContext对象不同。</p>
+</blockquote>
+<h2 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h2><blockquote>
+<p>这个对象封装了客户端提交过来的一切数据。 </p>
+</blockquote>
+<ol>
+<li><p>可以获取客户端请求头信息</p>
+<p>//得到一个枚举集合  </p>
+<pre><code>Enumeration&lt;String&gt; headerNames = request.getHeaderNames();
+while (headerNames.hasMoreElements()) {
+    String name = (String) headerNames.nextElement();
+    String value = request.getHeader(name);
+    System.out.println(name+&quot;=&quot;+value);</code></pre></li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>获取客户端提交过来的数据</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">String name = request.getParameter(&quot;name&quot;);</span><br><span class="line">String address = request.getParameter(&quot;address&quot;);</span><br><span class="line">System.out.println(&quot;name=&quot;+name);</span><br><span class="line">System.out.println(&quot;address=&quot;+address);</span><br><span class="line"></span><br><span class="line">-------------------------------------------------</span><br><span class="line"></span><br><span class="line">//name=zhangsan&amp;name=lisi&amp;name=wangwu 一个key可以对应多个值。</span><br><span class="line"></span><br><span class="line">Map&lt;String, String[]&gt; map = request.getParameterMap();</span><br><span class="line"></span><br><span class="line">Set&lt;String&gt; keySet = map.keySet();</span><br><span class="line">Iterator&lt;String&gt; iterator = keySet.iterator();</span><br><span class="line">while (iterator.hasNext()) &#123;</span><br><span class="line">	String key = (String) iterator.next();</span><br><span class="line">	System.out.println(&quot;key=&quot;+key + &quot;--的值总数有：&quot;+map.get(key).length);</span><br><span class="line">	String value = map.get(key)[0];</span><br><span class="line">	String value1 = map.get(key)[1];</span><br><span class="line">	String value2 = map.get(key)[2];</span><br><span class="line">	</span><br><span class="line">	System.out.println(key+&quot; ======= &quot;+ value + &quot;=&quot; + value1 + &quot;=&quot;+ value2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>获取中文数据</li>
+</ol>
+<blockquote>
+<p>客户端提交数据给服务器端，如果数据中带有中文的话，有可能会出现乱码情况，那么可以参照以下方法解决。</p>
+</blockquote>
+<ul>
+<li><p>如果是GET方式</p>
+<ol>
+<li>代码转码<br>String username = request.getParameter(“username”);<pre><code>String password = request.getParameter(&quot;password&quot;);</code></pre></li>
+</ol>
+</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(&quot;userName=&quot;+username+&quot;==password=&quot;+password);</span><br><span class="line"></span><br><span class="line">//get请求过来的数据，在url地址栏上就已经经过编码了，所以我们取到的就是乱码，</span><br><span class="line">//tomcat收到了这批数据，getParameter 默认使用ISO-8859-1去解码</span><br><span class="line"></span><br><span class="line">//先让文字回到ISO-8859-1对应的字节数组 ， 然后再按utf-8组拼字符串</span><br><span class="line">username = new String(username.getBytes(&quot;ISO-8859-1&quot;) , &quot;UTF-8&quot;);</span><br><span class="line">System.out.println(&quot;userName=&quot;+username+&quot;==password=&quot;+password);</span><br><span class="line"></span><br><span class="line">直接在tomcat里面做配置，以后get请求过来的数据永远都是用UTF-8编码。</span><br></pre></td></tr></table></figure></code></pre><ol start="2">
+<li><p>可以在tomcat里面做设置处理 conf/server.xml 加上URIEncoding=”utf-8”</p>
+<connector connectiontimeout="20000" port="8080" protocol="HTTP/1.1" redirectport="8443" uriencoding="UTF-8">
+
+</connector></li>
+</ol>
+<ul>
+<li><p>如果是POST方式</p>
+<p>这个说的是设置请求体里面的文字编码。  get方式，用这行，有用吗？ —&gt; 没用</p>
+<pre><code>request.setCharacterEncoding(&quot;UTF-8&quot;);</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这行设置一定要写在getParameter之前。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>##HttpServletResponse</p>
+<blockquote>
+<p>负责返回数据给客户端。 </p>
+</blockquote>
+<ul>
+<li>输出数据到页面上</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//以字符流的方式写数据	</span><br><span class="line">//response.getWriter().write(&quot;&lt;h1&gt;hello response...&lt;/h1&gt;&quot;);</span><br><span class="line"></span><br><span class="line">//以字节流的方式写数据 </span><br><span class="line">response.getOutputStream().write(&quot;hello response2222...&quot;.getBytes());</span><br></pre></td></tr></table></figure>
+
+<h3 id="响应的数据中有中文，那么有可能出现中文乱码"><a href="#响应的数据中有中文，那么有可能出现中文乱码" class="headerlink" title="响应的数据中有中文，那么有可能出现中文乱码"></a>响应的数据中有中文，那么有可能出现中文乱码</h3><ul>
+<li>以字符流输出</li>
+</ul>
+<blockquote>
+<p>response.getWriter()</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//1. 指定输出到客户端的时候，这些文字使用UTF-8编码</span><br><span class="line">response.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line"></span><br><span class="line">//2. 直接规定浏览器看这份数据的时候，使用什么编码来看。</span><br><span class="line">response.setHeader(&quot;Content-Type&quot;, &quot;text/html; charset=UTF-8&quot;);</span><br><span class="line"></span><br><span class="line">response.getWriter().write(&quot;我爱黑马训练营...&quot;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>以字节流输出 </li>
+</ul>
+<blockquote>
+<p>response.getOutputStream()</p>
+</blockquote>
+<p>​<br>​        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//1. 指定浏览器看这份数据使用的码表</span><br><span class="line">response.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=UTF-8&quot;);</span><br><span class="line"></span><br><span class="line">//2. 指定输出的中文用的码表</span><br><span class="line">response.getOutputStream().write(&quot;我爱深圳黑马训练营..&quot;.getBytes(&quot;UTF-8&quot;));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<h3 id="不管是字节流还是字符流，直接使用一行代码就可以了。"><a href="#不管是字节流还是字符流，直接使用一行代码就可以了。" class="headerlink" title="不管是字节流还是字符流，直接使用一行代码就可以了。"></a>不管是字节流还是字符流，直接使用一行代码就可以了。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(&quot;text/html;charset=UTF-8&quot;);</span><br><span class="line"></span><br><span class="line">然后在写数据即可。</span><br></pre></td></tr></table></figure>
+
+<h3 id="演练下载资源。"><a href="#演练下载资源。" class="headerlink" title="演练下载资源。"></a>演练下载资源。</h3><ol>
+<li>直接以超链接的方式下载，不写任何代码。 也能够下载东西下来。 </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">让tomcat的默认servlet去提供下载：&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;download/aa.jpg&quot;&gt;aa.jpg&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;download/bb.txt&quot;&gt;bb.txt&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;download/cc.rar&quot;&gt;cc.rar&lt;/a&gt;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原因是tomcat里面有一个默认的Servlet – DefaultServlet 。这个DefaultServlet 专门用于处理放在tomcat服务器上的静态资源。</p>
+</blockquote>
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img10.png" alt="icon"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>Servlet注册方式 </p>
+</li>
+<li><p>ServletContext【重点】</p>
+<p>作用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	1. 获取全局参数</span><br><span class="line"></span><br><span class="line">	2. 获取工程里面的资源。</span><br><span class="line"></span><br><span class="line">	3. 资源共享。  ServletContext 域对象</span><br><span class="line"></span><br><span class="line">有几个 一个 </span><br><span class="line"></span><br><span class="line">什么时候创建 ？ 什么时候销毁</span><br><span class="line"></span><br><span class="line">服务器启动的时候给每一个应用都创建一个ServletContext对象， 服务器关闭的时候销毁</span><br></pre></td></tr></table></figure>
+
+<p>简单登录</p>
+</li>
+<li><p>HttpServletRequest【重点】</p>
+<ol>
+<li>获取请求头<ol start="2">
+<li>获取提交过来的数据</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="4">
+<li><p>HttpServletResponse【重点】</p>
+<p>负责输出数据到客户端，其实就是对之前的请求作出响应</p>
+</li>
+<li><p>中文乱码问题。【重点】</p>
+</li>
+<li><p>下载</p>
+</li>
+</ol>
+<h3 id="作业："><a href="#作业：" class="headerlink" title="作业："></a>作业：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 完成注册 </span><br><span class="line"></span><br><span class="line">2. 完成登录</span><br></pre></td></tr></table></figure>
+
+<p><img src="E:/%E9%BB%91%E9%A9%AC/11.Request&Response(%E5%85%B126%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img11.png" alt="icon"></p>
+<hr>
+<p>V1.1 最好配合上数据库，完成注册和登录的功能。 </p>
+<p>​    </p>
 
 		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
