@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>spring | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="desciption: spring">
+  <meta name="description" content="desrcription: ** spring **">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/spring/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="desciption: spring">
+<meta property="og:description" content="desrcription: ** spring **">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-19T10:30:14.562Z">
+<meta property="og:updated_time" content="2019-10-18T01:22:45.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring">
-<meta name="twitter:description" content="desciption: spring">
+<meta name="twitter:description" content="desrcription: ** spring **">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>desciption: spring</p>
+        <p>desrcription: ** spring **</p>
 <a id="more"></a>
 
 
@@ -185,6 +185,63 @@
 </ul>
 </li>
 <li></li>
+</ul>
+<h3 id="spring的事务处理机制"><a href="#spring的事务处理机制" class="headerlink" title="spring的事务处理机制"></a>spring的事务处理机制</h3><ul>
+<li><p>编程式事务</p>
+</li>
+<li><p>声明式事务</p>
+<p>按照声明的内容自动执行</p>
+<p>声明的方式:</p>
+</li>
+</ul>
+<h2 id="JSP编程的两种model"><a href="#JSP编程的两种model" class="headerlink" title="JSP编程的两种model"></a>JSP编程的两种model</h2><ul>
+<li>JSP Model1:客户端发送请求–&gt;doJSP–&gt;javabean–&gt;返回请求</li>
+<li>JSP Model2:<ul>
+<li>JSP 负责生成动态网页</li>
+<li>Servlet 负责流程控制</li>
+<li>JavaBean 负责业务逻辑处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="springMVC"><a href="#springMVC" class="headerlink" title="springMVC"></a>springMVC</h2><p>springMVC是model2的实现.</p>
+<p>准备:DispatcherServlet读取springMVC的配置文件</p>
+<ol>
+<li>web.xml文件拦截客户端的所有请求</li>
+<li>把所有请求转移到核心控制器</li>
+</ol>
+<h3 id="springMVC的环境配置"><a href="#springMVC的环境配置" class="headerlink" title="springMVC的环境配置"></a>springMVC的环境配置</h3><ol>
+<li>jar包</li>
+<li>配置<ol>
+<li>配置web.xml</li>
+<li>配置拦截请求</li>
+<li>配置DispatcherServlet</li>
+<li>配置DispatcherServlet读取的springMVC的配置文件</li>
+</ol>
+</li>
+<li>编写springMVC的配置文件springmvc-config.xml<ol>
+<li>请求的url和控制器方法之间的映射</li>
+<li>响应结果和视图之间的映射</li>
+</ol>
+</li>
+</ol>
+<h3 id="springMVC的应用"><a href="#springMVC的应用" class="headerlink" title="springMVC的应用"></a>springMVC的应用</h3><ul>
+<li>在控制器中如何获取表单的值:</li>
+</ul>
+<ol>
+<li>参数HttpServletRequest对象</li>
+<li>get方式,声明多个形参,@RequestParam(value = “age”, required = true, defaultValue = “18”) String age</li>
+</ol>
+<ul>
+<li>控制器向视图传递值:就是控制器方法的返回值<ul>
+<li>字符串–视图的名字</li>
+<li>ModelAndView 模型和视图<ul>
+<li>Model:存放数据:List Map 数组 对象 等</li>
+<li>View:响应的视图</li>
+</ul>
+</li>
+<li>AJAX响应数据</li>
+</ul>
+</li>
 </ul>
 
 		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
@@ -415,6 +472,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">

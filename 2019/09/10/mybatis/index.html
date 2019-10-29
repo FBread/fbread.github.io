@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>MyBatis | FBread的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="desciption: MyBatis">
+  <meta name="description" content="description: MyBatis,PageHelper">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis">
 <meta property="og:url" content="http://yoursite.com/2019/09/10/mybatis/index.html">
 <meta property="og:site_name" content="FBread的博客">
-<meta property="og:description" content="desciption: MyBatis">
+<meta property="og:description" content="description: MyBatis,PageHelper">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-17T05:20:38.591Z">
+<meta property="og:updated_time" content="2019-10-19T09:30:39.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis">
-<meta name="twitter:description" content="desciption: MyBatis">
+<meta name="twitter:description" content="description: MyBatis,PageHelper">
   
     <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>desciption: MyBatis</p>
+        <p>description: <strong>MyBatis,PageHelper</strong></p>
 <a id="more"></a>
 
 <h1 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h1><h2 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h2><p>Object Relational Mapping 对象关系映射</p>
@@ -300,7 +300,7 @@ select * from smbms_user where userName =&apos;张华&apos; ${} 只是进行赋�
 <ul>
 <li><p>一级缓存:session</p>
 <ul>
-<li></li>
+<li>只在一个sqlSession中有效</li>
 <li>当提交事务(insert,update,delete)后,session中缓存的数据会清空</li>
 </ul>
 </li>
@@ -321,7 +321,7 @@ select * from smbms_user where userName =&apos;张华&apos; ${} 只是进行赋�
 <li><p>实体类实现可序列化的接口</p>
 </li>
 <li><p>在mapper文件的某个方法中可以设置不使用二级缓存</p>
-<p>useCache=”false”</p>
+<p>userCache=”false”</p>
 </li>
 <li><p>当二级缓存启动后</p>
 <ul>
@@ -349,6 +349,19 @@ select * from smbms_user where userName =&apos;张华&apos; ${} 只是进行赋�
 
 </li>
 </ol>
+<h2 id="PageHelper"><a href="#PageHelper" class="headerlink" title="PageHelper"></a>PageHelper</h2><p>mybatis的分页插件，需要导包。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> testPageHelper&#123;</span><br><span class="line">    <span class="keyword">int</span> pageNum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> pageSize=<span class="number">2</span>;</span><br><span class="line">    Map&lt;String,Object&gt; param = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    param.put(<span class="string">"name"</span>,<span class="string">"小明"</span>);</span><br><span class="line">    <span class="comment">//PageHelper对紧随它之后的第一条语句起作用</span></span><br><span class="line">    PageHelper.startPage(pageNum,pageSize,<span class="string">"id desc"</span>);<span class="comment">//开始分页</span></span><br><span class="line">    List&lt;User&gt; groupList = sqlSession.selectList(<span class="string">"selectAllUsers"</span>,param);</span><br><span class="line">    PageInfo&lt;User&gt; pageInfo = <span class="keyword">new</span> PageInfo&lt;&gt;(groupList,<span class="number">5</span>);<span class="comment">//页码导航</span></span><br><span class="line">    System.out.println(<span class="string">"当前页码:"</span>+pageInfo.getPageNum());</span><br><span class="line">    System.out.println(<span class="string">"每页:"</span>+pageInfo.getPageSize());</span><br><span class="line">    System.out.println(<span class="string">"总数据:"</span>+pageInfo.getTotal());</span><br><span class="line">    System.out.println(<span class="string">"总页数:"</span>+pageInfo.getPages());</span><br><span class="line"> 	System.out.println(<span class="string">"页码导航:"</span>+Arrays.toString(pageInfo.getNavigatepageNums()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在一个Mapper中引用另一个Mapper的ResultMap：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultMap='otherMapper.UserMap'</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在一个Mapper中引用另一个Mapper的sql语句</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">'UserMap'</span> <span class="attr">type</span>=<span class="string">'User'</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">'id'</span> <span class="attr">column</span>=<span class="string">'id'</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    &lt;collection property='stuid' select='stuMapper.getAllStu' column='id'&lt;/collection&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>👆↑用的比较少</p>
+</li>
+</ul>
 
 		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -578,6 +591,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">
