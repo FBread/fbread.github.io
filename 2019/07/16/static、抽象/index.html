@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="面包土豆西红柿的博客">
 <meta property="og:description" content="description： static、接口、抽象、单例设计模式">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/07/16/assets/img/20190716-1.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/16/assets/img/20190716-2.png">
-<meta property="og:updated_time" content="2019-10-31T10:44:54.089Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190716-1.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190716-2.png">
+<meta property="og:updated_time" content="2019-10-31T11:10:12.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="static、抽象">
 <meta name="twitter:description" content="description： static、接口、抽象、单例设计模式">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/16/assets/img/20190716-1.png">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/20190716-1.png">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
     System.out.println(&quot;静态代码块&quot;);
 }</code></pre><p>静态代码块无需调用,在类装载时就会执行.作用是为静态变量赋初始值,很少用.</p>
 <p>static修饰的称为静态成员,非static修饰的称为实例成员.<br>静态成员和实例成员的区别?<br>1.访问方式不同:<br>静态成员通过类名访问 EmpFac.createEmp();(类名.方法名)<br>实例成员通过对象来访问,先new出对象.    对象.方法名();<br>2.内存加载机制不同:<br>静态成员在程序运行时,就被加载到内存的静态区域中.<br>实例成员在执行到new时,把对应的内容加载到内存的堆区域中.<br>3.生命周期不同:<br>静态成员在程序退出运行时,从内存中被销毁.<br>实例成员要根据Java的垃圾回收机制来决定何时销毁.</p>
-<p>所有对象使用的是同一静态变量.<br>普通成员变量:<br><img src="../assets/img/20190716-1.png" alt="普通成员变量" title="普通成员变量"><br>静态成员变量:<br><img src="../assets/img/20190716-2.png" alt="静态成员变量" title="静态成员变量"></p>
+<p>所有对象使用的是同一静态变量.<br>普通成员变量:<br><img src="/assets/img/20190716-1.png" alt="普通成员变量" title="普通成员变量"><br>静态成员变量:<br><img src="/assets/img/20190716-2.png" alt="静态成员变量" title="静态成员变量"></p>
 <ul>
 <li><p>A:代码块概述</p>
 <ul>

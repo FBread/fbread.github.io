@@ -16,22 +16,22 @@
 <meta property="og:site_name" content="面包土豆西红柿的博客">
 <meta property="og:description" content="事务">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103101.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103102.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103103.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103104.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103105.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103106.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103107.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103108.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103109.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103110.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103111.png">
-<meta property="og:updated_time" content="2019-10-31T10:51:59.671Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103101.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103102.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103103.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103104.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103105.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103106.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103107.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103108.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103109.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103110.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/2019103111.png">
+<meta property="og:updated_time" content="2019-10-31T11:11:39.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事务">
 <meta name="twitter:description" content="事务">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/29/事务/..%5Cassets%5Cimg%5C2019103101.png">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/2019103101.png">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -210,11 +210,11 @@
 <ol>
 <li>关闭自动提交功能。</li>
 </ol>
-<p><img src="..%5Cassets%5Cimg%5C2019103101.png" alt="icon"></p>
+<p><img src="/assets/img/2019103101.png" alt="icon"></p>
 <ol start="2">
 <li>演示事务</li>
 </ol>
-<p><img src="..%5Cassets%5Cimg%5C2019103102.png" alt="icon"></p>
+<p><img src="/assets/img/2019103102.png" alt="icon"></p>
 <p>###使用代码方式演示事务</p>
 <blockquote>
 <p>代码里面的事务，主要是针对连接来的。 </p>
@@ -313,12 +313,12 @@ public void testTransaction(){
 
 &gt; 一个事务读到了另外一个事务提交的数据 ，造成了前后两次查询结果不一致。</code></pre><p>####读未提交 演示</p>
 <ol>
-<li><p>设置A窗口的隔离级别为 读未提交<br><img src="..%5Cassets%5Cimg%5C2019103103.png" alt="icon"></p>
+<li><p>设置A窗口的隔离级别为 读未提交<br><img src="/assets/img/2019103103.png" alt="icon"></p>
 </li>
 <li><p>两个窗口都分别开启事务</p>
 </li>
 </ol>
-<p><img src="..%5Cassets%5Cimg%5C2019103104.png" alt="icon"></p>
+<p><img src="/assets/img/2019103104.png" alt="icon"></p>
 <ul>
 <li>写</li>
 </ul>
@@ -328,15 +328,15 @@ public void testTransaction(){
 <h4 id="读已提交演示"><a href="#读已提交演示" class="headerlink" title="读已提交演示"></a>读已提交演示</h4><ol>
 <li>设置A窗口的隔离级别为 读已提交</li>
 </ol>
-<p><img src="..%5Cassets%5Cimg%5C2019103105.png" alt="icon"></p>
+<p><img src="/assets/img/2019103105.png" alt="icon"></p>
 <ol start="2">
 <li>A B 两个窗口都开启事务， 在B窗口执行更新操作。</li>
 </ol>
-<p><img src="..%5Cassets%5Cimg%5C2019103106.png" alt="icon"></p>
+<p><img src="/assets/img/2019103106.png" alt="icon"></p>
 <ol start="3">
 <li>在A窗口执行的查询结果不一致。 一次是在B窗口提交事务之前，一次是在B窗口提交事务之后。</li>
 </ol>
-<p><img src="..%5Cassets%5Cimg%5C2019103107.png" alt="icon"></p>
+<p><img src="/assets/img/2019103107.png" alt="icon"></p>
 <blockquote>
 <p>这个隔离级别能够屏蔽 脏读的现象， 但是引发了另一个问题  ，不可重复读。</p>
 </blockquote>
@@ -403,7 +403,7 @@ conn.rollback();</code></pre><ol start="2">
 <p>mySql 默认的隔离级别是 可重复读</p>
 <p>Oracle 默认的隔离级别是  读已提交</p>
 <p>###丢失更新</p>
-<p><img src="..%5Cassets%5Cimg%5C2019103108.png" alt="icon"></p>
+<p><img src="/assets/img/2019103108.png" alt="icon"></p>
 <p>###解决丢失更新</p>
 <ul>
 <li>悲观锁</li>
@@ -411,14 +411,14 @@ conn.rollback();</code></pre><ol start="2">
 <blockquote>
 <p>可以在查询的时候，加入 for update</p>
 </blockquote>
-<p><img src="..%5Cassets%5Cimg%5C2019103109.png" alt="icon"></p>
+<p><img src="/assets/img/2019103109.png" alt="icon"></p>
 <ul>
 <li>乐观锁</li>
 </ul>
 <blockquote>
 <p>要求程序员自己控制。 </p>
 </blockquote>
-<p><img src="..%5Cassets%5Cimg%5C2019103110.png" alt="icon"></p>
+<p><img src="/assets/img/2019103110.png" alt="icon"></p>
 <p>##数据库连接池</p>
 <blockquote>
 <ol>
@@ -428,7 +428,7 @@ conn.rollback();</code></pre><ol start="2">
 <blockquote>
 <p>2.一开始现在内存中开辟一块空间（集合） ， 一开先往池子里面放置 多个连接对象。  后面需要连接的话，直接从池子里面去。不要去自己创建连接了。  使用完毕， 要记得归还连接。确保连接对象能循环利用。</p>
 </blockquote>
-<p><img src="..%5Cassets%5Cimg%5C2019103111.png" alt="icon"></p>
+<p><img src="/assets/img/2019103111.png" alt="icon"></p>
 <p>###自定义数据库连接池 </p>
 <ul>
 <li><p>代码实现</p>

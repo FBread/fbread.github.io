@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="面包土豆西红柿的博客">
 <meta property="og:description" content="description:数组,二维数组,冒泡排序,选择排序">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/assets/img/20190708-1.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/08/assets/img/20190708-2.png">
-<meta property="og:updated_time" content="2019-10-31T10:44:40.236Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190708-1.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190708-2.png">
+<meta property="og:updated_time" content="2019-10-31T11:09:59.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组">
 <meta name="twitter:description" content="description:数组,二维数组,冒泡排序,选择排序">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/08/assets/img/20190708-1.png">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/20190708-1.png">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -208,7 +208,7 @@ for (double number : arr) {
     // 使用number直接访问元素即可
     // number不是下标,是数组当前的元素
     System.out.println(number + &quot; &quot;);
-}</code></pre><h5 id="6-冒泡排序-面试必问"><a href="#6-冒泡排序-面试必问" class="headerlink" title="6.冒泡排序(面试必问)"></a>6.冒泡排序(面试必问)</h5><p>对一堆无序的数字进行排序的方案,<br><img src="../assets/img/20190708-1.png" alt="冒泡排序" title="冒泡排序"><br>每一次比较相邻的两个元素(相邻比较),根据需要决定是否进行交换(合规交换)<br>每一轮比较交换完毕之后,总能把最值放到最后<br>下一轮比较时,之前的最值不再参与,剩下的元素按照规则比较,以此类推…<br>需要的轮数=元素的个数-1<br>每一轮中比较的次数=待比较的元素个数-1</p>
+}</code></pre><h5 id="6-冒泡排序-面试必问"><a href="#6-冒泡排序-面试必问" class="headerlink" title="6.冒泡排序(面试必问)"></a>6.冒泡排序(面试必问)</h5><p>对一堆无序的数字进行排序的方案,<br><img src="/assets/img/20190708-1.png" alt="冒泡排序" title="冒泡排序"><br>每一次比较相邻的两个元素(相邻比较),根据需要决定是否进行交换(合规交换)<br>每一轮比较交换完毕之后,总能把最值放到最后<br>下一轮比较时,之前的最值不再参与,剩下的元素按照规则比较,以此类推…<br>需要的轮数=元素的个数-1<br>每一轮中比较的次数=待比较的元素个数-1</p>
 <pre><code>public class BubbleSort {
     public static void main(String[] args) {
         // 定义数组存放所有的待排序数字
@@ -229,7 +229,7 @@ for (double number : arr) {
             System.out.println(a);
         }
     }
-}</code></pre><h5 id="7-选择排序-面试可能会问"><a href="#7-选择排序-面试可能会问" class="headerlink" title="7.选择排序(面试可能会问)"></a>7.选择排序(面试可能会问)</h5><p>预先选择一个位置,假设该位置是最值,必须指定一个顺序(从前往后,从后往前).把后面所有的待比较的数和当前位置的数比较,合规之后使用第三方的index记录合规数值的位置(数组中元素的下标),等到最后一个元素比较完毕后,再进行交换.一次比较重,交换只发生一次<br>选择排序比冒泡排序效率高.<br><img src="../assets/img/20190708-2.png" alt="冒泡排序" title="冒泡排序"></p>
+}</code></pre><h5 id="7-选择排序-面试可能会问"><a href="#7-选择排序-面试可能会问" class="headerlink" title="7.选择排序(面试可能会问)"></a>7.选择排序(面试可能会问)</h5><p>预先选择一个位置,假设该位置是最值,必须指定一个顺序(从前往后,从后往前).把后面所有的待比较的数和当前位置的数比较,合规之后使用第三方的index记录合规数值的位置(数组中元素的下标),等到最后一个元素比较完毕后,再进行交换.一次比较重,交换只发生一次<br>选择排序比冒泡排序效率高.<br><img src="/assets/img/20190708-2.png" alt="冒泡排序" title="冒泡排序"></p>
 <pre><code>public class SelectSort {
     public static void main(String[] args) {
         int[] arr = { 3, 1, 5, 2, 6, 7, -1, 3, 9 };
