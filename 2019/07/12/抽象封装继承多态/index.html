@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>抽象封装继承多态 | FBread的博客</title>
+  <title>抽象封装继承多态 | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="description:抽象,封装,继承,重写,堆栈,数据存储,作用域,object">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="抽象封装继承多态">
 <meta property="og:url" content="http://yoursite.com/2019/07/12/抽象封装继承多态/index.html">
-<meta property="og:site_name" content="FBread的博客">
+<meta property="og:site_name" content="面包土豆西红柿的博客">
 <meta property="og:description" content="description:抽象,封装,继承,重写,堆栈,数据存储,作用域,object">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/assets/img/20190715-1.png">
-<meta property="og:updated_time" content="2019-08-08T02:44:28.204Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/12/assets/img/20190715-1.png">
+<meta property="og:updated_time" content="2019-10-31T10:44:45.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="抽象封装继承多态">
 <meta name="twitter:description" content="description:抽象,封装,继承,重写,堆栈,数据存储,作用域,object">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/20190715-1.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/12/assets/img/20190715-1.png">
   
-    <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/ico/favicon.ico">
@@ -56,7 +56,7 @@
 		  <h1 class="header-author"><a href="/">FBread</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">胆小认生,喜欢独居</p>
+		<p class="header-subtitle">去火星看日出</p>
 		
 
 		<nav class="header-menu">
@@ -108,7 +108,7 @@
 			  <h1 class="header-author js-header-author">FBread</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>胆小认生,喜欢独居<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>去火星看日出<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -214,7 +214,7 @@
 <h4 id="8-Object"><a href="#8-Object" class="headerlink" title="8.Object"></a>8.Object</h4><p>是Java设计者提供的一个类,它是除了自身之外其他所有类的父类.<br>如果一个类extends指定了父类,Object是当前类的<strong>间接父类</strong>;<br>如果一个类没有指定父类,Object是当前类的<strong>直接父类</strong>;(类似于爷爷辈的)</p>
 <h4 id="9-栈Stack"><a href="#9-栈Stack" class="headerlink" title="9.栈Stack"></a>9.栈Stack</h4><p>又被称为”堆栈”,是一个只有一个出入口的容器.<br>存储的数据从该口进出,先进去的数据后出来,后进去的数据先出来,称为”FILO”/“FOlI”(first input last output)(就是先进后出/先出后进)结构.<br>一个出口一个入口,方便管理</p>
 <h4 id="10-堆Heap"><a href="#10-堆Heap" class="headerlink" title="10.堆Heap"></a>10.堆Heap</h4><p>是一个没有管理者的容量很大的容器(类似于垃圾场/垃圾房)<br>里面存放的东西杂乱无章,可以知道该容器什么时候会满.</p>
-<h4 id="11-堆和堆栈"><a href="#11-堆和堆栈" class="headerlink" title="11.堆和堆栈"></a>11.堆和堆栈</h4><p>Java程序在运行的时候在内存中,<br>Java程序不能直接修改内存,java运行于虚拟机上,虚拟机影响内存.<br>Java程序在运行的时候依靠jvm在系统内存中划出一片很大的区域600M~1000M.该内存被当前程序中所有的线程共享,称为Java的堆内存<br>在方法被<strong>调用</strong>的时候,此时针对每一个方法,jvm生成一个堆栈(栈),又被称为方法栈.在方法调用结束的时候(方法调用结束的标志是return做出返回值/或者运行到方法体的最后一行),方法栈被销毁.方法栈称为java的栈内存.<br><img src="/assets/img/20190715-1.png" alt="堆栈结构" title="堆栈结构"></p>
+<h4 id="11-堆和堆栈"><a href="#11-堆和堆栈" class="headerlink" title="11.堆和堆栈"></a>11.堆和堆栈</h4><p>Java程序在运行的时候在内存中,<br>Java程序不能直接修改内存,java运行于虚拟机上,虚拟机影响内存.<br>Java程序在运行的时候依靠jvm在系统内存中划出一片很大的区域600M~1000M.该内存被当前程序中所有的线程共享,称为Java的堆内存<br>在方法被<strong>调用</strong>的时候,此时针对每一个方法,jvm生成一个堆栈(栈),又被称为方法栈.在方法调用结束的时候(方法调用结束的标志是return做出返回值/或者运行到方法体的最后一行),方法栈被销毁.方法栈称为java的栈内存.<br><img src="../assets/img/20190715-1.png" alt="堆栈结构" title="堆栈结构"></p>
 <h4 id="12-数据的存储"><a href="#12-数据的存储" class="headerlink" title="12.数据的存储"></a>12.数据的存储</h4><p>数据类型的分类:<br>基本数据类型    byte short int long float double Boolean char<br>引用数据类型<br>存放该数据的变量是否允许.操作:允许的是引用数据类型.</p>
 <p>基本数据类型:<br>存放在栈内存中,针对”int a = 12;”而言,”int a”称为引用,”12”称为值,基本数据类型的引用和值都在栈里面.<br>引用数据类型:<br>“int[] arr={1,2,3}”引用部分”int[] arr”存放在栈里面,”{1,2,3}”数据部分存放在堆里面.我们把堆内存中真实的数据部分所占据的空间在jvm里面的编号存放在”int[] arr”里面,该编号是一个十进制的数字,我们把这个数字称为hashcode(哈希值).<br>注意:Java中没有地址的概念,只有jvm编号—&gt;hashcode</p>
 <h4 id="13-两种数据类型修改值的情况"><a href="#13-两种数据类型修改值的情况" class="headerlink" title="13.两种数据类型修改值的情况"></a>13.两种数据类型修改值的情况</h4><p>场景:<br>A方法中定义数据,调用B方法把A方法中定义的数据作为该方法的参数对该数据进行修改.<br>现象:<br>基本数据类型:B方法中值的修改无效.<br>引用数据类型:B方法中值的修改有效.</p>
@@ -534,6 +534,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -543,10 +547,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">error</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">

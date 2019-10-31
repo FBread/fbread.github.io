@@ -6,28 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>cookie&amp;session | FBread的博客</title>
+  <title>cookie&amp;session | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="description:cookie,session">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cookie&amp;session">
 <meta property="og:url" content="http://yoursite.com/2019/09/24/cookie-session/index.html">
-<meta property="og:site_name" content="FBread的博客">
+<meta property="og:site_name" content="面包土豆西红柿的博客">
 <meta property="og:description" content="description:cookie,session">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img01.png">
-<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img02.png">
-<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img03.png">
-<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img04.png">
-<meta property="og:image" content="e:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img05.png">
-<meta property="og:updated_time" content="2019-10-19T02:29:33.807Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/cookie-session/..%5Cassets%5Cimg%5C2019103114.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/cookie-session/..%5Cassets%5Cimg%5C2019103115.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/cookie-session/..%5Cassets%5Cimg%5C2019103116.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/cookie-session/..%5Cassets%5Cimg%5C2019103117.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/cookie-session/..%5Cassets%5Cimg%5C2019103118.png">
+<meta property="og:updated_time" content="2019-10-31T10:54:27.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookie&amp;session">
 <meta name="twitter:description" content="description:cookie,session">
-<meta name="twitter:image" content="e:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img01.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/24/cookie-session/..%5Cassets%5Cimg%5C2019103114.png">
   
-    <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/ico/favicon.ico">
@@ -60,7 +60,7 @@
 		  <h1 class="header-author"><a href="/">FBread</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">胆小认生,喜欢独居</p>
+		<p class="header-subtitle">去火星看日出</p>
 		
 
 		<nav class="header-menu">
@@ -112,7 +112,7 @@
 			  <h1 class="header-author js-header-author">FBread</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>胆小认生,喜欢独居<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>去火星看日出<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -184,7 +184,7 @@
 
 <h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//请求转发的写法： 参数即跳转的位置</span><br><span class="line">request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, response);</span><br><span class="line"></span><br><span class="line">1. 地址上显示的是请求servlet的地址。  返回200 ok</span><br><span class="line"></span><br><span class="line">2. 请求次数只有一次， 因为是服务器内部帮客户端执行了后续的工作。 </span><br><span class="line"></span><br><span class="line">3. 只能跳转自己项目的资源路径 。  </span><br><span class="line"></span><br><span class="line">4. 效率上稍微高一点，因为只执行一次请求。 </span><br><span class="line"></span><br><span class="line">5. 可以使用上一次的request对象。</span><br></pre></td></tr></table></figure>
 
-<p><img src="E:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img01.png" alt="icon"></p>
+<p><img src="..%5Cassets%5Cimg%5C2019103114.png" alt="icon"></p>
 <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><blockquote>
 <p>饼干. 其实是一份小数据， 是服务器给客户端，并且存储在客户端上的一份小数据</p>
 </blockquote>
@@ -211,7 +211,7 @@
 </li>
 <li></li>
 </ol>
-<p><img src="E:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img02.png" alt="icon"></p>
+<p><img src="..%5Cassets%5Cimg%5C2019103115.png" alt="icon"></p>
 <ul>
 <li><p>获取客户端带过来的Cookie</p>
 <p>//获取客户端带过来的cookie</p>
@@ -253,7 +253,7 @@ if(cookies != null){
 
 
 </ol>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p><img src="E:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img03.png" alt="icon"></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p><img src="..%5Cassets%5Cimg%5C2019103116.png" alt="icon"></p>
 <h3 id="Jsp-里面使用Java代码"><a href="#Jsp-里面使用Java代码" class="headerlink" title="Jsp 里面使用Java代码"></a>Jsp 里面使用Java代码</h3><ul>
 <li>jsp</li>
 </ul>
@@ -271,7 +271,7 @@ if(cookies != null){
 <p>&lt;%=a %&gt;<br>&lt;%=b %&gt;</p>
 </li>
 </ul>
-<h3 id="jsp显示浏览记录"><a href="#jsp显示浏览记录" class="headerlink" title="jsp显示浏览记录"></a>jsp显示浏览记录</h3><p><img src="E:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img04.png" alt="icon"></p>
+<h3 id="jsp显示浏览记录"><a href="#jsp显示浏览记录" class="headerlink" title="jsp显示浏览记录"></a>jsp显示浏览记录</h3><p><img src="..%5Cassets%5Cimg%5C2019103117.png" alt="icon"></p>
 <h3 id="清除浏览记录"><a href="#清除浏览记录" class="headerlink" title="清除浏览记录"></a>清除浏览记录</h3><blockquote>
 <p>其实就是清除Cookie， 删除cookie是没有什么delete方法的。只有设置maxAge 为0 。</p>
 </blockquote>
@@ -326,7 +326,7 @@ if(cookies != null){
 <li>session会话时间过期。 有效期过了，默认有效期： 30分钟。</li>
 </ol>
 </blockquote>
-<h1 id="例子三：-简单购物车。"><a href="#例子三：-简单购物车。" class="headerlink" title="例子三： 简单购物车。"></a>例子三： 简单购物车。</h1><p><img src="E:/%E9%BB%91%E9%A9%AC/12.Cookie&Session(%E5%85%B122%E9%9B%86)/code&%E8%B5%84%E6%96%99/%E7%AC%94%E8%AE%B0/img/img05.png" alt="icon"></p>
+<h1 id="例子三：-简单购物车。"><a href="#例子三：-简单购物车。" class="headerlink" title="例子三： 简单购物车。"></a>例子三： 简单购物车。</h1><p><img src="..%5Cassets%5Cimg%5C2019103118.png" alt="icon"></p>
 <h3 id="CartServlet-代码"><a href="#CartServlet-代码" class="headerlink" title="CartServlet 代码"></a>CartServlet 代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(&quot;text/html;charset=utf-8&quot;);</span><br><span class="line">	</span><br><span class="line">	//1. 获取要添加到购物车的商品id</span><br><span class="line">	int id = Integer.parseInt(request.getParameter(&quot;id&quot;)); // 0 - 1- 2 -3 -4 </span><br><span class="line">	String [] names = &#123;&quot;Iphone7&quot;,&quot;小米6&quot;,&quot;三星Note8&quot;,&quot;魅族7&quot; , &quot;华为9&quot;&#125;;</span><br><span class="line">	//取到id对应的商品名称</span><br><span class="line">	String name = names[id];</span><br><span class="line">	</span><br><span class="line">	//2. 获取购物车存放东西的session  Map&lt;String , Integer&gt;  iphoen7 3</span><br><span class="line">	//把一个map对象存放到session里面去，并且保证只存一次。 </span><br><span class="line">	Map&lt;String, Integer&gt; map = (Map&lt;String, Integer&gt;) request.getSession().getAttribute(&quot;cart&quot;);</span><br><span class="line">	//session里面没有存放过任何东西。</span><br><span class="line">	if(map == null)&#123;</span><br><span class="line">		map = new LinkedHashMap&lt;String , Integer&gt;();</span><br><span class="line">		request.getSession().setAttribute(&quot;cart&quot;, map);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <p>​            </p>
@@ -595,6 +595,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -604,10 +608,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">error</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">

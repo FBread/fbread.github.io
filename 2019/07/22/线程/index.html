@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>线程 | FBread的博客</title>
+  <title>线程 | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="description:进城,线程">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程">
 <meta property="og:url" content="http://yoursite.com/2019/07/22/线程/index.html">
-<meta property="og:site_name" content="FBread的博客">
+<meta property="og:site_name" content="面包土豆西红柿的博客">
 <meta property="og:description" content="description:进城,线程">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/assets/img/20190723-1.png">
-<meta property="og:updated_time" content="2019-07-31T00:33:46.558Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/22/assets/img/20190723-1.png">
+<meta property="og:updated_time" content="2019-10-31T10:44:59.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程">
 <meta name="twitter:description" content="description:进城,线程">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/20190723-1.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/22/assets/img/20190723-1.png">
   
-    <link rel="alternative" href="/atom.xml" title="FBread的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/ico/favicon.ico">
@@ -56,7 +56,7 @@
 		  <h1 class="header-author"><a href="/">FBread</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">胆小认生,喜欢独居</p>
+		<p class="header-subtitle">去火星看日出</p>
 		
 
 		<nav class="header-menu">
@@ -108,7 +108,7 @@
 			  <h1 class="header-author js-header-author">FBread</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>胆小认生,喜欢独居<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>去火星看日出<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -177,7 +177,7 @@
 <p>多进程:在操作系统中能(同时)运行多个任务(程序)<br>(CPU飞速切换,看起来像在同时做的)    </p>
 <p>多线程:在同一应用程序中有多个顺序流(同时)执行</p>
 <p>一个程序一个进程,下有多个线程</p>
-<p><img src="/assets/img/20190723-1.png" alt="线程的执行过程" title="线程的执行过程"><br> 创建线程的方法:<br>1.定义一个线程类,继承类Thread并重写其中的方法run();.方法run()称为线程体.</p>
+<p><img src="../assets/img/20190723-1.png" alt="线程的执行过程" title="线程的执行过程"><br> 创建线程的方法:<br>1.定义一个线程类,继承类Thread并重写其中的方法run();.方法run()称为线程体.</p>
 <pre><code>public class ThreadT extends Thread {
     public void run() {
         for (int i = 0; i &lt; 10; i++) {
@@ -321,6 +321,7 @@ public class Test{
     }
 }</code></pre><h4 id="线程之间的通信"><a href="#线程之间的通信" class="headerlink" title="线程之间的通信"></a>线程之间的通信</h4><p>典型案例:生产者 消费者模式</p>
 <p>wait();//线程停止执行,释放锁,在锁外边处于等待状态.是Object的方法.必须放在同步代码块中使用.<br>sleep();//Thread类的方法,指定休眠时间结束后线程自动进入就绪状态.休眠期间锁依然有效.可以在代码的任何位置使用<br>notify();//向其他等待的线程发出可执行通知,同时放弃锁<br>notifyAll();//</p>
+<p>​    </p>
 
 		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -553,6 +554,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -562,10 +567,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">error</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
