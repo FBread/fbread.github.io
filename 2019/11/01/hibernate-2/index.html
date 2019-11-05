@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>面包土豆西红柿的博客</title>
+  <title>hibernate-2 | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录一下有生之年">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,html,java,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="面包土豆西红柿的博客">
-<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+  <meta name="description" content="HQL(Hibernate Query Language)基本用法查询所有部门DeptDao.java: 12345678910111213//查询所有部门public List&amp;lt;Dept&amp;gt; getDeptList()&amp;#123;    //声明HQL		Dept是实体类的名字    String hql = &quot;from Dept&quot;;    //因为查询出来的结果是持久状态，修改对">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate-2">
+<meta property="og:url" content="http://yoursite.com/2019/11/01/hibernate-2/index.html">
 <meta property="og:site_name" content="面包土豆西红柿的博客">
-<meta property="og:description" content="记录一下有生之年">
+<meta property="og:description" content="HQL(Hibernate Query Language)基本用法查询所有部门DeptDao.java: 12345678910111213//查询所有部门public List&amp;lt;Dept&amp;gt; getDeptList()&amp;#123;    //声明HQL		Dept是实体类的名字    String hql = &quot;from Dept&quot;;    //因为查询出来的结果是持久状态，修改对">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-01T07:30:51.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面包土豆西红柿的博客">
-<meta name="twitter:description" content="记录一下有生之年">
+<meta name="twitter:title" content="hibernate-2">
+<meta name="twitter:description" content="HQL(Hibernate Query Language)基本用法查询所有部门DeptDao.java: 12345678910111213//查询所有部门public List&amp;lt;Dept&amp;gt; getDeptList()&amp;#123;    //声明HQL		Dept是实体类的名字    String hql = &quot;from Dept&quot;;    //因为查询出来的结果是持久状态，修改对">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -144,22 +145,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-抽象封装继承多态-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-hibernate-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/15/抽象封装继承多态-2/">抽象封装继承多态-2</a>
+    <h1 class="article-title" itemprop="name">
+      hibernate-2
     </h1>
   
 
         
-        <a href="/2019/07/15/抽象封装继承多态-2/" class="archive-article-date">
-  	<time datetime="2019-07-15T00:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+        <a href="/2019/11/01/hibernate-2/" class="archive-article-date">
+  	<time datetime="2019-11-01T02:04:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
 </a>
         
 		
@@ -167,539 +166,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>description:<strong>工厂设计模式,static,对象数组,多态</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/15/抽象封装继承多态-2/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        <a id="more"></a>
 
-      
+<h2 id="HQL-Hibernate-Query-Language"><a href="#HQL-Hibernate-Query-Language" class="headerlink" title="HQL(Hibernate Query Language)"></a>HQL(Hibernate Query Language)</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h6 id="查询所有部门"><a href="#查询所有部门" class="headerlink" title="查询所有部门"></a>查询所有部门</h6><p>DeptDao.java:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查询所有部门</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDeptList</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//声明HQL		Dept是实体类的名字</span></span><br><span class="line">    String hql = <span class="string">"from Dept"</span>;</span><br><span class="line">    <span class="comment">//因为查询出来的结果是持久状态，修改对象时会修改数据库，因此虽然是查询也需要事务</span></span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    <span class="comment">//执行HQL</span></span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/15/抽象封装继承多态-2/">展开全文 >></a>
-        </p>
-      
+<p>DeptService.java:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDeptlist</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> dd.getDeptList();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h6 id="按条件查询"><a href="#按条件查询" class="headerlink" title="按条件查询"></a>按条件查询</h6><p>DeptDao.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDeptBy</span><span class="params">(Dept dept)</span></span>&#123;</span><br><span class="line">    String hql = <span class="string">"from Dept d where d.dname = ?"</span>;</span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    <span class="comment">//给？赋值</span></span><br><span class="line">    query.setString(<span class="number">0</span>,dept.getDname());</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<h6 id="按条件模糊查询："><a href="#按条件模糊查询：" class="headerlink" title="按条件模糊查询："></a>按条件模糊查询：</h6><p>DeptDao.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDeptBy2</span><span class="params">(Dept dept)</span> </span>&#123;</span><br><span class="line">    String hql = <span class="string">"from Dept d where d.dname like ? and loc = ?"</span>;</span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    query.setString(<span class="number">0</span>, <span class="string">"%"</span> + dept.getDname() + <span class="string">"%"</span>);</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    query.setString(<span class="number">1</span>, dept.getLoc());</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h6 id="在hql语句中使用命名参数："><a href="#在hql语句中使用命名参数：" class="headerlink" title="在hql语句中使用命名参数："></a>在hql语句中使用命名参数：</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDeptBy3</span><span class="params">(Dept dept)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//:xxx 命名参数</span></span><br><span class="line">    String hql = <span class="string">"from Dept d where d.dname like :dn and loc = :loc"</span>;</span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    <span class="comment">//赋值方式1：</span></span><br><span class="line">    <span class="comment">//query.setString("dn",dept.getDname());</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//赋值方式2：把命名参数的值存入Map集合中</span></span><br><span class="line">    <span class="comment">//创建一个Map集合</span></span><br><span class="line">    Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">"dn"</span>, <span class="string">"%"</span> + dept.getDname() + <span class="string">"%"</span>);</span><br><span class="line">    map.put(<span class="string">"loc"</span>, dept.getLoc());</span><br><span class="line">    query.setProperties(map);</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h6 id="查询指定的列"><a href="#查询指定的列" class="headerlink" title="查询指定的列:"></a>查询指定的列:</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//执行后，不自动返回dept对象，因为使用了select，会返回异常</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDepts</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    <span class="comment">//需要哪些列查询哪些列</span></span><br><span class="line">    String hql = <span class="string">"select dname,loc from Dept where dname=?"</span>;</span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    query.setString(<span class="number">0</span>, name);</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>↑???返回的集合长度为1,但是打印出来的是hashcode(重写了toString方法),无法强转成Dept类,什么鬼</p>
+<p>解决方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDepts4</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//在这里使用的是Dept类有参的构造方法。重载一个</span></span><br><span class="line">	String sql = <span class="string">"select new Dept(dname,loc) from Dept"</span>; </span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  
-    <article id="post-面向对象-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/面向对象-2/">面向对象(2)</a>
-    </h1>
-  
+<h6 id="返回字符串数组"><a href="#返回字符串数组" class="headerlink" title="返回字符串数组"></a>返回字符串数组</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">getDeptNames</span><span class="params">()</span></span>&#123;</span><br><span class="line">	 <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">        String hql = <span class="string">"select dname from Dept"</span>;</span><br><span class="line">        Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">        <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">        List&lt;String&gt; dnames = query.list();</span><br><span class="line">        <span class="keyword">super</span>.getSession().close();</span><br><span class="line">        <span class="keyword">return</span> dnames;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-        <a href="/2019/07/11/面向对象-2/" class="archive-article-date">
-  	<time datetime="2019-07-11T03:18:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>description:<strong>访问限定符,访问器,this,包,面向对象思维</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/11/面向对象-2/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<h6 id="返回对象数组："><a href="#返回对象数组：" class="headerlink" title="返回对象数组："></a>返回对象数组：</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Object[]&gt; getDeptObject()&#123;</span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    String hql = <span class="string">"select dname,loc from Dept"</span>;</span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    List&lt;Object[]&gt; objects = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> objects;</span><br><span class="line">	<span class="comment">/*返回的结果大概是这个样子：</span></span><br><span class="line"><span class="comment">	*&#123;</span></span><br><span class="line"><span class="comment">	*["dname":"xxx","loc":"xxxxx"],</span></span><br><span class="line"><span class="comment">	*["dname":"xxx","loc":"xxxxx"]</span></span><br><span class="line"><span class="comment">	*&#125;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
+<h3 id="一对多，多对一关系"><a href="#一对多，多对一关系" class="headerlink" title="一对多，多对一关系"></a>一对多，多对一关系</h3><h4 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">one-to-one</span> <span class="attr">name</span>=<span class="string">"dept"</span> <span class="attr">class</span>=<span class="string">"cn.qf.hibernate.pojo.Dept"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/11/面向对象-2/">展开全文 >></a>
-        </p>
-      
+<p>默认懒加载,如果用到了dept这个数据并且在return之前把session关掉了就会报错</p>
+<h3 id="hibernate插件分页"><a href="#hibernate插件分页" class="headerlink" title="hibernate插件分页"></a>hibernate插件分页</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分页查询用户</span></span><br><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Emp&gt; <span class="title">getEmpByPages</span><span class="params">(<span class="keyword">int</span> currentPage,<span class="keyword">int</span> pageSize)</span></span>&#123;</span><br><span class="line">	<span class="comment">//计算从哪条数据开始获取</span></span><br><span class="line">	<span class="keyword">int</span> start = (currentPage-<span class="number">1</span>) * pageSize;</span><br><span class="line">    <span class="comment">//这里Dept是懒加载所以把它抛出去不用.</span></span><br><span class="line">    String hql = <span class="string">"select new Emp(empno,ename,job) from Emp"</span>;</span><br><span class="line">    <span class="comment">//↑因为这个分页是查所有数据，再进行分页，所以不适合大量数据</span></span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    <span class="comment">//设置查询的开始</span></span><br><span class="line">    query.setFirstResult(start);</span><br><span class="line">    query.setMaxResults(pageSize);</span><br><span class="line">    list&lt;Emp&gt; emps = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">	<span class="keyword">return</span> emps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h3 id="各种数据库分页"><a href="#各种数据库分页" class="headerlink" title="各种数据库分页"></a>各种数据库分页</h3><ul>
+<li><p>SQL server：top</p>
+</li>
+<li><p>mysql : limit 0,5</p>
+</li>
+<li><p>Oracle：借助于rownum伪列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 分页，每页2条数据，查询第二页的数据</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">rownum</span> r,e.* <span class="keyword">from</span> emp e) <span class="keyword">where</span> r &gt; <span class="number">2</span> <span class="keyword">and</span> r &lt; <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/10/面向对象/">面向对象</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/10/面向对象/" class="archive-article-date">
-  	<time datetime="2019-07-10T00:52:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>description:<strong>面向对象,类,方法,属性,对象,构造方法,断点调试</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/10/面向对象/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/10/面向对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/方法/">方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/09/方法/" class="archive-article-date">
-  	<time datetime="2019-07-09T00:38:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>description:<strong>方法,参数,重载</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/09/方法/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/08/数组/">数组</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/08/数组/" class="archive-article-date">
-  	<time datetime="2019-07-08T00:52:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>description:<strong>数组,二维数组,冒泡排序,选择排序</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/08/数组/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/08/数组/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-for循环-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/for循环-2/">for循环(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/06/for循环-2/" class="archive-article-date">
-  	<time datetime="2019-07-06T02:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>description:<strong>while,do-while,for-label</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/06/for循环-2/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/for循环-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-for循环-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/for循环-1/">for循环(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/for循环-1/" class="archive-article-date">
-  	<time datetime="2019-07-05T09:06:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>description:<strong>for循环,break</strong></p>
-        
-          <a class="article-more-a" href="/2019/07/05/for循环-1/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/for循环-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MarkDown基本语法及Markdownpad使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/MarkDown基本语法及Markdownpad使用/">MarkDown基本语法及Markdownpad使用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/04/MarkDown基本语法及Markdownpad使用/" class="archive-article-date">
-  	<time datetime="2019-07-04T11:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>实在太懒了不想写了=_=</p>
+<p>在这里如果直接写 rownum&gt;2，没有查询到任何记录。</p>
+<p>因为rownum总是从1开始的，第一条不满足去掉的话，第二条的rownum 又成了1。依此类推，所以永远没有满足条件的记录。</p>
+<p>可以这样理解：rownum是一个序列，是Oracle数据库从数据文件或缓冲区中读取数据的顺序。</p>
+<p>它取得第一条记录则rownum值为1，第二条为2。依次类推。</p>
+<p>rownum是在查询到的结果集后，再加上去的，它总是从1开始的 </p>
+<p>从上可得,任何时候想把rownum = 1这条记录抛弃是不对的。它在结果集中是不可或缺的。</p>
+<p>少了rownum=1就像空中楼阁一般不能存在。所以，rownum条件要包含到1。</p>
+</li>
+</ul>
 
 		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -710,136 +224,6 @@
     <div class="article-info article-info-index">
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/04/MarkDown基本语法及Markdownpad使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/04/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-04T05:21:38.183Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2019/07/04/hello-world/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/04/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-分支结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/分支结构/">分支结构</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/04/分支结构/" class="archive-article-date">
-  	<time datetime="2019-07-04T03:30:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2>
-        
-          <a class="article-more-a" href="/2019/07/04/分支结构/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -854,16 +238,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/04/分支结构/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/01/hibernate-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/11/04/集合底层部分/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          集合底层部分-ArrayList
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/01/sql优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql优化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -883,13 +335,16 @@
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
-    </nav>
+
   
+
 
 
           </div>
@@ -916,8 +371,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
