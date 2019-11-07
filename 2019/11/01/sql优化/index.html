@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>sql优化 | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如何优化数据库 优化索引、SQL语句、分析慢查询 设计表的时候严格按照数据库的设计范式来设计数据库 我们可以加上redis缓存，将经常被访问到的数据，但是不需要经常变化的数据放入至redis缓存服务器里面，这样的话能够节约太强盘I/0（昨天） 还可优化硬件，在硬件层面，我们可以使用更好的一些硬盘（固态硬盘），使用一些磁盘阵列技术（raid 0,raid1,raid5）raid0 最简单的 （两">
+  <meta name="description" content="如何优化数据库 优化索引、SQL语句、分析慢查询  设计表的时候严格按照数据库的设计范式来设计数据库">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,html,java,用户体验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql优化">
 <meta property="og:url" content="http://yoursite.com/2019/11/01/sql优化/index.html">
 <meta property="og:site_name" content="面包土豆西红柿的博客">
-<meta property="og:description" content="如何优化数据库 优化索引、SQL语句、分析慢查询 设计表的时候严格按照数据库的设计范式来设计数据库 我们可以加上redis缓存，将经常被访问到的数据，但是不需要经常变化的数据放入至redis缓存服务器里面，这样的话能够节约太强盘I/0（昨天） 还可优化硬件，在硬件层面，我们可以使用更好的一些硬盘（固态硬盘），使用一些磁盘阵列技术（raid 0,raid1,raid5）raid0 最简单的 （两">
+<meta property="og:description" content="如何优化数据库 优化索引、SQL语句、分析慢查询  设计表的时候严格按照数据库的设计范式来设计数据库">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-05T03:43:37.363Z">
+<meta property="og:updated_time" content="2019-11-07T09:08:00.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql优化">
-<meta name="twitter:description" content="如何优化数据库 优化索引、SQL语句、分析慢查询 设计表的时候严格按照数据库的设计范式来设计数据库 我们可以加上redis缓存，将经常被访问到的数据，但是不需要经常变化的数据放入至redis缓存服务器里面，这样的话能够节约太强盘I/0（昨天） 还可优化硬件，在硬件层面，我们可以使用更好的一些硬盘（固态硬盘），使用一些磁盘阵列技术（raid 0,raid1,raid5）raid0 最简单的 （两">
+<meta name="twitter:description" content="如何优化数据库 优化索引、SQL语句、分析慢查询  设计表的时候严格按照数据库的设计范式来设计数据库">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -166,21 +166,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h3 id="如何优化数据库"><a href="#如何优化数据库" class="headerlink" title="如何优化数据库"></a>如何优化数据库</h3><ol>
-<li>优化索引、SQL语句、分析慢查询</li>
-<li>设计表的时候严格按照数据库的设计范式来设计数据库</li>
-<li>我们可以加上redis缓存，将经常被访问到的数据，但是不需要经常变化的数据放入至redis缓存服务器里面，这样的话能够节约太强盘I/0（昨天）</li>
-<li>还可优化硬件，在硬件层面，我们可以使用更好的一些硬盘（固态硬盘），使用一些磁盘阵列技术（raid 0,raid1,raid5）<br>raid0 最简单的 （两块硬盘硬盘相加100G +  100 G = 200G）<br>raid1 镜像卷  把同样的数据写两份。可以随机从A/B里面读取，更高。硬盘坏了一块，数据也不会丢失<br>raid5  3块硬盘，坏了一块，另外两块也能工作。 </li>
-<li>如果以上都做速度还是慢，先不要去切分可以使用MySQL内部自带的表分区技术，来将数据分成不同的文件。这样能够让磁盘在读取的时候效率更高。</li>
-<li>可以再做垂直分表，可以将不经常读数据放到另外一个表里面去。这样能够节约磁盘IO</li>
-<li>如果发现我们的效率还是不够高，我们可以采用主从的方式来将数据读写分离。</li>
-<li>数据量特别大，我们优化起来会很困难可以使数数据库中间件的方式，将数据进行分库分表分机器。（原理，数据路由</li>
-<li>此外，我们还可以采用一些更快的存储方式，例如NoSQL来存储一些我们需要经常访问到的数据。从数据库里面取出来后，再到NoSQL取出一些其他的数据。</li>
-<li>此外还有一些表引擎 选择，参数优化和一些相关小技巧都是优化MySQL的方式</li>
-<li>我们还可以将我们的业务系统在架构级别进行缓存，静态化和分式式。</li>
-<li>不使用全文索引，使用xunsearch，ES或者云服务器上的索引。</li>
+        <h3 id="如何优化数据库"><a href="#如何优化数据库" class="headerlink" title="如何优化数据库"></a>如何优化数据库</h3><ol>
+<li><p>优化索引、SQL语句、分析慢查询</p>
+</li>
+<li><p>设计表的时候严格按照数据库的设计范式来设计数据库</p>
+<a id="more"></a>
+</li>
+<li><p>我们可以加上redis缓存，将经常被访问到的数据，但是不需要经常变化的数据放入至redis缓存服务器里面，这样的话能够节约太强盘I/0（昨天）</p>
+</li>
+<li><p>还可优化硬件，在硬件层面，我们可以使用更好的一些硬盘（固态硬盘），使用一些磁盘阵列技术（raid 0,raid1,raid5）<br>raid0 最简单的 （两块硬盘硬盘相加100G +  100 G = 200G）<br>raid1 镜像卷  把同样的数据写两份。可以随机从A/B里面读取，更高。硬盘坏了一块，数据也不会丢失<br>raid5  3块硬盘，坏了一块，另外两块也能工作。 </p>
+</li>
+<li><p>如果以上都做速度还是慢，先不要去切分可以使用MySQL内部自带的表分区技术，来将数据分成不同的文件。这样能够让磁盘在读取的时候效率更高。</p>
+</li>
+<li><p>可以再做垂直分表，可以将不经常读数据放到另外一个表里面去。这样能够节约磁盘IO</p>
+</li>
+<li><p>如果发现我们的效率还是不够高，我们可以采用主从的方式来将数据读写分离。</p>
+</li>
+<li><p>数据量特别大，我们优化起来会很困难可以使数数据库中间件的方式，将数据进行分库分表分机器。（原理，数据路由</p>
+</li>
+<li><p>此外，我们还可以采用一些更快的存储方式，例如NoSQL来存储一些我们需要经常访问到的数据。从数据库里面取出来后，再到NoSQL取出一些其他的数据。</p>
+</li>
+<li><p>此外还有一些表引擎 选择，参数优化和一些相关小技巧都是优化MySQL的方式</p>
+</li>
+<li><p>我们还可以将我们的业务系统在架构级别进行缓存，静态化和分式式。</p>
+</li>
+<li><p>不使用全文索引，使用xunsearch，ES或者云服务器上的索引。</p>
+</li>
 </ol>
 <h3 id="如何优化SQL语句"><a href="#如何优化SQL语句" class="headerlink" title="如何优化SQL语句"></a>如何优化SQL语句</h3><ol>
 <li>尽量选择较小的列–需要哪些列就使用哪些列  长度较小的列</li>
