@@ -247,9 +247,6 @@
 <p>注解本质是一个继承了Annotation的特殊接口，其具体实现类是Java运行时生成的动态代理类。我们通过反射获取注解时，返回的是Java运行时生成的动态代理对象。通过代理对象调用自定义注解的方法，会最终调用AnnotationInvocationHandler的invoke方法。该方法会从memberValues这个Map中索引出对应的值。而memberValues的来源是Java常量池。</p>
 <p>————————————————<br>版权声明：本文为CSDN博主「a745233700」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/a745233700/article/details/80963758" target="_blank" rel="noopener">https://blog.csdn.net/a745233700/article/details/80963758</a></p>
 
-		<span id="busuanzi_container_page_pv" style="float:right;color:#999;">
-  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-</span>
       
       
     </div>
