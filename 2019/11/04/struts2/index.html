@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>struts2 | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Struts2步骤环境搭建 web.xml 12345678&amp;lt;filter&amp;gt;    &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt;    &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter">
+  <meta name="description" content="Struts2">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="struts2">
 <meta property="og:url" content="http://yoursite.com/2019/11/04/struts2/index.html">
 <meta property="og:site_name" content="面包土豆西红柿的博客">
-<meta property="og:description" content="Struts2步骤环境搭建 web.xml 12345678&amp;lt;filter&amp;gt;    &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt;    &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter">
+<meta property="og:description" content="Struts2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-04T09:02:53.274Z">
+<meta property="og:updated_time" content="2019-11-05T03:39:44.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts2">
-<meta name="twitter:description" content="Struts2步骤环境搭建 web.xml 12345678&amp;lt;filter&amp;gt;    &amp;lt;filter-name&amp;gt;struts2&amp;lt;/filter-name&amp;gt;    &amp;lt;filter-class&amp;gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&amp;lt;/filter">
+<meta name="twitter:description" content="Struts2">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -166,9 +166,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h2 id="Struts2"><a href="#Struts2" class="headerlink" title="Struts2"></a>Struts2</h2><a id="more"></a>
 
-<h2 id="Struts2"><a href="#Struts2" class="headerlink" title="Struts2"></a>Struts2</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>web.xml  拦截请求   Struts2的过滤器</li>
+<li>Struts2 在服务启动过程中读取 Struts2的配置文件<pre><code>配置请求路径和类之间的映射
+            和方法之间的映射
+配置响应视图</code></pre></li>
+<li>在Struts2中每一个请求对应一个Action<br>控制器必须要实现Action接口，进而实现接口中的execute方法</li>
+</ol>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
 <li><p>web.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>struts2<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>struts2<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>

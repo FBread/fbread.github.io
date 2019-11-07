@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>hibernate-2 | 面包土豆西红柿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HQL(Hibernate Query Language)基本用法查询所有部门DeptDao.java: 12345678910111213//查询所有部门public List&amp;lt;Dept&amp;gt; getDeptList()&amp;#123;    //声明HQL		Dept是实体类的名字    String hql = &quot;from Dept&quot;;    //因为查询出来的结果是持久状态，修改对">
+  <meta name="description" content="HQL(Hibernate Query Language)">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hibernate-2">
 <meta property="og:url" content="http://yoursite.com/2019/11/01/hibernate-2/index.html">
 <meta property="og:site_name" content="面包土豆西红柿的博客">
-<meta property="og:description" content="HQL(Hibernate Query Language)基本用法查询所有部门DeptDao.java: 12345678910111213//查询所有部门public List&amp;lt;Dept&amp;gt; getDeptList()&amp;#123;    //声明HQL		Dept是实体类的名字    String hql = &quot;from Dept&quot;;    //因为查询出来的结果是持久状态，修改对">
+<meta property="og:description" content="HQL(Hibernate Query Language)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-01T07:30:51.988Z">
+<meta property="og:updated_time" content="2019-11-05T03:40:56.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hibernate-2">
-<meta name="twitter:description" content="HQL(Hibernate Query Language)基本用法查询所有部门DeptDao.java: 12345678910111213//查询所有部门public List&amp;lt;Dept&amp;gt; getDeptList()&amp;#123;    //声明HQL		Dept是实体类的名字    String hql = &quot;from Dept&quot;;    //因为查询出来的结果是持久状态，修改对">
+<meta name="twitter:description" content="HQL(Hibernate Query Language)">
   
     <link rel="alternative" href="/atom.xml" title="面包土豆西红柿的博客" type="application/atom+xml">
   
@@ -166,9 +166,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h2 id="HQL-Hibernate-Query-Language"><a href="#HQL-Hibernate-Query-Language" class="headerlink" title="HQL(Hibernate Query Language)"></a>HQL(Hibernate Query Language)</h2><a id="more"></a>
 
-<h2 id="HQL-Hibernate-Query-Language"><a href="#HQL-Hibernate-Query-Language" class="headerlink" title="HQL(Hibernate Query Language)"></a>HQL(Hibernate Query Language)</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h6 id="查询所有部门"><a href="#查询所有部门" class="headerlink" title="查询所有部门"></a>查询所有部门</h6><p>DeptDao.java:</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h6 id="查询所有部门"><a href="#查询所有部门" class="headerlink" title="查询所有部门"></a>查询所有部门</h6><p>DeptDao.java:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查询所有部门</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Dept&gt; <span class="title">getDeptList</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//声明HQL		Dept是实体类的名字</span></span><br><span class="line">    String hql = <span class="string">"from Dept"</span>;</span><br><span class="line">    <span class="comment">//因为查询出来的结果是持久状态，修改对象时会修改数据库，因此虽然是查询也需要事务</span></span><br><span class="line">    <span class="keyword">super</span>.getSession().beginTransaction();</span><br><span class="line">    <span class="comment">//执行HQL</span></span><br><span class="line">    Query query = <span class="keyword">super</span>.getSession().createQuery(hql);</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    List&lt;Dept&gt; depts = query.list();</span><br><span class="line">    <span class="keyword">super</span>.getSession().close();</span><br><span class="line">    <span class="keyword">return</span> depts;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>DeptService.java:</p>
