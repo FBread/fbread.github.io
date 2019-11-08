@@ -146,20 +146,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[随笔]191107" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[error]startup.sh启动闪退" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/[随笔]191107/">[随笔]</a>
+      <a class="article-title" href="/2019/11/08/[error]startup.sh启动闪退/">[error]startup.sh启动闪退</a>
     </h1>
   
 
         
-        <a href="/2019/11/07/[随笔]191107/" class="archive-article-date">
-  	<time datetime="2019-11-07T09:11:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
+        <a href="/2019/11/08/[error]startup.sh启动闪退/" class="archive-article-date">
+  	<time datetime="2019-11-08T03:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
 </a>
         
 		
@@ -167,7 +167,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一、首先查看端口是否被占用了，一般Tomcat的默认端口是8080，可以在管理员命令行通过“netstat -ano|findstr “8080””的命令查看当前是否有进程占用了端口。<br>1.如果端口占用了：</p>
+<p><img src="/assets/img/20181021001416935.jfif" alt="img"></p>
+<p>则根据PID（进程id号）来查这个占用端口的是哪个程序，命令是“tasklist|findstr “27900””（注意PID是最后一列的数，输入命令行的时候记得该空格的地方要空格，如下图）：</p>
+<p> <img src="/assets/img/20181021002138841.jfif" alt="img"> </p>
+<p>如上图通过PID找到占用8080端口的程序是java.exe，下面在通过命令行“taskkill /f /t /im java.exe”结束该进程（注意“/”之前都有空格）：</p>
+<p><img src="/assets/img/20181021002654300.jfif" alt="img">  </p>
+<p>至此，java.exe这个进程就被结束了。</p>
+<p>2.如果端口没被占用，则可能是第二个点引发的问题</p>
+<p>二、这个情况发生的前提是使用的Tomcat是免安装版本的。因为在启动tomcat是需要读取环境变量和配置信息，缺少了这些信息，就不能登记环境变量，导致了tomcat的闪退。<br>解决办法：<br>1：在已解压的tomcat的bin文件夹下找到startup.bat，右击-&gt;编辑。在文件头加入下面两行：<br>SET JAVA_HOME=D:\Java\jdk1.7 （java jdk目录）<br>SET TOMCAT_HOME=E:\tomcat-7.0 （解压后的tomcat文件目录）</p>
+<p>2.在已解压的tomcat的bin文件夹下找到shutdown.bat，右击-&gt;编辑。在文件头加入下面两行：<br>SET JAVA_HOME=D:\Java\jdk1.7 （java jdk目录）<br>SET TOMCAT_HOME=E:\tomcat-7.0 （解压后的tomcat文件目录）</p>
+<p>三、server.xml配置文件出错<br>这是新手最容易犯的错误，也是最不容易被发现的，以下内容敲黑板画重点！</p>
+<p>在Tomcat安装的主目录中，进入“conf”配置目录下，找到server.xml这个文件，用记事本打开。</p>
+<p> <img src="/assets/img/20181021004440704.jfif" alt="img"> </p>
+<p> <img src="/assets/img/20181021004518882.jfif" alt="img"> </p>
+<p> <img src="/assets/img/20181021005058356.png" alt="img"> </p>
+<p>找到配置web路径的地方，将其改为自己项目中web的实际路径。</p>
+<p>配置完之后保存，再重启Tomcat就可以了<br>————————————————<br>版权声明：本文为CSDN博主「SCAU林庭辉」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/scau_lth/article/details/83218335" target="_blank" rel="noopener">https://blog.csdn.net/scau_lth/article/details/83218335</a></p>
+
       
       
     </div>
@@ -178,7 +195,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/[随笔]191107/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/08/[error]startup.sh启动闪退/">展开全文 >></a>
         </p>
       
 
@@ -208,19 +225,157 @@
 
 
   
-    <article id="post-随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-nginx入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/随笔/">[随笔]191107</a>
+      <a class="article-title" href="/2019/11/08/nginx入门/">nginx入门</a>
     </h1>
   
 
         
-        <a href="/2019/11/07/随笔/" class="archive-article-date">
+        <a href="/2019/11/08/nginx入门/" class="archive-article-date">
+  	<time datetime="2019-11-08T02:18:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Nginx中文文档：<a href="http://www.nginx.cn/doc/" target="_blank" rel="noopener">http://www.nginx.cn/doc/</a></p>
+</blockquote>
+<h3 id="单应用项目开发"><a href="#单应用项目开发" class="headerlink" title="单应用项目开发"></a>单应用项目开发</h3><p>特点：<br>1.所有功能都集中在一个项目里<br>    1）职能功能：登录，注册，购买，搜索…<br>    2）代码角度：dao,service,controller,view<br>2.部署运行在一个服务器上<br>弊端:<br>tomcat200个并发请求处理，高并发请求无法满足。</p>
+<p>解决办法：集群 分布式</p>
+<h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><p>什么是集群？就是同样的事情多个人做。或者说同一个程序部署到堕胎服务器上。</p>
+<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><p>一个事情分开做，一个程序也可以拆分，就是分布式。<br>横向拆：按职能功能    登录，注册，搜索，购买<br>纵向拆：按代码：    dao，service，controller，view(前后端分离)</p>
+<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><p>实现分布式的技术</p>
+<ul>
+<li>微:一个程序只有一个功能</li>
+</ul>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><p>解压多个tomcat,修改端口号<br>分别启动tomcat<br>修改nginx下的conf文件夹里的nginx.conf配置文件,对nginx服务进行配置<br>    nginx-1.10.3\conf\nginx.conf<br><img src="/assets/img/image-20191108141953850.png" alt="image-20191108141953850"></p>
+<p><img src="/assets/img/image-20191108142042664.png" alt="image-20191108142042664"></p>
+
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/08/nginx入门/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-集合底层原理-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/08/集合底层原理-HashTable/">集合底层原理--HashTable</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/08/集合底层原理-HashTable/" class="archive-article-date">
+  	<time datetime="2019-11-08T01:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><p>底层数组+链表实现key和value不能为Null</p>
+<h3 id="Curr"><a href="#Curr" class="headerlink" title="Curr"></a>Curr</h3>
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/08/集合底层原理-HashTable/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[随笔]191107" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/[随笔]191107/">[随笔]191107</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/07/[随笔]191107/" class="archive-article-date">
   	<time datetime="2019-11-07T09:11:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
 </a>
         
@@ -229,31 +384,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    -=-今天把博客从T400搬到加了内存条和固态的小破本子上，搬家可真是累，一下午什么也没干，啊哈哈。</p>
-<p>​    不过为什么部署到git上不需要输入密码了？迷惑</p>
-
+        <p> -=-今天把博客从T400搬到加了内存条和固态的小破本子上，搬家可真是累，一下午什么也没干，啊哈哈。</p>
+<p> 不过为什么部署到git上不需要输入密码了？迷惑</p>
+        
+          <a class="article-more-a" href="/2019/11/07/[随笔]191107/#more">more >></a>
+        
       
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/随笔/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/07/[随笔]191107/">展开全文 >></a>
         </p>
       
 
@@ -636,19 +782,19 @@
 
 
   
-    <article id="post-集合底层部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-集合底层部分-ArrayList" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/集合底层部分/">集合底层部分-ArrayList</a>
+      <a class="article-title" href="/2019/11/04/集合底层部分-ArrayList/">集合底层部分-ArrayList</a>
     </h1>
   
 
         
-        <a href="/2019/11/04/集合底层部分/" class="archive-article-date">
+        <a href="/2019/11/04/集合底层部分-ArrayList/" class="archive-article-date">
   	<time datetime="2019-11-04T01:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
@@ -659,7 +805,7 @@
       
         <h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3>
         
-          <a class="article-more-a" href="/2019/11/04/集合底层部分/#more">more >></a>
+          <a class="article-more-a" href="/2019/11/04/集合底层部分-ArrayList/#more">more >></a>
         
       
       
@@ -682,151 +828,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/集合底层部分/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hibernate-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/hibernate-2/">hibernate-2</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/01/hibernate-2/" class="archive-article-date">
-  	<time datetime="2019-11-01T02:04:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HQL-Hibernate-Query-Language"><a href="#HQL-Hibernate-Query-Language" class="headerlink" title="HQL(Hibernate Query Language)"></a>HQL(Hibernate Query Language)</h2>
-        
-          <a class="article-more-a" href="/2019/11/01/hibernate-2/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/01/hibernate-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sql优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/sql优化/">sql优化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/01/sql优化/" class="archive-article-date">
-  	<time datetime="2019-11-01T01:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何优化数据库"><a href="#如何优化数据库" class="headerlink" title="如何优化数据库"></a>如何优化数据库</h3><ol>
-<li><p>优化索引、SQL语句、分析慢查询</p>
-</li>
-<li><p>设计表的时候严格按照数据库的设计范式来设计数据库</p>
-        
-          <a class="article-more-a" href="/2019/11/01/sql优化/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/01/sql优化/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/04/集合底层部分-ArrayList/">展开全文 >></a>
         </p>
       
 
@@ -978,11 +980,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DB</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">DB</a>
               </li>
             
             <div class="clearfix"></div>
