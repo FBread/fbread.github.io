@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/assets/img/image-20191108141953850.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/image-20191108142042664.png">
-<meta property="og:updated_time" content="2019-11-08T06:21:31.620Z">
+<meta property="og:updated_time" content="2019-11-08T08:42:54.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx入门">
 <meta name="twitter:description" content="Nginx中文文档：http://www.nginx.cn/doc/  单应用项目开发特点：1.所有功能都集中在一个项目里    1）职能功能：登录，注册，购买，搜索…    2）代码角度：dao,service,controller,view2.部署运行在一个服务器上弊端:tomcat200个并发请求处理，高并发请求无法满足。 解决办法：集群 分布式 集群什么是集群？就是同样的事情多个人做。或">
@@ -182,6 +182,12 @@
 </ul>
 <h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><p>解压多个tomcat,修改端口号<br>分别启动tomcat<br>修改nginx下的conf文件夹里的nginx.conf配置文件,对nginx服务进行配置<br>    nginx-1.10.3\conf\nginx.conf<br><img src="/assets/img/image-20191108141953850.png" alt="image-20191108141953850"></p>
 <p><img src="/assets/img/image-20191108142042664.png" alt="image-20191108142042664"></p>
+<p>修改tomcat的欢迎页以便观察.</p>
+<p>访问nginx的端口</p>
+<h3 id="集群的好处"><a href="#集群的好处" class="headerlink" title="集群的好处"></a>集群的好处</h3><p>处理高并发<br>宕机后,不影响整个的运行</p>
+<h3 id="Nginx工作原理"><a href="#Nginx工作原理" class="headerlink" title="Nginx工作原理"></a>Nginx工作原理</h3><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><p>正向代理:代理距离客户端近<br>反向代理:在服务端<br>其中,Nginx是反向代理</p>
+<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p>将服务器接收到的请求按照规则分发的过程,称为负载均衡.<br>nginx支持的负载均衡调度算法:<br>1.weight轮询(默认):<br>2.ip_hash:每个请求按照发起客户端的ip的hash结果进行匹配,这样的算法下一个固定ip地址的客户总会访问到同一个后端服务器,这也在一定程度上解决了集群部署环境下session共享的问题(但是不能用这个方法来解决session共享的问题)<br>即:根据ip地址的Hash值来分配处理的服务器<br>3.fair:智能调整调度算法,动态的根据后端服务器的请求处理到相应的时间进行分配<br>看起来很不错,然鹅默认不支持,如果使用需要安装模块<br>4.url_hash默认不支持</p>
+<p>### </p>
 
       
       
@@ -421,6 +427,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>
