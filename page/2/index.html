@@ -146,20 +146,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-struts2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Redis持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/struts2/">struts2</a>
+      <a class="article-title" href="/2019/11/13/Redis持久化/">Redis持久化</a>
     </h1>
   
 
         
-        <a href="/2019/11/04/struts2/" class="archive-article-date">
-  	<time datetime="2019-11-04T03:01:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+        <a href="/2019/11/13/Redis持久化/" class="archive-article-date">
+  	<time datetime="2019-11-13T01:41:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
 </a>
         
 		
@@ -167,9 +167,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Struts2"><a href="#Struts2" class="headerlink" title="Struts2"></a>Struts2</h2>
+        <h2 id="Redis内存数据的淘汰机制"><a href="#Redis内存数据的淘汰机制" class="headerlink" title="Redis内存数据的淘汰机制"></a>Redis内存数据的淘汰机制</h2><p>​    Redis内存淘汰指的是用户存储的一些键被可以被Redis主动地从实例中删除，从而产生读miss的情况.<br>​    内存的淘汰机制的初衷是为了更好地使用内存，用一定的缓存miss来换取内存的使用效率.<br>存入数据时,指定有效时间</p>
         
-          <a class="article-more-a" href="/2019/11/04/struts2/#more">more >></a>
+          <a class="article-more-a" href="/2019/11/13/Redis持久化/#more">more >></a>
         
       
       
@@ -182,7 +182,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
         		</li>
       		
 		</ul>
@@ -192,7 +192,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/struts2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/13/Redis持久化/">展开全文 >></a>
         </p>
       
 
@@ -222,20 +222,20 @@
 
 
   
-    <article id="post-集合底层部分-ArrayList" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据库三大范式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/集合底层部分-ArrayList/">集合底层部分-ArrayList</a>
+      <a class="article-title" href="/2019/11/12/数据库三大范式/">数据库三大范式</a>
     </h1>
   
 
         
-        <a href="/2019/11/04/集合底层部分-ArrayList/" class="archive-article-date">
-  	<time datetime="2019-11-04T01:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+        <a href="/2019/11/12/数据库三大范式/" class="archive-article-date">
+  	<time datetime="2019-11-12T08:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
 </a>
         
 		
@@ -243,598 +243,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3>
-        
-          <a class="article-more-a" href="/2019/11/04/集合底层部分-ArrayList/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        <p>数据库设计阶段:</p>
+<p>​    1.需求分析:收集信息,要存储的数据,E-R图(实体关系图)<br>​    2.概要设计:数据库模型图<br>​    3.详细设计:使用三大范式,规范数据库设计<br>​    4.编码:数据库实现</p>
+<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>这里用的是Visio2003</p>
+<p>E-R图分为对象(矩形),属性(椭圆),关系(菱形) 三个主要部分</p>
+<p><img src="/assets%5Cimg%5Cimage-20191114103144368.png" alt="image-20191114103144368"></p>
+<p>实体之间的映射基数:一对一,一对多,多对一,多对多</p>
+<h1 id="数据库模型图"><a href="#数据库模型图" class="headerlink" title="数据库模型图"></a>数据库模型图</h1><p><img src="/assets%5Cimg%5Cimage-20191114110239970.png" alt="image-20191114110239970"></p>
+<h1 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h1><p>基本完全参考 <a href="https://segmentfault.com/a/1190000013695030" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013695030</a> </p>
+<p>三大范式是规范数据库设计的最小要求</p>
+<h2 id="一、第一范式"><a href="#一、第一范式" class="headerlink" title="一、第一范式"></a>一、第一范式</h2><p>1NF是对属性的<strong><code>原子性</code></strong>，要求属性具有原子性，不可再分解；</p>
+<blockquote>
+<p>表：字段1、 字段2(字段2.1、字段2.2)、字段3 ……</p>
+</blockquote>
+<p>如学生（学号，姓名，性别，出生年月日），如果认为最后一列还可以再分成（出生年，出生月，出生日），它就不是一范式了，否则就是；具体问题具体分析</p>
+<h2 id="二、第二范式"><a href="#二、第二范式" class="headerlink" title="二、第二范式"></a>二、第二范式</h2><p>2NF是对记录的<strong><code>惟一性</code></strong>，要求记录有惟一标识，即实体的惟一性，即不存在部分依赖；</p>
+<blockquote>
+<p>表：学号、课程号、姓名、学分;</p>
+</blockquote>
+<p>这个表明显说明了两个事务:学生信息, 课程信息;由于非主键字段必须依赖主键，这里<strong>学分依赖课程号</strong>，<strong>姓名依赖与学号</strong>，所以不符合二范式。</p>
+<p><strong>可能会存在问题：</strong></p>
+<ul>
+<li><code>数据冗余:</code>，每条记录都含有相同信息；</li>
+<li><code>删除异常：</code>删除所有学生成绩，就把课程信息全删除了；</li>
+<li><code>插入异常：</code>学生未选课，无法记录进数据库；</li>
+<li><code>更新异常：</code>调整课程学分，所有行都调整。</li>
+</ul>
+<p><strong>正确做法:</strong><br>学生：<code>Student</code>(学号, 姓名)；<br>课程：<code>Course</code>(课程号, 学分)；<br>选课关系：<code>StudentCourse</code>(学号, 课程号, 成绩)。</p>
+<h2 id="三、第三范式"><a href="#三、第三范式" class="headerlink" title="三、第三范式"></a>三、第三范式</h2><p>3NF是对字段的<strong><code>冗余性</code></strong>，要求任何字段不能由其他字段派生出来，它要求字段没有冗余，即不存在传递依赖；</p>
+<blockquote>
+<p>表: 学号, 姓名, 年龄, 学院名称, 学院电话</p>
+</blockquote>
+<p>因为存在<strong>依赖传递</strong>: (学号) → (学生)→(所在学院) → (学院电话) 。</p>
+<p><strong>可能会存在问题：</strong></p>
+<ul>
+<li><code>数据冗余:</code>有重复值；</li>
+<li><code>更新异常：</code>有重复的冗余信息，修改时需要同时修改多条记录，否则会出现<strong>数据不一致的情况</strong> 。</li>
+</ul>
+<p><strong>正确做法：</strong></p>
+<p>学生：(学号, 姓名, 年龄, 所在学院)；</p>
+<p>学院：(学院, 电话)。</p>
+<h2 id="四、反范式化"><a href="#四、反范式化" class="headerlink" title="四、反范式化"></a>四、反范式化</h2><p><strong>一般说来，数据库只需满足第三范式（<code>3NF</code>）就行了。</strong></p>
+<p>没有冗余的数据库设计可以做到。但是，没有冗余的数据库未必是最好的数据库，有时为了提高运行效率，就必须降低范式标准，适当保留冗余数据。具体做法是：在概念数据模型设计时遵守第三范式，降低范式标准的工作放到物理数据模型设计时考虑。降低范式就是增加字段，允许冗余，<strong><code>达到以空间换时间的目的</code></strong>。</p>
+<p>〖例〗：有一张存放商品的基本表，如表1所示。“金额”这个字段的存在，表明该表的设计不满足第三范式，因为“金额”可以由“单价”乘以“数量”得到，说明“金额”是冗余字段。但是，增加“金额”这个冗余字段，可以提高查询统计的速度，这就是以空间换时间的作法。</p>
+<p>在<code>Rose 2002</code>中，规定列有两种类型：<strong>数据列</strong>和<strong>计算列</strong>。“金额”这样的列被称为“计算列”，而“单价”和“数量”这样的列被称为“数据列”。</p>
+<h2 id="五、范式化设计和反范式化设计的优缺点"><a href="#五、范式化设计和反范式化设计的优缺点" class="headerlink" title="五、范式化设计和反范式化设计的优缺点"></a>五、范式化设计和反范式化设计的优缺点</h2><h3 id="5-1-范式化"><a href="#5-1-范式化" class="headerlink" title="5.1 范式化"></a>5.1 范式化</h3><p><strong>优点：</strong></p>
+<p><img src="/assets%5Cimg%5C1291265419-5aa76970ab29f_articlex.png" alt="clipboard.png"></p>
+<p><strong>缺点：</strong></p>
+<p><img src="/assets%5Cimg%5C3541584523-5aa76a12393b0_articlex.png" alt="clipboard.png"></p>
+<h3 id="5-2-反范式化"><a href="#5-2-反范式化" class="headerlink" title="5.2 反范式化"></a>5.2 反范式化</h3><p><strong>优点：</strong></p>
+<p><img src="/assets%5Cimg%5C3600099256-5aa76b36084c1_articlex.png" alt="clipboard.png"></p>
+<p><strong>缺点：</strong></p>
+<p><img src="/assets%5Cimg%5C1354236810-5aa76b65a1bcd_articlex.png" alt="clipboard.png"></p>
+<p><strong>参考资料如下：</strong></p>
+<p><a href="http://blog.csdn.net/taorui/article/details/2418761" target="_blank" rel="noopener">1、通俗地理解数据库三个范式</a><br><a href="http://blog.csdn.net/wuyanxiaxia/article/details/22933021" target="_blank" rel="noopener">2、数据库模型设计，第一范式、第二范式、第三范式简单例子理解</a><br><a href="http://blog.csdn.net/andywuchuanlong/article/details/25913235" target="_blank" rel="noopener">3、数据库三大范式最简单的解释</a></p>
 
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/集合底层部分-ArrayList/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hibernate-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/hibernate-2/">hibernate-2</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/01/hibernate-2/" class="archive-article-date">
-  	<time datetime="2019-11-01T02:04:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HQL-Hibernate-Query-Language"><a href="#HQL-Hibernate-Query-Language" class="headerlink" title="HQL(Hibernate Query Language)"></a>HQL(Hibernate Query Language)</h2>
-        
-          <a class="article-more-a" href="/2019/11/01/hibernate-2/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/01/hibernate-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sql优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/sql优化/">sql优化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/01/sql优化/" class="archive-article-date">
-  	<time datetime="2019-11-01T01:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何优化数据库"><a href="#如何优化数据库" class="headerlink" title="如何优化数据库"></a>如何优化数据库</h3><ol>
-<li><p>优化索引、SQL语句、分析慢查询</p>
-</li>
-<li><p>设计表的时候严格按照数据库的设计范式来设计数据库</p>
-        
-          <a class="article-more-a" href="/2019/11/01/sql优化/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/01/sql优化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hibernate-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/hibernate-1/">hibernate(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/31/hibernate-1/" class="archive-article-date">
-  	<time datetime="2019-10-31T01:27:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h2>
-        
-          <a class="article-more-a" href="/2019/10/31/hibernate-1/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/31/hibernate-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/二叉树/">二叉树</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/31/二叉树/" class="archive-article-date">
-  	<time datetime="2019-10-31T00:12:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、树的定义</p>
-<p>树是一种数据结构，它是由n（n&gt;=1）个有限结点组成一个具有层次关系的集合。</p>
-        
-          <a class="article-more-a" href="/2019/10/31/二叉树/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/31/二叉树/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JMM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/JMM/">JMM</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/29/JMM/" class="archive-article-date">
-  	<time datetime="2019-10-29T12:14:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-
-
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/JMM/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/事务/">事务</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/29/事务/" class="archive-article-date">
-  	<time datetime="2019-10-29T11:10:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2>
-        
-          <a class="article-more-a" href="/2019/10/29/事务/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/事务/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-红黑树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/红黑树/">红黑树</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/29/红黑树/" class="archive-article-date">
-  	<time datetime="2019-10-29T09:17:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-
-
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/红黑树/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-oracle数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/oracle数据库/">oracle数据库</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/29/oracle数据库/" class="archive-article-date">
-  	<time datetime="2019-10-29T01:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1>
-        
-          <a class="article-more-a" href="/2019/10/29/oracle数据库/#more">more >></a>
-        
       
       
     </div>
@@ -856,7 +319,687 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/oracle数据库/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/12/数据库三大范式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-redis-哨兵模式及Java中的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/redis-哨兵模式及Java中的使用/">redis-哨兵模式及Java中的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/redis-哨兵模式及Java中的使用/" class="archive-article-date">
+  	<time datetime="2019-11-12T01:40:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <a href="https://www.jianshu.com/p/06ab9daf921d" target="_blank" rel="noopener">https://www.jianshu.com/p/06ab9daf921d</a> </p>
+<p>看看这个 <a href="https://www.jianshu.com/p/06ab9daf921d" target="_blank" rel="noopener">https://www.jianshu.com/p/06ab9daf921d</a> </p>
+        
+          <a class="article-more-a" href="/2019/11/12/redis-哨兵模式及Java中的使用/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/redis-哨兵模式及Java中的使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ThreadLocal-面试必问深度解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/ThreadLocal-面试必问深度解析/">ThreadLocal-面试必问深度解析</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/12/ThreadLocal-面试必问深度解析/" class="archive-article-date">
+  	<time datetime="2019-11-12T01:14:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>转载自 <a href="https://www.jianshu.com/p/98b68c97df9b" target="_blank" rel="noopener">https://www.jianshu.com/p/98b68c97df9b</a> </p>
+        
+          <a class="article-more-a" href="/2019/11/12/ThreadLocal-面试必问深度解析/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/12/ThreadLocal-面试必问深度解析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Redis常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/Redis常用命令/">Redis常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/11/Redis常用命令/" class="archive-article-date">
+  	<time datetime="2019-11-11T07:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <a href="http://doc.redisfans.com/" target="_blank" rel="noopener">http://doc.redisfans.com/</a> Redis 命令参考</p>
+<h3 id="2-1-通用命令"><a href="#2-1-通用命令" class="headerlink" title="2.1 通用命令"></a>2.1 通用命令</h3><h4 id="KEYS"><a href="#KEYS" class="headerlink" title="KEYS"></a>KEYS</h4><p>keys *   </p>
+<p>获取当前所有的键</p>
+<h4 id="EXISTS"><a href="#EXISTS" class="headerlink" title="EXISTS"></a>EXISTS</h4><p>exists key [key  key  …]  </p>
+<p>判断某个键是否存在，返回存在的个数，不存在返回0</p>
+<h4 id="DEL"><a href="#DEL" class="headerlink" title="DEL"></a>DEL</h4><p>del key  [key  key  …] </p>
+<p>删除键，返回被删除的个数</p>
+<h4 id="TYPE"><a href="#TYPE" class="headerlink" title="TYPE"></a>TYPE</h4><p>type key  </p>
+<p>返回一个key对应的数据类型</p>
+<h4 id="EXPIRE"><a href="#EXPIRE" class="headerlink" title="EXPIRE"></a>EXPIRE</h4><p>expire key seconds</p>
+<p>为给定 key设置生存时间，当 key过期时(生存时间为 0 )，它会被自动删除,单位是秒。</p>
+<p>类似的命令有PEXPIRE，设置单位是毫秒</p>
+<h4 id="TTL"><a href="#TTL" class="headerlink" title="TTL"></a>TTL</h4><p>ttl key</p>
+<p>以秒为单位，返回给定 key 的剩余生存时间(TTL, time to live)。</p>
+<p>当 key 不存在时，返回 -2 。</p>
+<p>当 key存在但没有设置剩余生存时间时，返回 -1 。</p>
+<p>否则，以秒为单位，返回 key的剩余生存时间。</p>
+<p>类似命令有PTTL，单位是毫秒</p>
+<h4 id="RENAME"><a href="#RENAME" class="headerlink" title="RENAME"></a>RENAME</h4><p>rename key new key</p>
+<p>将 key改名为 newkey 。</p>
+<p>当 key和 newkey 相同，或者 key 不存在时，返回一个错误。</p>
+<p>当 newkey已经存在时， RENAME 命令将覆盖旧值。</p>
+<h4 id="SORT"><a href="#SORT" class="headerlink" title="SORT"></a>SORT</h4><p>SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern …]] [ASC | DESC] [ALPHA] [STORE destination]<br>返回或保存给定列表、集合、有序集合 key 中经过排序的元素。<br>排序默认以数字作为对象，值被解释为双精度浮点数，然后进行比较。</p>
+<h4 id="FLUSHDB-慎用"><a href="#FLUSHDB-慎用" class="headerlink" title="FLUSHDB(慎用)"></a>FLUSHDB(慎用)</h4><p>清空redis所有数据</p>
+<h3 id="2-2-String（字符串）"><a href="#2-2-String（字符串）" class="headerlink" title="2.2 String（字符串）"></a>2.2 String（字符串）</h3><p>Redis字符串是以key-value键值形式存储数据的。操作字符串使用set和get命令</p>
+<h4 id="SET"><a href="#SET" class="headerlink" title="SET"></a>SET</h4><p>添加值使用set命令</p>
+<p>set key value</p>
+<h4 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h4><p>查询值使用get命令</p>
+<p>get key</p>
+<p>如图：</p>
+<p><img src="/assets/img/1556256749737.png" alt="1556256749737"></p>
+<p>redis中没有修改，给已经存在的key存入新的值，就会覆盖掉原来的值：</p>
+<p><img src="/assetsimg/1556256771880.png" alt="1556256771880"></p>
+<p>一个键最多能存512M的数据</p>
+<h4 id="INCR-和-INCRBY"><a href="#INCR-和-INCRBY" class="headerlink" title="INCR 和 INCRBY"></a>INCR 和 INCRBY</h4><p>incr key  实现整数值加1。如果value不是数字类型，则报错</p>
+<p>incrby key increment  整数值增加increment</p>
+<h4 id="DECR-和-DECRBY"><a href="#DECR-和-DECRBY" class="headerlink" title="DECR 和 DECRBY"></a>DECR 和 DECRBY</h4><p>decr key  实现整数值减1</p>
+<p>decrby key increment   整数值增减increment</p>
+<h4 id="INCRBYFLOAT"><a href="#INCRBYFLOAT" class="headerlink" title="INCRBYFLOAT"></a>INCRBYFLOAT</h4><p>incrbyfloat key increment  数值增加一个浮点数</p>
+<h4 id="APPEND"><a href="#APPEND" class="headerlink" title="APPEND"></a>APPEND</h4><p>append key value 在字符串后追加value</p>
+<h4 id="STRLEN"><a href="#STRLEN" class="headerlink" title="STRLEN"></a>STRLEN</h4><p>strlen key 返回value的长度，不存在返回0</p>
+<h4 id="MGET-和-MSET"><a href="#MGET-和-MSET" class="headerlink" title="MGET 和 MSET"></a>MGET 和 MSET</h4><p>mget key [key key ]  同时查询多个key(用空格分割)</p>
+<p>mset key value [key value …]同时设置多个key-value</p>
+<h4 id="SETNX"><a href="#SETNX" class="headerlink" title="SETNX"></a>SETNX</h4><p>setnx key value</p>
+<p>用法同set</p>
+<p>将 key 的值设为 value ，当且仅当 key 不存在，若给定的 key 已经存在，则 SETNX 不做任何动作。</p>
+<p>成功返回1，否则返回0</p>
+<h4 id="SETEX"><a href="#SETEX" class="headerlink" title="SETEX"></a>SETEX</h4><p>setex key seconds value</p>
+<p>设置key的值为value,并将 key 的生存时间设为 seconds (以秒为单位)。</p>
+<p>如果 key 已经存在， SETEX 命令将覆写旧值。</p>
+<h4 id="GETRANGE"><a href="#GETRANGE" class="headerlink" title="GETRANGE"></a><strong>GETRANGE</strong></h4><p>getrange key start end<br>返回 key中字符串值的子字符串，字符串的截取范围由 start 和 end 两个偏移量决定(包括 start和 end 在内)。<br>负数偏移量表示从字符串最后开始计数， -1 表示最后一个字符， -2 表示倒数第二个，以此类推。</p>
+<h3 id="2-3-Hash（哈希表）"><a href="#2-3-Hash（哈希表）" class="headerlink" title="2.3 Hash（哈希表）"></a>2.3 Hash（哈希表）</h3><p>hash是以key-field-value的形式存储数据的。一个key下面有多个field，每个field有一个对应的值</p>
+<h4 id="HSET"><a href="#HSET" class="headerlink" title="HSET"></a>HSET</h4><p>hset key field value 设置key中某字段值</p>
+<h4 id="HGET"><a href="#HGET" class="headerlink" title="HGET"></a>HGET</h4><p>hget key field  查询key中某字段值</p>
+<h4 id="HDEL"><a href="#HDEL" class="headerlink" title="HDEL"></a>HDEL</h4><p>hdel key field  删除key中某个字段</p>
+<p><img src="/assetsimg/1556257701992.png" alt="1556257701992"></p>
+<h4 id="HMSET"><a href="#HMSET" class="headerlink" title="HMSET"></a>HMSET</h4><p>hmset key field value [field value …] 一次设置key的多个field值</p>
+<h4 id="HMGET"><a href="#HMGET" class="headerlink" title="HMGET"></a>HMGET</h4><p>hmget key field [field …] 查询key的多个field</p>
+<h4 id="HGETALL"><a href="#HGETALL" class="headerlink" title="HGETALL"></a>HGETALL</h4><p>hgetall key 返回key中所有字段和字段值</p>
+<h4 id="HEXISTS"><a href="#HEXISTS" class="headerlink" title="HEXISTS"></a>HEXISTS</h4><p>hexists key field 判断是否存在，存在返回1，否则是0</p>
+<h4 id="HSETNX"><a href="#HSETNX" class="headerlink" title="HSETNX"></a>HSETNX</h4><p>hsetnx key field value 和hset类似，不同的是要求这个key-field不存在</p>
+<h4 id="HINCRBY"><a href="#HINCRBY" class="headerlink" title="HINCRBY"></a>HINCRBY</h4><p>hincrby key field increment  同incrby,给field自增，自减increment是负数</p>
+<h4 id="HKEYS"><a href="#HKEYS" class="headerlink" title="HKEYS"></a>HKEYS</h4><p>hkeys key 返回key下所有的field</p>
+<h4 id="HVALS"><a href="#HVALS" class="headerlink" title="HVALS"></a>HVALS</h4><p>hvals key 返回key下所有的字段值</p>
+<h4 id="HLEN"><a href="#HLEN" class="headerlink" title="HLEN"></a>HLEN</h4><p>hlen key 返回key中总字段数</p>
+<h4 id="HINCRBYFLOAT"><a href="#HINCRBYFLOAT" class="headerlink" title="HINCRBYFLOAT"></a>HINCRBYFLOAT</h4><p>用法同HINCRBY，为哈希表 key 中的域 field 加上浮点数增量 increment 。</p>
+<p>如果哈希表中没有域 field ，那么 HINCRBYFLOAT 会先将域 field 的值设为 0 ，然后再执行加法操作。</p>
+<p>如果键 key 不存在，那么 HINCRBYFLOAT 会先创建一个哈希表，再创建域 field ，最后再执行加法操作。</p>
+<h3 id="2-4-Set（集合）"><a href="#2-4-Set（集合）" class="headerlink" title="2.4 Set（集合）"></a>2.4 Set（集合）</h3><p>set是无序集合，集合中元素值唯一（不允许有重复元素）。</p>
+<p><img src="/assetsimg/1556257733103.png" alt="1556257733103"></p>
+<h4 id="SADD"><a href="#SADD" class="headerlink" title="SADD"></a>SADD</h4><p>sadd key member [member …] 向集合中添加元素</p>
+<h4 id="SREM"><a href="#SREM" class="headerlink" title="SREM"></a>SREM</h4><p>srem key member [member …] 删除集合中元素</p>
+<h4 id="SMEMBERS"><a href="#SMEMBERS" class="headerlink" title="SMEMBERS"></a>SMEMBERS</h4><p>smembers key 返回集合中所有元素</p>
+<h4 id="SISMEMBER"><a href="#SISMEMBER" class="headerlink" title="SISMEMBER"></a>SISMEMBER</h4><p>sismember key member 判断是否存在，存在返回1，否则是0</p>
+<h4 id="SCARD"><a href="#SCARD" class="headerlink" title="SCARD"></a>SCARD</h4><p>scard key 返回集合中元素个数</p>
+<h4 id="SDIFF-SINTER-SUNION"><a href="#SDIFF-SINTER-SUNION" class="headerlink" title="SDIFF/SINTER/SUNION"></a>SDIFF/SINTER/SUNION</h4><p>sdiff key [key]  返回A集合中有，B集合中没有的数据，即A-B</p>
+<p>sinter key [key] 返回A和B中都由的数据，交集</p>
+<p>sunion key [key] 返回A和B中所有元素，重复元素只出现一次，并集</p>
+<h4 id="SDIFFSTORE-SINTERSTORE-SUNIONSTORE"><a href="#SDIFFSTORE-SINTERSTORE-SUNIONSTORE" class="headerlink" title="SDIFFSTORE/SINTERSTORE/SUNIONSTORE"></a>SDIFFSTORE/SINTERSTORE/SUNIONSTORE</h4><p>sdiffstore destination key [key …] ，差运算并存储到destination新集合中</p>
+<p>sinterstore destination key [key …]，交运算并存储到destination新集合中</p>
+<p>sunionstore destination key [key …]，并运算并存储到destination新集合中</p>
+<h4 id="SRANDMEMBER"><a href="#SRANDMEMBER" class="headerlink" title="SRANDMEMBER"></a>SRANDMEMBER</h4><p>srandmember key [count] 随机输出count个元素，默认是1个，count小于0可能出现重复元素，count大于0是不重复的</p>
+<h4 id="SPOP"><a href="#SPOP" class="headerlink" title="SPOP"></a>SPOP</h4><p>spop key [count] 随机弹出count个元素，弹出的元素将不在集合中</p>
+<h3 id="2-5-List-列表"><a href="#2-5-List-列表" class="headerlink" title="2.5 List (列表)"></a>2.5 List (列表)</h3><p>列表是一个线性集合</p>
+<h4 id="LPUSH-RPUSH-LPUSHX"><a href="#LPUSH-RPUSH-LPUSHX" class="headerlink" title="LPUSH/RPUSH/LPUSHX"></a>LPUSH/RPUSH/LPUSHX</h4><p>使用lpush或者rpush添加数据，lpush是从列表头插入，使用rpush是从结尾插入。</p>
+<p><img src="/assetsimg/1556257653236.png" alt="1556257653236"></p>
+<p>LPUSHX key value</p>
+<p>将值 value 插入到列表 key 的表头，当且仅当 key 存在并且是一个列表。</p>
+<h4 id="LRANGE"><a href="#LRANGE" class="headerlink" title="LRANGE"></a>LRANGE</h4><p>lrange用于遍历列表，lrange key 0 -1是返回整个列表</p>
+<p><img src="/assetsimg/1556257670997.png" alt="1556257670997"></p>
+<p>一个列表最多可以存2^32-1个数据</p>
+<h4 id="LPOP-RPOP"><a href="#LPOP-RPOP" class="headerlink" title="LPOP/RPOP"></a>LPOP/RPOP</h4><p>lpop key 移除左边第一个元素</p>
+<p>rpop key 移除右边第一个元素</p>
+<h4 id="LLEN"><a href="#LLEN" class="headerlink" title="LLEN"></a>LLEN</h4><p>llen key 返回列表中元素个数</p>
+<h4 id="LINDEX"><a href="#LINDEX" class="headerlink" title="LINDEX"></a>LINDEX</h4><p>lindex key index 返回第index个位置的数字，-1表示最右边，0是最左边</p>
+<h4 id="LSET"><a href="#LSET" class="headerlink" title="LSET"></a>LSET</h4><p>lset key index value 把列表的第index个元素设置成value</p>
+<h4 id="LTRIM"><a href="#LTRIM" class="headerlink" title="LTRIM"></a>LTRIM</h4><p>ltrim key start stop 保留列表中的片段(多余的就删了)</p>
+<h4 id="RPOPLPUSH"><a href="#RPOPLPUSH" class="headerlink" title="RPOPLPUSH"></a>RPOPLPUSH</h4><p>rpoplpush source target 从source移动到target，一次操作一个元素</p>
+<h3 id="2-6-Zset-Sorted-Set-有序集合"><a href="#2-6-Zset-Sorted-Set-有序集合" class="headerlink" title="2.6 Zset (Sorted Set 有序集合)"></a>2.6 Zset (Sorted Set 有序集合)</h3><p>zset是有序集合：</p>
+<h4 id="ZADD"><a href="#ZADD" class="headerlink" title="ZADD"></a>ZADD</h4><p>zadd key score member  用于添加元素，member按score排序，score相同，按member排序</p>
+<p><img src="/assetsimg/1556257764812.png" alt="1556257764812"></p>
+<h4 id="ZSCORE"><a href="#ZSCORE" class="headerlink" title="ZSCORE"></a>ZSCORE</h4><p>zscore key member 返回member的score</p>
+<h4 id="ZRANGE"><a href="#ZRANGE" class="headerlink" title="ZRANGE"></a>ZRANGE</h4><p>zrange key start end [withscores] </p>
+<p>返回成员，score升序排列，加withscores会返回score</p>
+<p><img src="/assetsimg/1556257786012.png" alt="1556257786012"></p>
+<h4 id="ZREVRANGE"><a href="#ZREVRANGE" class="headerlink" title="ZREVRANGE"></a>ZREVRANGE</h4><p>zrevrange start end [withscores] 同zrange，score降序排列</p>
+<h4 id="ZRANGEEBYSCORE"><a href="#ZRANGEEBYSCORE" class="headerlink" title="ZRANGEEBYSCORE"></a>ZRANGEEBYSCORE</h4><p>zrangebyscore key min max [withscores] [limit offest count] 按score范围返回元素，从左偏移offset个元素，返回前count个</p>
+<h4 id="ZINCRYBY"><a href="#ZINCRYBY" class="headerlink" title="ZINCRYBY"></a>ZINCRYBY</h4><p>zincrby key incremtment member 增加元素score</p>
+<h4 id="ZCOUNT"><a href="#ZCOUNT" class="headerlink" title="ZCOUNT"></a>ZCOUNT</h4><p>zcount key min max 计算score在min到max之间的元素个数</p>
+<h4 id="ZRANK"><a href="#ZRANK" class="headerlink" title="ZRANK"></a>ZRANK</h4><p>zrank key member 返回集合中member的索引，score升序</p>
+<h4 id="ZREVRANK"><a href="#ZREVRANK" class="headerlink" title="ZREVRANK"></a>ZREVRANK</h4><p>zrevrank key member 返回集合中member的索引，score降序</p>
+
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/11/Redis常用命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Redis入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/Redis入门/">Redis入门</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/11/Redis入门/" class="archive-article-date">
+  	<time datetime="2019-11-11T00:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <a href="https://cloud.tencent.com/developer/doc/1203" target="_blank" rel="noopener">https://cloud.tencent.com/developer/doc/1203</a> </p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>由意大利人开发的一款内存高速缓存数据库.是一个开源的、使用C语言编写的、支持网络交互的、可基于内存也可持久化的Key-Value数据库。<br>支持丰富的数据类型:String,list,set,zset(sorted set),hash等</p>
+        
+          <a class="article-more-a" href="/2019/11/11/Redis入门/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/11/Redis入门/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-emacs安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/08/emacs安装/">emacs安装</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/08/emacs安装/" class="archive-article-date">
+  	<time datetime="2019-11-08T07:21:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <a href="https://www.cnblogs.com/felixwang2/p/10281092.html" target="_blank" rel="noopener">https://www.cnblogs.com/felixwang2/p/10281092.html</a> </p>
+<p> <a href="https://ruby-china.org/topics/37062" target="_blank" rel="noopener">https://ruby-china.org/topics/37062</a> </p>
+<p>看这两个</p>
+        
+          <a class="article-more-a" href="/2019/11/08/emacs安装/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/08/emacs安装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[error]startup.sh启动闪退" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/08/[error]startup.sh启动闪退/">[error]startup.sh启动闪退</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/08/[error]startup.sh启动闪退/" class="archive-article-date">
+  	<time datetime="2019-11-08T03:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、首先查看端口是否被占用了，一般Tomcat的默认端口是8080，可以在管理员命令行通过“netstat -ano|findstr “8080””的命令查看当前是否有进程占用了端口。</p>
+        
+          <a class="article-more-a" href="/2019/11/08/[error]startup.sh启动闪退/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/08/[error]startup.sh启动闪退/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nginx入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/08/nginx入门/">nginx入门</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/08/nginx入门/" class="archive-article-date">
+  	<time datetime="2019-11-08T02:18:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Nginx中文文档：<a href="http://www.nginx.cn/doc/" target="_blank" rel="noopener">http://www.nginx.cn/doc/</a></p>
+</blockquote>
+<h3 id="单应用项目开发"><a href="#单应用项目开发" class="headerlink" title="单应用项目开发"></a>单应用项目开发</h3><p>特点：<br>1.所有功能都集中在一个项目里<br>    1）职能功能：登录，注册，购买，搜索…<br>    2）代码角度：dao,service,controller,view<br>2.部署运行在一个服务器上<br>弊端:<br>tomcat200个并发请求处理，高并发请求无法满足。</p>
+<p>解决办法：集群 分布式</p>
+        
+          <a class="article-more-a" href="/2019/11/08/nginx入门/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/08/nginx入门/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-集合底层原理-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/08/集合底层原理-HashTable/">集合底层原理--HashTable</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/08/集合底层原理-HashTable/" class="archive-article-date">
+  	<time datetime="2019-11-08T01:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><p>底层数组+链表实现key和value不能为Null</p>
+        
+          <a class="article-more-a" href="/2019/11/08/集合底层原理-HashTable/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/08/集合底层原理-HashTable/">展开全文 >></a>
         </p>
       
 
@@ -888,7 +1031,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1000,15 +1143,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1016,7 +1155,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
             
             <div class="clearfix"></div>

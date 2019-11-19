@@ -146,20 +146,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Redis入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post- RabbitMQ环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/11/Redis入门/">Redis入门</a>
+      <a class="article-title" href="/2019/11/19/ RabbitMQ环境配置/">RabbitMQ环境配置</a>
     </h1>
   
 
         
-        <a href="/2019/11/11/Redis入门/" class="archive-article-date">
-  	<time datetime="2019-11-11T00:34:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
+        <a href="/2019/11/19/ RabbitMQ环境配置/" class="archive-article-date">
+  	<time datetime="2019-11-19T01:48:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
 </a>
         
 		
@@ -167,51 +167,209 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> <a href="https://cloud.tencent.com/developer/doc/1203" target="_blank" rel="noopener">https://cloud.tencent.com/developer/doc/1203</a> </p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>由意大利人开发的一款内存高速缓存数据库,使用C语言编写,是一个key-value存储系统.<br>支持丰富的数据类型:String,list,set,zset(sorted set),hash等</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>Redis以内存作为数据存储介质,所以读写数据的效率极高,远远超过数据库.</li>
-<li>以设置和读取一个256字节字符串为例,它的读取速度可高达110000次/s,写速度高达81000次/秒.</li>
-<li>Redis和Memcache不同的是,存储在Redis中的数据是持久化的,断电或重启后,数据也不会丢失.</li>
-<li>Redistribution的存储分为内存存储,磁盘存储和log文件三部分.<br>  重启后,Redis可以从磁盘 重新将数据加载到内存中,这些可以通过配置文件配置.</li>
-<li>Redis支持主从模式,可以配置集群,这样更利于支撑起大型的项目,这也是Redis的一大亮点.</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>众多语言都支持Redis,因为Redis交换数据快,所以在服务器中常用来存储一些需要频繁调取的数据,这样可以大大节省系统直接读取磁盘来获得数据的I/O开销,更重要的是可以极大提升速度.</li>
-<li>例如一个大型网站每天有100万人访问,其中一个新闻板块,如果直接从数据库查询,那么一天就要多消耗100万次数据请求.这个就可以用Redis完成,将这种数据存到Redis(内存)中</li>
-</ul>
-<h3 id="windows下使用Redis"><a href="#windows下使用Redis" class="headerlink" title="windows下使用Redis"></a>windows下使用Redis</h3><p>1.下载<br>2.启动    <code>./redis-server.exe redis.windows.conf</code></p>
-<p><img src="/assets/img/image-20191111104719331.png" alt="image-20191111104719331"></p>
-<p>3.下载并安装Redis Desktop Manager(图形界面管理,也可以使用自带命令窗口,见下集群),连接Redis</p>
-<img src="/assets/img/image-20191111104928641.png" alt="image-20191111104928641" style="zoom:50%;">
+        <h2 id="RabbitMQ环境配置"><a href="#RabbitMQ环境配置" class="headerlink" title="RabbitMQ环境配置"></a>RabbitMQ环境配置</h2><p>1、RabbitMQ安装前首先要安装一个依赖环境erlang</p>
+<p>下载地址：<a href="http://www.erlang.org/download.html" target="_blank" rel="noopener">http://www.erlang.org/download.html</a></p>
+<p>下载后默认进行安装即可</p>
+        
+          <a class="article-more-a" href="/2019/11/19/ RabbitMQ环境配置/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-<img src="/assets/img/image-20191111105011471.png" alt="image-20191111105011471" style="zoom:50%;">
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/19/ RabbitMQ环境配置/">展开全文 >></a>
+        </p>
+      
 
-<p>4.添加数据</p>
-<img src="/assets/img/image-20191111105715961.png" alt="image-20191111105715961" style="zoom:50%;">
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
 
-<p>右键add new key–&gt;    <img src="/assets/img/image-20191111105624517.png" alt="image-20191111105624517" style="zoom:50%;"></p>
-<h3 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h3><p>复制三份作为伪集群</p>
-<p><img src="/assets/img/image-20191111110056715.png" alt="image-20191111110056715"></p>
-<p>redis.windows.conf修改配置信息</p>
-<p>ip地址(不需要修改):</p>
-<p><img src="/assets/img/image-20191111110220526.png" alt="image-20191111110220526"></p>
-<p>端口号(改成三个不同端口号):</p>
-<p><img src="/assets/img/image-20191111110311025.png" alt="image-20191111110311025"></p>
-<p> 指定本地数据库文件名</p>
-<p><img src="/assets/img/image-20191111110549033.png" alt="image-20191111110549033"></p>
-<p>主从配置:设置主服务的ip:127.0.0.1,port:6381</p>
-<p><img src="/assets/img/image-20191111111058246.png" alt="image-20191111111058246"></p>
-<p>启动服务.(双击启动默认6739,可以修改系统环境变量)</p>
-<p>使用自带命令窗口:</p>
-<p>切换到redis目录下运行 <code>redis-cli.exe -h 127.0.0.1 -p 6379</code> 。</p>
-<p><img src="/assets/img/image-20191111113733236.png" alt="image-20191111113733236"></p>
-<p>设置键值对 set key value</p>
-<p>取出键值对 get key</p>
-<p><img src="/assets/img/image-20191111114006771.png" alt="image-20191111114006771"></p>
-<p>主从集群:只能通过主服务器写入数据,从服务器只能读取数据.当主服务挂掉后,集群中将无法写入数据.</p>
-<p>从服务只能读不能写:</p>
-<p><img src="/assets/img/image-20191111114219193.png" alt="image-20191111114219193"></p>
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MQ消息队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/18/MQ消息队列/">MQ消息队列</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/18/MQ消息队列/" class="archive-article-date">
+  	<time datetime="2019-11-18T07:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-18</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>消息队列中间件是分布式系统中重要的组件，主要解决应用耦合，异步消息，流量削锋等问题。</p>
+<p>实现高性能，高可用，可伸缩和最终一致性架构。</p>
+<p>使用较多的消息队列有ActiveMQ，RabbitMQ，ZeroMQ，Kafka，MetaMQ，RocketMQ。</p>
+        
+          <a class="article-more-a" href="/2019/11/18/MQ消息队列/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/18/MQ消息队列/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-idea连数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/idea连数据库/">idea连数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/idea连数据库/" class="archive-article-date">
+  	<time datetime="2019-11-15T09:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>idea连数据库时超时错误</p>
+<p>将url改为:</p>
+<p><code>jdbc:mysql://localhost:3306/webuser?useSSL=false&amp;serverTimezone=Hongkong&amp;characterEncoding=utf-8&amp;autoReconnect=true</code></p>
+
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/15/idea连数据库/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-【ZOOKEEPER】报错-DZOOKEEPER-LOG-DIR-XXX-不是内部或外部命令，也不是可运行的程序-或批处理文件的解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/【ZOOKEEPER】报错-DZOOKEEPER-LOG-DIR-XXX-不是内部或外部命令，也不是可运行的程序-或批处理文件的解决/">【ZOOKEEPER】报错-DZOOKEEPER.LOG.DIR=XXX... 不是内部或外部命令，也不是可运行的程序 或批处理文件的解决</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/【ZOOKEEPER】报错-DZOOKEEPER-LOG-DIR-XXX-不是内部或外部命令，也不是可运行的程序-或批处理文件的解决/" class="archive-article-date">
+  	<time datetime="2019-11-15T08:18:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>感谢大佬:<a href="http://www.freesion.com/article/235010523/" target="_blank" rel="noopener">http://www.freesion.com/article/235010523/</a></p>
+<p><img src="/assets/img/image-20191115162052881.png" alt="image-20191115162052881"></p>
+<p> 修改zkServer.cmd文件 </p>
+<p><img src="/assets%5Cimg%5Cimage-20191115162256082.png" alt="image-20191115162256082"></p>
 
       
       
@@ -224,7 +382,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">error</a>
         		</li>
       		
 		</ul>
@@ -234,7 +392,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/11/Redis入门/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/15/【ZOOKEEPER】报错-DZOOKEEPER-LOG-DIR-XXX-不是内部或外部命令，也不是可运行的程序-或批处理文件的解决/">展开全文 >></a>
         </p>
       
 
@@ -264,20 +422,20 @@
 
 
   
-    <article id="post-emacs安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-dubbo-zookeeper聚合项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/08/emacs安装/">emacs安装</a>
+      <a class="article-title" href="/2019/11/15/dubbo-zookeeper聚合项目/">dubbo&amp;zookeeper聚合项目</a>
     </h1>
   
 
         
-        <a href="/2019/11/08/emacs安装/" class="archive-article-date">
-  	<time datetime="2019-11-08T07:21:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+        <a href="/2019/11/15/dubbo-zookeeper聚合项目/" class="archive-article-date">
+  	<time datetime="2019-11-15T02:22:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
         
 		
@@ -285,99 +443,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> <a href="https://www.cnblogs.com/felixwang2/p/10281092.html" target="_blank" rel="noopener">https://www.cnblogs.com/felixwang2/p/10281092.html</a> </p>
-<p> <a href="https://ruby-china.org/topics/37062" target="_blank" rel="noopener">https://ruby-china.org/topics/37062</a> </p>
-<p>看这两个</p>
-
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/08/emacs安装/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[error]startup.sh启动闪退" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/08/[error]startup.sh启动闪退/">[error]startup.sh启动闪退</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/08/[error]startup.sh启动闪退/" class="archive-article-date">
-  	<time datetime="2019-11-08T03:39:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、首先查看端口是否被占用了，一般Tomcat的默认端口是8080，可以在管理员命令行通过“netstat -ano|findstr “8080””的命令查看当前是否有进程占用了端口。<br>1.如果端口占用了：</p>
-<p><img src="/assets/img/20181021001416935.jfif" alt="img"></p>
-<p>则根据PID（进程id号）来查这个占用端口的是哪个程序，命令是“tasklist|findstr “27900””（注意PID是最后一列的数，输入命令行的时候记得该空格的地方要空格，如下图）：</p>
-<p> <img src="/assets/img/20181021002138841.jfif" alt="img"> </p>
-<p>如上图通过PID找到占用8080端口的程序是java.exe，下面在通过命令行“taskkill /f /t /im java.exe”结束该进程（注意“/”之前都有空格）：</p>
-<p><img src="/assets/img/20181021002654300.jfif" alt="img">  </p>
-<p>至此，java.exe这个进程就被结束了。</p>
-<p>2.如果端口没被占用，则可能是第二个点引发的问题</p>
-<p>二、这个情况发生的前提是使用的Tomcat是免安装版本的。因为在启动tomcat是需要读取环境变量和配置信息，缺少了这些信息，就不能登记环境变量，导致了tomcat的闪退。<br>解决办法：<br>1：在已解压的tomcat的bin文件夹下找到startup.bat，右击-&gt;编辑。在文件头加入下面两行：<br>SET JAVA_HOME=D:\Java\jdk1.7 （java jdk目录）<br>SET TOMCAT_HOME=E:\tomcat-7.0 （解压后的tomcat文件目录）</p>
-<p>2.在已解压的tomcat的bin文件夹下找到shutdown.bat，右击-&gt;编辑。在文件头加入下面两行：<br>SET JAVA_HOME=D:\Java\jdk1.7 （java jdk目录）<br>SET TOMCAT_HOME=E:\tomcat-7.0 （解压后的tomcat文件目录）</p>
-<p>三、server.xml配置文件出错<br>这是新手最容易犯的错误，也是最不容易被发现的，以下内容敲黑板画重点！</p>
-<p>在Tomcat安装的主目录中，进入“conf”配置目录下，找到server.xml这个文件，用记事本打开。</p>
-<p> <img src="/assets/img/20181021004440704.jfif" alt="img"> </p>
-<p> <img src="/assets/img/20181021004518882.jfif" alt="img"> </p>
-<p> <img src="/assets/img/20181021005058356.png" alt="img"> </p>
-<p>找到配置web路径的地方，将其改为自己项目中web的实际路径。</p>
-<p>配置完之后保存，再重启Tomcat就可以了<br>————————————————<br>版权声明：本文为CSDN博主「SCAU林庭辉」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/scau_lth/article/details/83218335" target="_blank" rel="noopener">https://blog.csdn.net/scau_lth/article/details/83218335</a></p>
+        <p>父工程不运行任何程序,只做版本控制</p>
+<p>新建maven项目<br>在pom中添加<code>&lt;packaging&gt;pom&lt;/packaging&gt;</code><br>新建modules<br>interface:<br>    约束方法 jar</p>
+<p>provider:war</p>
+<p>​    业务逻辑处理,数据访问</p>
 
       
       
@@ -389,7 +458,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/08/[error]startup.sh启动闪退/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/15/dubbo-zookeeper聚合项目/">展开全文 >></a>
         </p>
       
 
@@ -419,20 +488,20 @@
 
 
   
-    <article id="post-nginx入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1115面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/08/nginx入门/">nginx入门</a>
+      <a class="article-title" href="/2019/11/15/1115面试题/">1115面试题</a>
     </h1>
   
 
         
-        <a href="/2019/11/08/nginx入门/" class="archive-article-date">
-  	<time datetime="2019-11-08T02:18:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+        <a href="/2019/11/15/1115面试题/" class="archive-article-date">
+  	<time datetime="2019-11-15T01:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
         
 		
@@ -440,26 +509,97 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>Nginx中文文档：<a href="http://www.nginx.cn/doc/" target="_blank" rel="noopener">http://www.nginx.cn/doc/</a></p>
-</blockquote>
-<h3 id="单应用项目开发"><a href="#单应用项目开发" class="headerlink" title="单应用项目开发"></a>单应用项目开发</h3><p>特点：<br>1.所有功能都集中在一个项目里<br>    1）职能功能：登录，注册，购买，搜索…<br>    2）代码角度：dao,service,controller,view<br>2.部署运行在一个服务器上<br>弊端:<br>tomcat200个并发请求处理，高并发请求无法满足。</p>
-<p>解决办法：集群 分布式</p>
-<h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><p>什么是集群？就是同样的事情多个人做。或者说同一个程序部署到堕胎服务器上。</p>
-<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><p>一个事情分开做，一个程序也可以拆分，就是分布式。<br>横向拆：按职能功能    登录，注册，搜索，购买<br>纵向拆：按代码：    dao，service，controller，view(前后端分离)</p>
-<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><p>实现分布式的技术</p>
-<ul>
-<li>微:一个程序只有一个功能</li>
+        <p>多线程，io/nio，jvm，集合底层，tcp/ip协议，socket，websocket。spring，springmvc，xml，设计模式，eclipse plugin开发，数据库，前端（基本没有什么人问，面的后端开发，也许熟悉前端也是加分项）了解netty、mybatis、redis<br> springmvc，mybatis，redis，activemq，阿里云对象存储 </p>
+<p> 多线程，线程池拒绝策略，jvm调优，tomcat调优，消息中间件，分布式，集群，zookeeper，微服务。sql左连接右连接区别，存储过程。linux </p>
+<p>stringbuffer和stringbuild区别，stringbuild线程不安全体现在哪，你对线程安不安全怎么理解（这个问题发挥空间很大，关键词:全局变量、JVM运行时数据区、可见性、原子性、锁、甚至可以说到多核cpu硬件层面(我是不会的)），arraylist和linkedlist区别，spring ioc，aop作用，原理。springmvc执行流程（这种问题最扯淡），hashmap原理（问的很浅，底层结构，答数组+链表/红黑树。他就没问了），hashmap,hashtable,concurrentHashMap(大致基本说下，他就不问了),hashmap遍历。对大数据有关技术了解多少(答:了解一点，听过hadoop)。其它忘了，总体难度不大。写代码:字符串分割排序(split+冒泡)）<br>问的项目业务，公司业务模块（无从下口），为什么要用redis，相比于如memcached,mongodb有什么优势，mybatis，activemq。springmvc有什么好处，为什么要用它,springmvc和struts区别(都不会)…用过什么数据库，有没有做过数据库优化，什么情况下要用到索引，好处是什么，哪些字段适合建立索引，mysql索引底层数据结构了解吗，索引什么情况下会失效，联合索引abc只用了a字段，索引是否会生效。什么情况下要用到多线程，为什么要用，好处。启动多个线程，如何知道他们都运行完毕了。jquery要想取某个节点中的第几个元素怎么写，具体哪个方法（（我看你是闲着蛋疼）答：元素选择器,find,eq）。 总体回答的很不好，感觉他就盯着我写的了解程度的技术问，有为难我降低我薪资要求的意思。最后通知面试通过（也许是真的缺人，也许是我吹牛比较6，画了项目流程图给他）<br>string为什么是不可变的，重写重载，object类有哪些方法，sleep和wait区别，实现线程的方式，run，start区别，线程有几种状态，synchronize实现原理（这个问题可以说的很多，建议大家往深了看，往深了说，以震慑面试官），与lock区别，还知道哪些锁，说说自旋锁。线程池，线程池等待队列，拒绝策略，死锁产生原因。为什么java可以一次编译，到处运行。事务特性，索引失效，mysql有哪些函数。http和https区别，get和post区别，springbean是单例吗，spring源码看过吗，其中的单例bean是怎么实现的。redis有支持哪些数据结构。servlet怎么取前端参数。（两个面试官，感觉面试官水平有限，一直在想问什么问题，越问越没难度）设计个洗牌算法。线上购物车需要有个标志唯一id，有什么方法实现这个id（uuid，参考jdk中random实现原理，取随机种子）</p>
+<p>抽象类接口区别，接口中可以定义成员变量吗，默认是什么类型的变量（public static final），接口中方法权限可以是private吗，接口是否可以写具体实现（答：jdk8开始可以）重写重载区别，线程的实现方式（我已经感觉到这个部门有多缺人了）。sql交并集，事务隔离级别。能调用另一个类的私有方法吗，怎么做。如果线程池执行shutdown或shutdownNow，线程池中线程会中断吗，会出现什么异常，catch处理中该写些什么。用过哪些concurrent包下的类，说说原子类，cas操作可能会存在什么问题。jdk中有哪些设计模式的运用，项目中用了哪些设计模式，treemap中compartor用了什么设计模式，有哪些单例模式的实现方式，springbean是单例吗。如果想要在某些自己指定的某些方法前后打印日志怎么实现（答：自定义注解，问：具体怎么做，答：spring aop的实现思路…），注解实现原理。</p>
+<p>servlet和jsp区别，如果没有servlet，jsp怎么跟后端交互（大概是这个意思，没听太懂，一脸懵逼）。springmvc怎么取前端数据，springmvc模式下，如果没有注解怎么取前端参数（答：servlet，requset.getParameter。他问，具体在哪怎么用，也没听太懂，懵逼）。搭建springmvc项目步骤。spirngmvc controller中定义全局hashmap，它是否是线程安全的，为什么。</p>
+<p>Io nio区别，nio原理。netty用的多吗。答，不多。</p>
+<p>项目中用哪种方式解析xml的 答:jaxb,dom4j,digester。问:jaxp是什么。 答:是jaxb,巴拉巴拉… 问:哦哦，挺好用的</p>
+<p>servlet生命周期。tomcat在初始化中做了什么事（答：启动socket服务端…问:没了吗?答:… 很明显该回答的还有很多，想了解的应该是我对tomcat的理解程度，以及是否看过tomcat源码）。是否用过Nginx。过滤器和拦截器的区别。</p>
+<p>项目中有用到缓存吗，redis有提供了哪些存储数据结构，redis持久化。</p>
+<p>说说java内存模型，新生代老年代算法，你说的新生代老年代属于堆还是栈，还知道哪些gc算法，创建大对象也是在新生代分配吗，（答：直接晋升进入老年代，问：具体多大对象，答：超过eden区大小，问：你是否确定，顿时虚了，后来回去查阅过，我回答的不对，jvm这里的看点很多，涉及到优化）。新生代的算法，说说minor gc,minor gc触发条件。老年代用了什么算法，说说标记整理算法，full gc是否真正回收了废弃对象。有哪些gc策略。你觉得你的项目中如果需要jvm调优你会注重哪个分带的调优，或者说更注重哪种gc调优，为什么，具体怎么做（懵逼，随便吹了下。问：你确定吗？  顿时又虚了）。</p>
+<p>线上系统每天会收到20万级的数据，一个月会有百万条，并且还会递增。你如何设计数据库（答:分库分表，建立索引，问：分库分表对的，还有哪些点，分库分表按什么规则分）。如果查询字段不是分库分表的规则字段，怎么办（他说没事，想到什么说什么，也许你的思路会比我们的更好，你说说看）。沉默许久，不会，没接触过。（后来查了该问题：分库分表多维度查询）问:oracle分页的sql关键字是什么 答:limit 问:不对吧，那是mysql的 答:啊？好吧 问:也许是limit，我也记不清了，可能你说的是对的，回去我得看看。（面试官还算和蔼，其实是rownum）<br>。3个技术人员依次提问，jdbc连接步骤，statement和prepareStatement区别，项目中数据库事务控制你们是怎么做的。TreeMap,TreeSet,HashSet实现原理(之前只看了hashmap（别人都问hashmap,偏偏他就不问，这公司有套路的）其它回答的不好。这次面试经验很重要-所有集合实现都得认真看一遍),dom4j怎么取节点。为什么重写equals方法最好也得重写hashcode。treeMap中元素怎么排序，如果没实现comparator接口会怎么样。序列化作用。</p>
+<p>2面，也是3个人，项目经理（从言谈中看得出来技术沉淀很不错）+HR+不知道什么人(女，基本没说话)。都是项目经理问。自我介绍，项目介绍，项目细节（问的很细致）。项目中有用到多线程，线程池吗，怎么用的。说说你对hash的理解。hashSet是怎么去重的。你知道哪些map,set，说说他们实现原理。红黑树，二叉树。sql优化。linux。socket长连接短连接，连接出现异常你是怎么处理的。定时器。如果cpu有8个核心，那么程序启动多少个线程相对合适（懵逼）。</p>
+<p> treeMap元素排序。项目中是否做过jvm优化，sql优化。gc算法。是否用过webservice。mybatis分页,redis有关问题。BIO,NIO,AIO区别。高并发情况下怎么降低服务器压力（暂不从增加服务器和硬件提升层面考虑），方案解决问题:</p>
+<p>   1.假如servlet处理一个请求需要0.4秒，那么处理100请求大概需要多久，为什么。同时处理1000个请求导致服务器压力过大崩溃怎么解决</p>
+<p>  2.线上系统造成服务器cpu占用率过高问题（网上有解决方案） </p>
+<p>  3.秒杀系统少卖超卖问题怎么处理（网上有解决方案）</p>
+<p>4.有个业务场景，通过第三方工具收集到大概百万条手机号，存储到文本中，文本中每行一个号码。我们的数据库中会存每个号码对应的会员等级信息(也有可能这个号码在数据库中不存在,那么他就是新用户)。按会员等级给号码发送不同内容的信息，新号码发送邀请信息。设计一个方案，怎么做效率最高（数据库数据量很大）。</p>
+<h4 id="JDBC流程"><a href="#JDBC流程" class="headerlink" title="JDBC流程:"></a>JDBC流程:</h4><p>1.加载jar<br>2.Class.forName(“”);<br>3.Connection conn = DriverManager.getConnection(url,name,pwd);<br>4.PreparedStatement ps = conn.createStatement(sql);<br>5.Int result = ps.executeUpdate();<br>6.ResultSet rs = ps.executeQuery();</p>
+
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/15/1115面试题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Redis和mysql数据同步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/Redis和mysql数据同步/">Redis和mysql数据同步</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/Redis和mysql数据同步/" class="archive-article-date">
+  	<time datetime="2019-11-15T01:30:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>并发量小的:业务逻辑层直接同步</p>
+</li>
+<li><p>并发量大的:写数据时,先直接写到Redis中.</p>
+<p>方案1:设置定时任务,在某一个时间点同步到数据库中.</p>
+<p>方案2:消息队列MQ,</p>
+</li>
 </ul>
-<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><p>解压多个tomcat,修改端口号<br>分别启动tomcat<br>修改nginx下的conf文件夹里的nginx.conf配置文件,对nginx服务进行配置<br>    nginx-1.10.3\conf\nginx.conf<br><img src="/assets/img/image-20191108141953850.png" alt="image-20191108141953850"></p>
-<p><img src="/assets/img/image-20191108142042664.png" alt="image-20191108142042664"></p>
-<p>修改tomcat的欢迎页以便观察.</p>
-<p>访问nginx的端口</p>
-<h3 id="集群的好处"><a href="#集群的好处" class="headerlink" title="集群的好处"></a>集群的好处</h3><p>处理高并发<br>宕机后,不影响整个的运行</p>
-<h3 id="Nginx工作原理"><a href="#Nginx工作原理" class="headerlink" title="Nginx工作原理"></a>Nginx工作原理</h3><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><p>正向代理:代理距离客户端近<br>反向代理:在服务端<br>其中,Nginx是反向代理</p>
-<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p>将服务器接收到的请求按照规则分发的过程,称为负载均衡.<br>nginx支持的负载均衡调度算法:<br>1.weight轮询(默认):<br>2.ip_hash:每个请求按照发起客户端的ip的hash结果进行匹配,这样的算法下一个固定ip地址的客户总会访问到同一个后端服务器,这也在一定程度上解决了集群部署环境下session共享的问题(但是不能用这个方法来解决session共享的问题)<br>即:根据ip地址的Hash值来分配处理的服务器<br>3.fair:智能调整调度算法,动态的根据后端服务器的请求处理到相应的时间进行分配<br>看起来很不错,然鹅默认不支持,如果使用需要安装模块<br>4.url_hash默认不支持</p>
-<p>### </p>
-
+        
+          <a class="article-more-a" href="/2019/11/15/Redis和mysql数据同步/#more">more >></a>
+        
       
       
     </div>
@@ -470,7 +610,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/08/nginx入门/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/15/Redis和mysql数据同步/">展开全文 >></a>
         </p>
       
 
@@ -500,20 +640,20 @@
 
 
   
-    <article id="post-集合底层原理-HashTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java常见异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/08/集合底层原理-HashTable/">集合底层原理--HashTable</a>
+      <a class="article-title" href="/2019/11/15/Java常见异常/">Java常见异常</a>
     </h1>
   
 
         
-        <a href="/2019/11/08/集合底层原理-HashTable/" class="archive-article-date">
-  	<time datetime="2019-11-08T01:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+        <a href="/2019/11/15/Java常见异常/" class="archive-article-date">
+  	<time datetime="2019-11-15T00:17:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
         
 		
@@ -521,339 +661,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><p>底层数组+链表实现key和value不能为Null</p>
-<h3 id="Curr"><a href="#Curr" class="headerlink" title="Curr"></a>Curr</h3>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/08/集合底层原理-HashTable/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+        <p>转自: <a href="https://www.cnblogs.com/cvst/p/5822373.html" target="_blank" rel="noopener">https://www.cnblogs.com/cvst/p/5822373.html</a> </p>
+<p>Java Exception：</p>
+<p>1、Error<br>2、Runtime Exception 运行时异常<br>3、Exception<br>4、throw 用户自定义异常</p>
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[随笔]191107" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/[随笔]191107/">[随笔]191107</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/07/[随笔]191107/" class="archive-article-date">
-  	<time datetime="2019-11-07T09:11:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> -=-今天把博客从T400搬到加了内存条和固态的小破本子上，搬家可真是累，一下午什么也没干，啊哈哈。</p>
-<p> 不过为什么部署到git上不需要输入密码了？迷惑</p>
-        
-          <a class="article-more-a" href="/2019/11/07/[随笔]191107/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/[随笔]191107/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/07/hello-world/" class="archive-article-date">
-  	<time datetime="2019-11-07T06:43:59.149Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2019/11/07/hello-world/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常用网址1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/常用网址1/">常用网址1</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/07/常用网址1/" class="archive-article-date">
-  	<time datetime="2019-11-07T02:12:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>spring cloud的视频 驰狼 ： <a href="http://chilangedu.com" target="_blank" rel="noopener">http://chilangedu.com</a><br>spring cloud zull间书：<a href="https://springcloud.cc/spring-cloud-netflix.html" target="_blank" rel="noopener">https://springcloud.cc/spring-cloud-netflix.html</a><br>spring cloud 整合mybatis ： <a href="https://blog.csdn.net/ylimh_hmily/article/details/78287373" target="_blank" rel="noopener">https://blog.csdn.net/ylimh_hmily/article/details/78287373</a><br>前端自动生成的模板：<a href="https://alibaba.github.io/ice/" target="_blank" rel="noopener">https://alibaba.github.io/ice/</a><br>swagger扩展版本：<a href="http://www.sosoapi.com/pass/help/manual.htm" target="_blank" rel="noopener">http://www.sosoapi.com/pass/help/manual.htm</a></p>
-        
-          <a class="article-more-a" href="/2019/11/07/常用网址1/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/常用网址1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/05/linux入门/">linux入门</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/05/linux入门/" class="archive-article-date">
-  	<time datetime="2019-11-05T03:06:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.安装虚拟机</p>
-<p>2.启动虚拟机,安装系统</p>
-<p>3.最小安装–&gt;基本环境:选择GNOME桌面(支持图形界面及命令)</p>
-<p>​    附加选项:系统管理工具,安全性工具,开发工具,GNOME应用程</p>
-<p>​    安装位置:点进去确认一下</p>
-<p>​    网络和主机名:点进去,以太网打开一个</p>
-        
-          <a class="article-more-a" href="/2019/11/05/linux入门/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/05/linux入门/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-springmvc面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/05/springmvc面试题/">springmvc面试题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/05/springmvc面试题/" class="archive-article-date">
-  	<time datetime="2019-11-05T00:29:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="springmvc面试题"><a href="#springmvc面试题" class="headerlink" title="springmvc面试题"></a>springmvc面试题</h1><p>1、什么是Spring MVC ？简单介绍下你对springMVC的理解?</p>
-<p>Spring MVC是一个基于Java的实现了MVC设计模式的请求驱动类型的轻量级Web框架，通过把Model，View，Controller分离，将web层进行职责解耦，把复杂的web应用分成逻辑清晰的几部分，简化开发，减少出错，方便组内开发人员之间的配合。</p>
-        
-          <a class="article-more-a" href="/2019/11/05/springmvc面试题/#more">more >></a>
+          <a class="article-more-a" href="/2019/11/15/Java常见异常/#more">more >></a>
         
       
       
@@ -866,7 +678,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Java</a>
         		</li>
       		
 		</ul>
@@ -876,7 +688,151 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/05/springmvc面试题/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/15/Java常见异常/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-dubbo-zookeeper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/dubbo-zookeeper/">dubbo+zookeeper</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/13/dubbo-zookeeper/" class="archive-article-date">
+  	<time datetime="2019-11-13T06:50:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>单机结构:一个系统业务量很小的时候将所有代码都放在一个项目中,部署在一台服务器上,整个项目所有的服务都由这台服务器提供.</p>
+<p>缺点:处理能力有限.业务增长时,无法满足需求.</p>
+        
+          <a class="article-more-a" href="/2019/11/13/dubbo-zookeeper/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/13/dubbo-zookeeper/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Redis-缓存雪崩、缓存穿透、缓存预热、缓存更新、缓存降级" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/Redis-缓存雪崩、缓存穿透、缓存预热、缓存更新、缓存降级/">Redis-缓存雪崩、缓存穿透、缓存预热、缓存更新、缓存降级</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/13/Redis-缓存雪崩、缓存穿透、缓存预热、缓存更新、缓存降级/" class="archive-article-date">
+  	<time datetime="2019-11-13T03:29:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <a href="https://www.cnblogs.com/leesmall/p/8594542.html" target="_blank" rel="noopener">https://www.cnblogs.com/leesmall/p/8594542.html</a> </p>
+<h2 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h2><p>​     大量的key设置了相同的过期时间，导致在缓存在同一时刻出现大面积的缓存过期，所有原本应该访问缓存的请求都去查询数据库了,造成瞬时DB请求量大、压力骤增
+        
+          <a class="article-more-a" href="/2019/11/13/Redis-缓存雪崩、缓存穿透、缓存预热、缓存更新、缓存降级/#more">more >></a>
+        
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/13/Redis-缓存雪崩、缓存穿透、缓存预热、缓存更新、缓存降级/">展开全文 >></a>
         </p>
       
 
@@ -908,7 +864,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1020,15 +976,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1036,7 +988,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-Java</a>
               </li>
             
             <div class="clearfix"></div>
