@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数组 | 面包土豆西红柿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数组,二维数组,冒泡排序,选择排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="https://fbread.github.io/2019/07/08/%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="面包土豆西红柿">
+<meta property="og:description" content="数组,二维数组,冒泡排序,选择排序">
+<meta property="og:locale">
+<meta property="og:image" content="https://fbread.github.io/assets/img/20190708-1.png">
+<meta property="og:image" content="https://fbread.github.io/assets/img/20190708-2.png">
+<meta property="article:published_time" content="2019-07-07T15:52:17.000Z">
+<meta property="article:modified_time" content="2024-05-28T07:19:40.361Z">
+<meta property="article:author" content="Ziyi Jiang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fbread.github.io/assets/img/20190708-1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="面包土豆西红柿" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">面包土豆西红柿</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fbread.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/07/08/%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2019-07-07T15:52:17.000Z" itemprop="datePublished">2019-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数组
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h5 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h5><p>是相同数据类型的多个数据组成的一个集合.</p>
+<h5 id="2-定义语法"><a href="#2-定义语法" class="headerlink" title="2.定义语法"></a>2.定义语法</h5><p>方案一:(数组的静态声明法)<br>注意:<br>1)数据中的每个数据称为元素,元素允许重复<br>2)元素的数据类型必须和数组类型一致<br>3)多个元素之前使用逗号隔开,最后一个元素后面的’,’可以省略</p>
+<pre><code>数据类型[] 标识符 = &#123;数据1,数据2,数据3,...&#125;;
+int[] arr01 = &#123; -1, 2, 3, 412, 41, 1 &#125;;
+</code></pre>
+<p>方案二:(数组的动态声明法)</p>
+<pre><code>数据类型[] 标识符 = new 数据类型[数组长度];
+//6是数组长度--当前数组允许存储元素最多的个数
+int[] arr02 = new int[6];
+</code></pre>
+<p>方案三:(很少使用)</p>
+<pre><code>数据类型[] 标识符 = new 数据类型[]&#123;数据1,数据2,数据3,...&#125;;
+double[] arr = new double[] &#123;12.3,421.1,2,1&#125;;
+</code></pre>
+<p>省略了数组的长度,数组长度通过后面{}里面元素的个数自行确定.</p>
+<h5 id="3-获取数组元素的值"><a href="#3-获取数组元素的值" class="headerlink" title="3.获取数组元素的值"></a>3.获取数组元素的值</h5><p>语法:<br>数组的标识符[下标];<br>下标是一个整型数据,从0开始,最后一个元素下标是数组长度-1</p>
+<pre><code>char[] cc = &#123; &#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;,&#39;o&#39; &#125;;
+System.out.println(cc[0]);//h
+System.out.println(cc[1]);//e
+System.out.println(cc[2]);//l
+System.out.println(cc[3]);//l
+System.out.println(cc[4]);//o
+</code></pre>
+<p>如果下标是负数或者大于等于数组长度,会导致ArrayIndexOutOfBoundException错误.</p>
+<h5 id="4-数组的遍历"><a href="#4-数组的遍历" class="headerlink" title="4.数组的遍历"></a>4.数组的遍历</h5><p>使用for循环访问数组元素—&gt;数组的遍历<br>我们可以通过 数组变量.length 的方式获取数组的长度<br>注意:<br>1)循环变量i必须是整型;<br>2)i从0开始,最大到数组长度-1;<br>看见数组第一件事先写个for循环</p>
+<h5 id="5-数组遍历的简单方式-增强for循环"><a href="#5-数组遍历的简单方式-增强for循环" class="headerlink" title="5.数组遍历的简单方式(增强for循环)"></a>5.数组遍历的简单方式(增强for循环)</h5><p>语法:</p>
+<pre><code>for(数据类型 标识符 : 数组的名字)&#123;
+//循环体中使用标识符去访问数据
+&#125;
+</code></pre>
+<p>数据类型必须和数组中存放的数据类型一致<br>注意:数组元素中没有全部赋值,未赋值的元素采用默认值:<br>整数 0<br>浮点 0.0<br>char ‘ ‘<br>String null<br>boolean false</p>
+<p>相比for的区别:<br>1)forEach永远不会出现数组下标越界问题<br>2)forEach中循环变量i代表具体的元素,<br>for中循环变量i代表下标.<br>3)在需要用到数组下标的地方,forEach不如for好用</p>
+<pre><code>double[] arr = new double[5];
+// 设置数组的初始值
+arr[0] = 1.1;
+arr[1] = 12.2;
+arr[3] = 1;
+//数组的遍历
+for (int i = 0; i &lt; arr.length; i++) &#123;
+    System.out.println(arr[i] + &quot; &quot;);
+&#125;
+// 只有一个条件
+for (double number : arr) &#123;
+    // 使用number直接访问元素即可
+    // number不是下标,是数组当前的元素
+    System.out.println(number + &quot; &quot;);
+&#125;
+</code></pre>
+<h5 id="6-冒泡排序-面试必问"><a href="#6-冒泡排序-面试必问" class="headerlink" title="6.冒泡排序(面试必问)"></a>6.冒泡排序(面试必问)</h5><p>对一堆无序的数字进行排序的方案,<br><img src="/assets/img/20190708-1.png" alt="冒泡排序" title="冒泡排序"><br>每一次比较相邻的两个元素(相邻比较),根据需要决定是否进行交换(合规交换)<br>每一轮比较交换完毕之后,总能把最值放到最后<br>下一轮比较时,之前的最值不再参与,剩下的元素按照规则比较,以此类推…<br>需要的轮数&#x3D;元素的个数-1<br>每一轮中比较的次数&#x3D;待比较的元素个数-1</p>
+<pre><code>public class BubbleSort &#123;
+    public static void main(String[] args) &#123;
+        // 定义数组存放所有的待排序数字
+        int[] arr = &#123; 3, 1, 5, 2, 6, 7, -1, 3, 9 &#125;;
+        //外层循环处理好边界到length-1
+        for (int i = 0; i &lt; arr.length - 1; i++) &#123;
+            //内层循环控制具体每一行的比较
+            for (int j = 0; j &lt; arr.length - 1 - i; j++) &#123;
+                //比较相邻元素
+                if (arr[j] &gt; arr[j + 1]) &#123;
+                    int t = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
+                &#125;
+            &#125;
+        &#125;
+        for (int a : arr) &#123;
+            System.out.println(a);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h5 id="7-选择排序-面试可能会问"><a href="#7-选择排序-面试可能会问" class="headerlink" title="7.选择排序(面试可能会问)"></a>7.选择排序(面试可能会问)</h5><p>预先选择一个位置,假设该位置是最值,必须指定一个顺序(从前往后,从后往前).把后面所有的待比较的数和当前位置的数比较,合规之后使用第三方的index记录合规数值的位置(数组中元素的下标),等到最后一个元素比较完毕后,再进行交换.一次比较重,交换只发生一次<br>选择排序比冒泡排序效率高.<br><img src="/assets/img/20190708-2.png" alt="冒泡排序" title="冒泡排序"></p>
+<pre><code>public class SelectSort &#123;
+    public static void main(String[] args) &#123;
+        int[] arr = &#123; 3, 1, 5, 2, 6, 7, -1, 3, 9 &#125;;
+        // 外层循环控制轮数
+        for (int i = 0; i &lt; arr.length - 1; i++) &#123;
+            // 假设的最小值
+            int t = i;
+            // 内层循环负责找到一个最小值放到从前面数第一个待排序的位置
+            for (int j = i; j &lt; arr.length - 1; j++) &#123;
+                // 如果记录比最小值arr[t]还小,更新t
+                if (arr[t] &gt; arr[j]) &#123;
+                    t = j;
+                &#125;
+            &#125;
+            if (t != i) &#123;
+                int temp = arr[i];
+                arr[i] = arr[t];
+                arr[t] = temp;
+            &#125;
+        &#125;
+        for (int a : arr) &#123;
+            System.out.println(a);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h5 id="8-二维数组"><a href="#8-二维数组" class="headerlink" title="8.二维数组"></a>8.二维数组</h5><p>类似于矩阵,用于手机硬件开发和设计,例如相机,指纹识别模块<br>在线选座,电影院等</p>
+<h6 id="8-1二维数组的定义"><a href="#8-1二维数组的定义" class="headerlink" title="8.1二维数组的定义"></a>8.1二维数组的定义</h6><p>方案一: <code>数据类型\[\]\[\] 变量名 = &#123;&#123;&#125;,&#123;&#125;,&#123;&#125;&#125;;</code></p>
+<pre><code>int[][] arr = &#123; &#123; 1, 2, 3 &#125;, &#123; 4, 5 &#125;, &#123; 12, 22, 33 &#125; &#125;;
+</code></pre>
+<p><strong>二维数组的每一个元素又是一个一维数组</strong><br>方案二:<br>数据类型[][] 变量名 &#x3D; new int[2][3];<br>[2][3] 是二维数组的长度,2是宽度,3是高度;<br>即这个二维数组一共有两个元素,每个元素都是一个一维数组,里面存放3个元素</p>
+<pre><code>int[][] arr1 = new int[3][4];
+//给元素赋值
+arr[0][0] = 12;
+arr[0][1] = 13;
+arr[0][2] = 11;
+</code></pre>
+<p>方案三:<br>数据类型[][] 变量名 &#x3D; new 数据类型[][]{};</p>
+<pre><code>String[][] arr2 = new String[][] &#123; &#123; &quot;如果&quot;, &quot;有西瓜&quot; &#125;, &#123; &quot;我要吃&quot;, &quot;雪糕&quot;, &quot;喝可乐&quot; &#125; &#125;;
+</code></pre>
+<h6 id="8-2二维数组的遍历"><a href="#8-2二维数组的遍历" class="headerlink" title="8.2二维数组的遍历"></a>8.2二维数组的遍历</h6><pre><code>for()&#123;
+    //拆分出的每个数组
+&#125;
+
+String[][] arr2 = new String[][] &#123; &#123; &quot;如果&quot;, &quot;有西瓜&quot; &#125;, &#123; &quot;我要吃&quot;, &quot;雪糕&quot;, &quot;喝可乐&quot; &#125; &#125;;
+// 遍历
+for (int i = 0; i &lt; arr2.length; i++) &#123;
+    //获取里面的每一个元素---&gt;是一个一维数组
+    String[] innerArr = arr2[i];
+    for(String s:innerArr) &#123;
+        System.out.print(s+&quot; &quot;);
+    &#125;
+    System.out.println();
+&#125;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fbread.github.io/2019/07/08/%E6%95%B0%E7%BB%84/" data-id="clwq1xiub0004wkgbeov73yl2" data-title="数组" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/09/%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/06/for%E5%BE%AA%E7%8E%AF-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">for循环-2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/09/%E6%96%B9%E6%B3%95/">方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/%E6%95%B0%E7%BB%84/">数组</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/06/for%E5%BE%AA%E7%8E%AF-2/">for循环-2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Ziyi Jiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
