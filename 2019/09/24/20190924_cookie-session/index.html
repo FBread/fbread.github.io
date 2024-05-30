@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>cookie&amp;session | 面包土豆西红柿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="cookie,session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cookie&amp;session">
+<meta property="og:url" content="https://fbread.github.io/2019/09/24/20190924_cookie-session/index.html">
+<meta property="og:site_name" content="面包土豆西红柿">
+<meta property="og:description" content="cookie,session">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fbread.github.io/assets/img/2019103114.png">
+<meta property="og:image" content="https://fbread.github.io/assets/img/2019103115.png">
+<meta property="og:image" content="https://fbread.github.io/assets/img/2019103116.png">
+<meta property="og:image" content="https://fbread.github.io/assets/img/2019103117.png">
+<meta property="og:image" content="https://fbread.github.io/assets/img/2019103118.png">
+<meta property="article:published_time" content="2019-09-24T03:58:46.000Z">
+<meta property="article:modified_time" content="2024-05-30T03:12:36.765Z">
+<meta property="article:author" content="Ziyi Jiang">
+<meta property="article:tag" content="cookie">
+<meta property="article:tag" content="session">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fbread.github.io/assets/img/2019103114.png">
+  
+    <link rel="alternate" href="/atom.xml" title="面包土豆西红柿" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">面包土豆西红柿</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fbread.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-20190924_cookie-session" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/09/24/20190924_cookie-session/" class="article-date">
+  <time class="dt-published" datetime="2019-09-24T03:58:46.000Z" itemprop="datePublished">2019-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      cookie&amp;session
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="中文文件下载"><a href="#中文文件下载" class="headerlink" title="中文文件下载"></a>中文文件下载</h2><blockquote>
+<p>针对浏览器类型，对文件名字做编码处理 Firefox (Base64) , IE、Chrome …<br>使用的是URLEncoder</p>
+</blockquote>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</code></pre></td>
+<td class="code"><pre><code>/*
+ * 如果文件的名字带有中文，那么需要对这个文件名进行编码处理
+ * 如果是IE ，或者  Chrome （谷歌浏览器） ，使用URLEncoding 编码
+ * 如果是Firefox ， 使用Base64编码
+ */
+//获取来访的客户端类型
+String clientType = request.getHeader(&quot;User-Agent&quot;);
+
+<p>if(clientType.contains(&quot;Firefox&quot;))&#123;<br>    fileName &#x3D; DownLoadUtil.base64EncodeFileName(fileName);<br>&#125;else&#123;<br> &#x2F;&#x2F;IE ，或者  Chrome （谷歌浏览器） ，<br>    &#x2F;&#x2F;对中文的名字进行编码处理<br>    fileName &#x3D; URLEncoder.encode(fileName,&quot;UTF-8&quot;);<br>&#125;</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<h2 id="请求转发和重定向"><a href="#请求转发和重定向" class="headerlink" title="请求转发和重定向"></a>请求转发和重定向</h2><h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</code></pre></td>
+<td class="code"><pre><code>    /*
+    之前的写法
+ response.setStatus(302);
+  response.setHeader(&quot;Location&quot;, &quot;login_success.html&quot;);*/
+   
+<p>  &#x2F;&#x2F;重定向写法： 重新定位方向 参数即跳转的位置<br>response.sendRedirect(&quot;login_success.html&quot;);</p>
+<ol>
+<li><p>地址上显示的是最后的那个资源的路径地址</p>
+</li>
+<li><p>请求次数最少有两次， 服务器在第一次请求后，会返回302 以及一个地址， 浏览器在根据这个地址，执行第二次访问。</p>
+</li>
+<li><p>可以跳转到任意路径。 不是自己的工程也可以跳。</p>
+</li>
+<li><p>效率稍微低一点， 执行两次请求。 </p>
+</li>
+<li><p>后续的请求，没法使用上一次的request存储的数据，或者 没法使用上一次的request对象，因为这是两次不同的请求。</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure></li>
+</ol>
+<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</code></pre></td>
+<td class="code"><pre><code>//请求转发的写法： 参数即跳转的位置
+request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, response);
+
+<ol>
+<li><p>地址上显示的是请求servlet的地址。  返回200 ok</p>
+</li>
+<li><p>请求次数只有一次， 因为是服务器内部帮客户端执行了后续的工作。 </p>
+</li>
+<li><p>只能跳转自己项目的资源路径 。  </p>
+</li>
+<li><p>效率上稍微高一点，因为只执行一次请求。 </p>
+</li>
+<li><p>可以使用上一次的request对象。</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure></li>
+</ol>
+<p><img src="/assets/img/2019103114.png" alt="icon"></p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><blockquote>
+<p>饼干. 其实是一份小数据，<br>是服务器给客户端，并且存储在客户端上的一份小数据</p>
+</blockquote>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><blockquote>
+<p>自动登录、浏览记录、购物车。</p>
+</blockquote>
+<h3 id="为什么要有这个Cookie"><a href="#为什么要有这个Cookie" class="headerlink" title="为什么要有这个Cookie"></a>为什么要有这个Cookie</h3><blockquote>
+<p>http的请求是无状态。<br>客户端与服务器在通讯的时候，是无状态的，其实就是客户端在第二次来访的时候，服务器根本就不知道这个客户端以前有没有来访问过。<br>为了更好的用户体验，更好的交互<br>[自动登录]，其实从公司层面讲，就是为了更好的收集用户习惯[大数据]</p>
+</blockquote>
+<h3 id="Cookie怎么用"><a href="#Cookie怎么用" class="headerlink" title="Cookie怎么用"></a>Cookie怎么用</h3><h4 id="简单使用："><a href="#简单使用：" class="headerlink" title="简单使用："></a>简单使用：</h4><ul>
+<li><p>添加Cookie给客户端</p>
+<ol>
+<li><p>在响应的时候，添加cookie</p>
+<p>Cookie cookie &#x3D; new Cookie(“aa”, “bb”);</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2</code></pre></td>
+<td class="code"><pre><code>//给响应，添加一个cookie
+     response.addCookie(cookie);</code></pre></td>
+</tr>
+</tbody>
+</table>
+</figure></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>客户端收到的信息里面，响应头中多了一个字段 Set-Cookie</p>
+</li>
+<li></li>
+</ol>
+<p><img src="/assets/img/2019103115.png" alt="icon"></p>
+<ul>
+<li><p>获取客户端带过来的Cookie</p>
+<p>&#x2F;&#x2F;获取客户端带过来的cookie</p>
+<pre><code>Cookie[] cookies = request.getCookies();
+if(cookies != null)&#123;
+    for (Cookie c : cookies) &#123;
+        String cookieName = c.getName();
+        String cookieValue = c.getValue();
+        System.out.println(cookieName + &quot; = &quot;+ cookieValue);
+    &#125;
+&#125;
+</code></pre>
+</li>
+<li><p>常用方法</p>
+</li>
+</ul>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</code></pre></td>
+<td class="code"><pre><code>//关闭浏览器后，cookie就没有了。 ---&gt; 针对没有设置cookie的有效期。
+//    expiry： 有效 以秒计算。
+//正值 ： 表示 在这个数字过后，cookie将会失效。
+//负值： 关闭浏览器，那么cookie就失效， 默认值是 -1
+cookie.setMaxAge(60 * 60 * 24 * 7);
+
+<p>&#x2F;&#x2F;赋值新的值<br>&#x2F;&#x2F;cookie.setValue(newValue);</p>
+<p>&#x2F;&#x2F;用于指定只有请求了指定的域名，才会带上该cookie<br>cookie.setDomain(&quot;.itheima.com&quot;);</p>
+<p>&#x2F;&#x2F;只有访问该域名下的cookieDemo的这个路径地址才会带cookie<br>cookie.setPath(&quot;&#x2F;CookieDemo&quot;);</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<h2 id="例子一-显示最近访问的时间。"><a href="#例子一-显示最近访问的时间。" class="headerlink" title="例子一 显示最近访问的时间。"></a>例子一 显示最近访问的时间。</h2><ol>
+<li>判断账号是否正确</li>
+<li>如果正确，则获取cookie。 但是得到的cookie是一个数组，<br>我们要从数组里面找到我们想要的对象。</li>
+<li>如果找到的对象为空，表明是第一次登录。那么要添加cookie</li>
+<li>如果找到的对象不为空， 表明不是第一次登录。</li>
+</ol>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</code></pre></td>
+<td class="code"><pre><code>if(&quot;admin&quot;.equals(userName) &amp;&amp; &quot;123&quot;.equals(password))&#123;
+    //获取cookie last-name --- &gt;
+ Cookie [] cookies = request.getCookies();
+ 
+<p>  &#x2F;&#x2F;从数组里面找出我们想要的cookie<br>  Cookie cookie &#x3D; CookieUtil.findCookie(cookies, &quot;last&quot;);</p>
+<p>  &#x2F;&#x2F;是第一次登录，没有cookie<br> if(cookie &#x3D;&#x3D; null)&#123;</p>
+<pre><code>  Cookie c = new Cookie(&amp;quot;last&amp;quot;, System.currentTimeMillis()+&amp;quot;&amp;quot;);
+ c.setMaxAge(60*60); //一个小时
+    response.addCookie(c);
+    
+  response.getWriter().write(&amp;quot;欢迎您, &amp;quot;+userName);
+   
+</code></pre>
+<p>  }else{<br>      &#x2F;&#x2F;1. 去以前的cookie第二次登录，有cookie<br>      long lastVisitTime &#x3D; Long.parseLong(cookie.getValue());</p>
+<pre><code>  //2. 输出到界面，
+   response.getWriter().write(&amp;quot;欢迎您, &amp;quot;+userName +&amp;quot;,上次来访时间是：&amp;quot;+new Date(lastVisitTime));&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+</code></pre>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<p>​</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7</code></pre></td>
+<td class="code"><pre><code>        //3. 重置登录的时间
+      cookie.setValue(System.currentTimeMillis()+&quot;&quot;);
+     response.addCookie(cookie);
+   &#125;
+&#125;else&#123;
+  response.getWriter().write(&quot;登陆失败 &quot;);
+&#125;</code></pre></td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<h2 id="例子二：-显示商品浏览记录。"><a href="#例子二：-显示商品浏览记录。" class="headerlink" title="例子二： 显示商品浏览记录。"></a>例子二： 显示商品浏览记录。</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li><p>拷贝基础课第一天的 htmll原型文件，到工程的WebContent里面。</p>
+</li>
+<li><p>在WebContent目录下新建一个jsp文件， product_list.jsp,<br>然后拷贝原来product_list.html的内容到jsp里面。<br>建好之后，jsp里面的所有ISO-8859-1 改成 UTF-8</p>
+<p>拷贝html标签的所有内容。 替换jsp的html标签即可</p>
+</li>
+<li><p>修改product_info.htm里面的手机数码超链接地址</p>
+</li>
+<li><p><a href="product_list.jsp">手机数码[(current)]{.sr-only}</a></p>
+</li>
+<li><p>修改首页(index.html)顶部的手机数码跳转的位置为 product_list.jsp</p>
+</li>
+<li><p><a href="product_list.jsp">手机数码[(current)]{.sr-only}</a></p>
+</li>
+</ol>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p><img src="/assets/img/2019103116.png" alt="icon"></p>
+<h3 id="Jsp-里面使用Java代码"><a href="#Jsp-里面使用Java代码" class="headerlink" title="Jsp 里面使用Java代码"></a>Jsp 里面使用Java代码</h3><ul>
+<li>jsp</li>
+</ul>
+<blockquote>
+<p>Java Server Pager —&gt; 最终会翻译成一个类， 就是一个Servlet</p>
+</blockquote>
+<ul>
+<li><p>定义全局变量</p>
+<p>&lt;%! int a &#x3D; 99; %&gt;</p>
+</li>
+<li><p>定义局部变量</p>
+<p>&lt;% int b &#x3D; 999; %&gt;</p>
+</li>
+<li><p>在jsp页面上，显示 a 和 b的值，</p>
+<p>&lt;%&#x3D;a %&gt;<br>&lt;%&#x3D;b %&gt;</p>
+</li>
+</ul>
+<h3 id="jsp显示浏览记录"><a href="#jsp显示浏览记录" class="headerlink" title="jsp显示浏览记录"></a>jsp显示浏览记录</h3><p><img src="/assets/img/2019103117.png" alt="icon"></p>
+<h3 id="清除浏览记录"><a href="#清除浏览记录" class="headerlink" title="清除浏览记录"></a>清除浏览记录</h3><blockquote>
+<p>其实就是清除Cookie， 删除cookie是没有什么delete方法的。只有设置maxAge<br>为0 。</p>
+</blockquote>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4</code></pre></td>
+<td class="code"><pre><code>Cookie cookie = new Cookie(&quot;history&quot;,&quot;&quot;);
+cookie.setMaxAge(0); //设置立即删除
+cookie.setPath(&quot;/CookieDemo02&quot;);
+response.addCookie(cookie);</code></pre></td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<h3 id="Cookie总结"><a href="#Cookie总结" class="headerlink" title="Cookie总结"></a>Cookie总结</h3><ol>
+<li><p>服务器给客户端发送过来的一小份数据，并且存放在客户端上。</p>
+</li>
+<li><p>获取cookie， 添加cookie</p>
+<p>request.getCookie();</p>
+<p>response.addCookie();</p>
+</li>
+<li><p>Cookie分类</p>
+<p>会话Cookie</p>
+<pre><code>默认情况下，关闭了浏览器，那么cookie就会消失。
+</code></pre>
+<p>持久Cookie</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5</code></pre></td>
+<td class="code"><pre><code>在一定时间内，都有效，并且会保存在客户端上。 
+
+<p>cookie.setMaxAge(0); &#x2F;&#x2F;设置立即删除</p>
+<p>cookie.setMaxAge(100); &#x2F;&#x2F;100 秒</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+</li>
+<li><p>Cookie的安全问题。</p>
+</li>
+</ol>
+<blockquote>
+<p>由于Cookie会保存在客户端上，所以有安全隐患问题。 还有一个问题，<br>Cookie的大小与个数有限制。 为了解决这个问题 —&gt; Session .</p>
+</blockquote>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><blockquote>
+<p>会话 ， Session是基于Cookie的一种会话机制。<br>Cookie是服务器返回一小份数据给客户端，并且存放在客户端上。<br>Session是，数据存放在服务器端。</p>
+</blockquote>
+<ul>
+<li>常用API</li>
+</ul>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</code></pre></td>
+<td class="code"><pre><code>//得到会话ID
+String id = session.getId();
+
+<p>&#x2F;&#x2F;存值<br>session.setAttribute(name, value);</p>
+<p>&#x2F;&#x2F;取值<br>session.getAttribute(name);</p>
+<p>&#x2F;&#x2F;移除值<br>session.removeAttribute(name);</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<ul>
+<li>Session何时创建 ， 何时销毁?</li>
+<li>创建</li>
+</ul>
+<blockquote>
+<p>如果有在servlet里面调用了 request.getSession()</p>
+</blockquote>
+<ul>
+<li>销毁</li>
+</ul>
+<blockquote>
+<p>session 是存放在服务器的内存中的一份数据。 当然可以持久化. Redis .<br>即使关了浏览器，session也不会销毁。</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>关闭服务器</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>session会话时间过期。 有效期过了，默认有效期： 30分钟。</li>
+</ol>
+</blockquote>
+<h1 id="例子三：-简单购物车。"><a href="#例子三：-简单购物车。" class="headerlink" title="例子三： 简单购物车。"></a>例子三： 简单购物车。</h1><p><img src="/assets/img/2019103118.png" alt="icon"></p>
+<h3 id="CartServlet-代码"><a href="#CartServlet-代码" class="headerlink" title="CartServlet 代码"></a>CartServlet 代码</h3><figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</code></pre></td>
+<td class="code"><pre><code>response.setContentType(&quot;text/html;charset=utf-8&quot;);
+    
+<p>  &#x2F;&#x2F;1. 获取要添加到购物车的商品id<br>   int id &#x3D; Integer.parseInt(request.getParameter(&quot;id&quot;)); &#x2F;&#x2F; 0 - 1- 2 -3 -4<br>   String [] names &#x3D; &#123;&quot;Iphone7&quot;,&quot;小米6&quot;,&quot;三星Note8&quot;,&quot;魅族7&quot; , &quot;华为9&quot;&#125;;<br>  &#x2F;&#x2F;取到id对应的商品名称<br> String name &#x3D; names[id];</p>
+<p>  &#x2F;&#x2F;2. 获取购物车存放东西的session  Map&lt;String , Integer&gt;  iphoen7 3<br>    &#x2F;&#x2F;把一个map对象存放到session里面去，并且保证只存一次。<br>    Map&lt;String, Integer&gt; map &#x3D; (Map&lt;String, Integer&gt;) request.getSession().getAttribute(&quot;cart&quot;);<br>    &#x2F;&#x2F;session里面没有存放过任何东西。<br> if(map &#x3D;&#x3D; null)&#123;<br>     map &#x3D; new LinkedHashMap&lt;String , Integer&gt;();<br>        request.getSession().setAttribute(&quot;cart&quot;, map);<br> &#125;</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<p>​</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</code></pre></td>
+<td class="code"><pre><code>//3. 判断购物车里面有没有该商品
+if(map.containsKey(name))&#123;
+ //在原来的值基础上  + 1 
+  map.put(name, map.get(name) + 1 );
+&#125;else&#123;
+  //没有购买过该商品，当前数量为1 。
+   map.put(name, 1);
+&#125;
+
+<p>&#x2F;&#x2F;4. 输出界面。（跳转）<br>response.getWriter().write(&quot;&lt;a href&#x3D;&#39;product_list.jsp&#39;&gt;&lt;h3&gt;继续购物&lt;&#x2F;h3&gt;&lt;&#x2F;a&gt;&lt;br&gt;&quot;);<br>response.getWriter().write(&quot;&lt;a href&#x3D;&#39;cart.jsp&#39;&gt;&lt;h3&gt;去购物车结算&lt;&#x2F;h3&gt;&lt;&#x2F;a&gt;&quot;);</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<h2 id="移除Session中的元素"><a href="#移除Session中的元素" class="headerlink" title="移除Session中的元素"></a>移除Session中的元素</h2><figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5</code></pre></td>
+<td class="code"><pre><code>//强制干掉会话，里面存放的任何数据就都没有了。
+session.invalidate();
+
+<p>&#x2F;&#x2F;从session中移除某一个数据<br>&#x2F;&#x2F;session.removeAttribute(&quot;cart&quot;);</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ul>
+<li><p>请求转发和重定向（面试经常问。）</p>
+</li>
+<li><p>Cookie</p>
+<p>服务器给客户端发送一小份数据， 存放在客户端上。</p>
+<p>基本用法：</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3</code></pre></td>
+<td class="code"><pre><code>添加cookie
+
+<p>获取cookie。</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<p>演练例子：</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3</code></pre></td>
+<td class="code"><pre><code>1. 获取上一次访问时间
+
+<ol start="2">
+<li>获取商品浏览记录。</code></pre></td></tr>
+</tbody>
+</table>
+</figure></li>
+</ol>
+</li>
+<li><p>什么时候有cookie</p>
+<p>response.addCookie(new Cookie())</p>
+</li>
+<li><p>Cookie 分类</p>
+<p>会话Cookie</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7</code></pre></td>
+<td class="code"><pre><code>    关闭浏览器，就失效
+
+<p>持久cookie</p>
+<p>   存放在客户端上。 在指定的期限内有效。 </p>
+<pre><code>setMaxAge();&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+</code></pre>
+</tr>
+</tbody>
+</table>
+</figure>
+</li>
+<li><p>Session</p>
+<p>也是基于cookie的一种会话技术， 数据存放存放在服务器端</p>
+<figure class="highlight plain">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="gutter"><pre><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</code></pre></td>
+<td class="code"><pre><code>会在cookie里面添加一个字段 JSESSIONID . 是tomcat服务器生成。 
+
+<p>setAttribute 存数据</p>
+<p>getAttribute 取数据</p>
+<p>removeAttribute  移除数据</p>
+<p>getSessionId();  获取会话id</p>
+<p>invalidate() 强制让会话失效。</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+</figure>
+</li>
+<li><p>创建和销毁</p>
+<p>，调用request.getSesion创建</p>
+<p>服务器关闭 ， 会话超时（30分）</p>
+</li>
+</ul>
+<p>setAttribute 存放的值， 在浏览器关闭后，还有没有。<br>有！，就算客户端把电脑砸了也还有。</p>
+<p>​</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fbread.github.io/2019/09/24/20190924_cookie-session/" data-id="clwrjpdbb000jwggb3ng3fs8i" data-title="cookie&amp;session" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/" rel="tag">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/" rel="tag">session</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/29/20190929_jsp-jstl/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JSP &amp; EL &amp; JSTL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/17/20190917_servlet/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Servlet</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea/" rel="tag">Idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/" rel="tag">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quartz/" rel="tag">Quartz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thymeleaf/" rel="tag">Thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/" rel="tag">session</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Idea/" style="font-size: 10px;">Idea</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Quartz/" style="font-size: 10px;">Quartz</a> <a href="/tags/Thymeleaf/" style="font-size: 10px;">Thymeleaf</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/session/" style="font-size: 10px;">session</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/30/20240530-thymeleaf-1/">thymeleaf-1</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/29/20240529_Postgres%E5%AE%9E%E7%8E%B0on%20update%20current_timestamp/">Postgres实现on update current_timestamp</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/18/20191018_quartz/">Quartz</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/20191015_shiro/">Shiro</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Ziyi Jiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

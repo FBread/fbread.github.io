@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>装箱 | 面包土豆西红柿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="装箱,拆箱,包装类,String相关方法,时间相关方法,math方法,system方法,枚举,日历类,DateFormat,Scanner">
+<meta property="og:type" content="article">
+<meta property="og:title" content="装箱">
+<meta property="og:url" content="https://fbread.github.io/2019/07/18/20190718_%E8%A3%85%E7%AE%B1/index.html">
+<meta property="og:site_name" content="面包土豆西红柿">
+<meta property="og:description" content="装箱,拆箱,包装类,String相关方法,时间相关方法,math方法,system方法,枚举,日历类,DateFormat,Scanner">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-17T17:02:55.000Z">
+<meta property="article:modified_time" content="2024-05-29T02:42:19.938Z">
+<meta property="article:author" content="Ziyi Jiang">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="面包土豆西红柿" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">面包土豆西红柿</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fbread.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-20190718_装箱" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/07/18/20190718_%E8%A3%85%E7%AE%B1/" class="article-date">
+  <time class="dt-published" datetime="2019-07-17T17:02:55.000Z" itemprop="datePublished">2019-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      装箱
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h4><p>将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据</p>
+<p>byte Byte<br>short Short<br>int Integer<br>long Long<br>float Float<br>double Double<br>char Character<br>boolean Boolean</p>
+<p>例:基本数据类型与字符串之间的转换</p>
+<pre><code>Integer.toBinaryString()
+
+Integer.MAX_VALUE;//int类型的最大值
+Integer.MIN_VALUE;//int类型的最小值
+
+Integer i1 = new Integer(100);//100
+Integer i1 = new Integer(&quot;100&quot;);//100
+
+Integer i1 = new Integer(&quot;abc&quot;);
+//报错:java.lang.NumberFormatExcetion数字格式异常
+
+//int转字符串
+int i = 100;
+i1.toString();//返回i1值的字符串
+String s1 = i+&quot;&quot;;//推荐
+String s2 = String.valueOf(i);//推荐
+</code></pre>
+<p>八中基本数据类型的包发装类中,其中其中都有parseXxx(),可以将这七中字符串表现形式转换成基本数据类型(char的包装类Character没有parseXxx()方法,char只能存一个字符,字符串到字符的转换可以通过toCharArray())</p>
+<pre><code>//jdk1.5前:
+int x = 100;
+Integer i = new Integer(x);//将基本数据类型包装成对象,装箱
+int y = i.intValue();//讲对象转换为基本数据类型,拆箱
+
+//jdk1.5后:实际上使用的还是上面的方法
+Integer i1 = 100;//自动装箱,把基本数据类型转换成对象
+int z = i1 + 200;//自动拆箱,把对象转换为基本数据类型
+
+//底层调用i2.intValue(),但是i2是null,null调用方法就会出现空指针异常(java.lang.NullPointerException)
+Integer i2 = null;
+int a = i3 +100;
+</code></pre>
+<p>包装器的缓存：</p>
+<p>Boolean：(全部缓存)<br>Byte：(全部缓存)<br>Character(&lt;&#x3D; 127缓存)<br>Short(-128 — 127缓存)<br>Long(-128 — 127缓存)<br>Integer(-128 — 127缓存)<br>Float(没有缓存)<br>Doulbe(没有缓存)</p>
+<p>例:Integer 的valueOf()内部有一个Integer cache[]数组,保存了-128<br>到127,值在数组中会直接取数,不在的话new一个Integer对象;<br>所以:</p>
+<pre><code>Integer i1 = 127;
+Integer i2 = 127;
+System.out.println(i1==i2);//true
+System.out.println(i1.equals(i2));//true    内部重写了equals方法
+
+Integer i3 = 128;
+Integer i4 = 128;
+System.out.println(i1==i2);//false    超出范围 new了两个Integer对象
+System.out.println(i1.equals(i2));//true
+</code></pre>
+<h4 id="String的相关方法"><a href="#String的相关方法" class="headerlink" title="String的相关方法"></a>String的相关方法</h4><h5 id="String"><a href="#String" class="headerlink" title="String"></a>String</h5><p>String是不可变字符串,字符串是常量,一旦被赋值,就不能被改变.再次赋值时原来的字符串就变成了垃圾.<br>字符串字面值”abc”可以看做一个字符串对象.<br>String类重写了toString()方法,返回的是该对象本身.<br>*常见构造方法<br>* public String():空构造<br>* public String(byte[] bytes):把字节数组转成字符串<br>* public String(byte[] bytes,int index,int<br>length):把字节数组的一部分转成字符串<br>* public String(char[] value):把字符数组转成字符串<br>* public String(char[] value,int index,int<br>count):把字符数组的一部分转成字符串<br>* public String(String original):把字符串常量值转成字符串</p>
+<ul>
+<li><p>String类的判断功能</p>
+<ul>
+<li>boolean equals(Object obj):比较字符串的内容是否相同,区分大小写</li>
+<li>boolean equalsIgnoreCase(String<br>str):比较字符串的内容是否相同,忽略大小写</li>
+<li>boolean contains(String str):判断大字符串中是否包含小字符串</li>
+<li>boolean startsWith(String<br>str):判断字符串是否以某个指定的字符串开头</li>
+<li>boolean endsWith(String<br>str):判断字符串是否以某个指定的字符串结尾</li>
+<li>boolean isEmpty():判断字符串是否为空。</li>
+</ul>
+</li>
+<li><p>String类的获取功能</p>
+<ul>
+<li>int length():获取字符串的长度。</li>
+<li>char charAt(int index):获取指定索引位置的字符</li>
+<li>int indexOf(int ch):返回指定字符在此字符串中第一次出现处的索引。</li>
+<li>int indexOf(String<br>str):返回指定字符串在此字符串中第一次出现处的索引。</li>
+<li>int indexOf(int ch,int<br>fromIndex):返回指定字符在此字符串中从指定位置后第一次出现处的索引。</li>
+<li>int indexOf(String str,int<br>fromIndex):返回指定字符串在此字符串中从指定位置后第一次出现处的索引。</li>
+<li>lastIndexOf</li>
+<li>String substring(int<br>start):从指定位置开始截取字符串,默认到末尾。</li>
+<li>String substring(int start,int<br>end):从指定位置开始到指定位置结束截取字符串。</li>
+</ul>
+</li>
+<li><p>String的转换功能：</p>
+<ul>
+<li><p>byte[] getBytes():把字符串转换为字节数组。</p>
+</li>
+<li><p>char[] toCharArray():把字符串转换为字符数组。</p>
+</li>
+<li><p>static String valueOf(char[] chs):把字符数组转成字符串。</p>
+</li>
+<li><p>static String valueOf(int i):把int类型的数据转成字符串。</p>
+<ul>
+<li>注意：String类的valueOf方法可以把任意类型的数据转成字符串</li>
+</ul>
+</li>
+<li><p>String toLowerCase():把字符串转成小写。(了解)</p>
+</li>
+<li><p>String toUpperCase():把字符串转成大写。</p>
+</li>
+<li><p>String concat(String str):把字符串拼接。</p>
+</li>
+</ul>
+</li>
+<li><p>A:String的替换功能</p>
+<ul>
+<li>String replace(char old,char new)</li>
+<li>String replace(String old,String new)</li>
+</ul>
+</li>
+<li><p>B:String的去除字符串两空格</p>
+<ul>
+<li>String trim()</li>
+</ul>
+</li>
+<li><p>C:String的按字典顺序比较两个字符串</p>
+<ul>
+<li><p>int compareTo(String str)</p>
+</li>
+<li><p>int compareToIgnoreCase(String str)</p>
+<p>byte[] arr1 &#x3D; {96,97,98};<br>String s2 &#x3D; new String(arr1);&#x2F;&#x2F;解码,abc</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h5><p>StringBuilder一个可变的字符序列.在原空间更改当频繁改变字符串值时,使用此类内存利用率高.非线程安全<br>StringBuffer 线程安全，可变的字符序列</p>
+<pre><code>.append() 在末尾追加字符串
+.insert(i,&quot;a&quot;) 插入到指定索引位置
+.delete(start,end) 删除指定位置
+.reverse();字符串反转
+.
+String str = sb.subString(0,4); 截取字符串,返回字符串
+</code></pre>
+<p>当频繁改变字符串值时,StringBuilder最快,StringBuffer其次,String最慢</p>
+<p>String–&gt;StringBuffer:<br>1)StringBuffer sb1 &#x3D; new StringBuffer(“heima”);&#x2F;&#x2F;通过构造方法转换<br>2)StringBuffer sb1&#x3D; new StringBuffer();<br>sb1.append(“heima”);</p>
+<p>StringBuffer–&gt;String<br>1)String s1 &#x3D; new String(sb1);&#x2F;&#x2F;通过构造方法转换<br>2)String s2 &#x3D; sb1.toString();<br>3)String s3 &#x3D; sb.subString(0,sb.length());&#x2F;&#x2F;截取字符串转换</p>
+<h4 id="时间方法"><a href="#时间方法" class="headerlink" title="时间方法"></a>时间方法</h4><pre><code>//获取系统时间
+Date dt = new Date();//当前时间
+Date d2 = new Date(0);//返回1970年1月1日八点的时间,因为是东八区,实际上是1970年1月1日的0点
+d2.setTime(1000);//设置毫秒值,改变时间对象(1970年1月1日后的1000毫秒)
+Syst.currentTimeMillis();//通过系统类的方法获得当前毫秒值
+
+
+//时间格式化类 DateFormat 抽象类
+DateFormat df1 = DateFormat.getDateInstance();//相当于父类引用指向子类对象,右边的方法返回一个子类 SimpleDateFormat
+
+Date d = new Date();
+SimpleDateFormat tm = new SimpleDateFormat();
+String strTime = tm.format(d);//返回当前时间的字符串
+
+SimpleDateFormat tm1 = new SimpleDateFormat(&quot;yyyy年MM月dd日 HH:mm:ss&quot;);
+String strTime = tm1.format(dt);
+System.out.println(strTime);;
+</code></pre>
+<p>将时间字符串转换成日期对象</p>
+<pre><code>String str= &quot;2000年03月09日 09:09:07&quot;;
+SimpleDateFormat tm2 = new SimpleDateFormat(&quot;yyyy年MM月dd日 HH:mm:ss&quot;);
+Date d = tm2.parse(str);//会有异常需要处理.将时间字符串转换成日期对象
+</code></pre>
+<p>计算出生多少天</p>
+<pre><code>//1.将生日字符串和今天字符串存在String类型的变量中
+String birth = &quot;1990年08月08日&quot;;
+String today = &quot;2088年09月09日&quot;;
+//2.定义日期格式化对象
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日&quot;);
+//3.将日期字符串转为日期对象
+Date d1 = sdf.parse(birth);
+Date d2 = sdf.parse(today);
+//4.通过日期对象获得毫秒值
+long time = d2.getTime() - d1.getTime();
+//5.两个日期相减,求出天数
+System.out.println(time/1000/60/60/24);
+</code></pre>
+<h4 id="日历类-Calendar"><a href="#日历类-Calendar" class="headerlink" title="日历类(Calendar)"></a>日历类(Calendar)</h4><p>Date类中很多方法过时了,由Calendar类的方法替代</p>
+<pre><code>Calendar c = Calendar.getInstance();//父类引用指向子类对象,返回
+c.get(Calendar.YEAR);    //通过字段获取年
+c.get(Calendar.MONTH);    //月份值是0-11
+c.get(Calendar.DAY_OF_MONTH);    //月中的第几天
+c.get(Calendar.DAY_OF_WEEK);    //周日是第一天,周六是最后一天
+</code></pre>
+<p>将星期存储表中进行查表</p>
+<pre><code>//1.返回值类型String\
+//2.参数列表 int week
+
+public static String getWeek(int week)&#123;
+String[] arr = &#123;&quot;&quot;,&quot;星期日&quot;,星期一&quot;,&quot;星期二&quot;,&quot;星期三&quot;,&quot;星期四&quot;,&quot;星期五&quot;,&quot;星期六&quot;&#125;;
+&#125;
+
+c.getWeek(Calendar.DAY_OF_WEEK); 
+</code></pre>
+<p>常见操作:</p>
+<pre><code>c.add(Calendar.MONTH,-1);//对指定的字段进行向前减或向后加
+c.set(Calendar.YEAR,2000);//修改指定字段
+c.set(2000,7,8);//2000年8月8日
+</code></pre>
+<p>判断闰年平年:</p>
+<pre><code>//1.键盘录入年Scanner
+Scanner sc = new Scanner(System.in);
+System.out.println(&quot;请输入年份&quot;);
+//int year = sc.nextInt();
+String line = sc.nextLine();
+int year = Integer.parseInt(line);//将数字字符串转换成数字,需要异常处理
+//判断方法
+public static boolean getYear(int year)&#123;
+    Calendar c = Calendar.getInstance();
+    //日期设为那一年的3月1日
+    c.set(year,2,1);
+    //日期减一天到2月的最后一天
+    c.add(Calendar.DAY_OF_MONTH,-1);
+    return c.get(Calendar.DAY_OF_MONTH)==29;
+&#125;
+boolean b = getYear(year);    //返回结果    
+</code></pre>
+<h4 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h4><p>Math类中全是静态方法,所以构造方法私有了</p>
+<pre><code>Math.PI;//3.141592....
+Math.sqrt(9);//平方根
+Math.cbrt(27);//立方根
+Math.abs(-7);//绝对值
+Math.ceil(7.7);//向上取整    
+Math.floor(-1.1);//向下取整
+Math.round(4.6);//四舍五入
+Math.min(2,4);//取最小数
+Math.max(44,444);//取最大数
+Math.pow(2,10);//2的10次方
+Math.random();[0-1)随机数    ]
+</code></pre>
+<h4 id="System方法"><a href="#System方法" class="headerlink" title="System方法"></a>System方法</h4><p>System是final类,方法都是静态方法.<br>提供了标准输入(in),标准输出(out),错误输出流(err);</p>
+<pre><code>System.gc();
+//调用此方法后,不会立即清空内存堆空间,而是加入到计划清空列表中
+finalize();//当垃圾回收器确定不存在该对象的更多引用时,对象的垃圾回收期调用该方法.
+
+Systrm.exit(0);//根据惯例,非0的状态码标识异常终止  退出虚拟机
+System.currentTimeMillis();//返回1970年1月1日至今的毫秒值
+System.arraycopy(from,0,to,0,src.length)
+</code></pre>
+<p>Java的垃圾回收机制;<br>垃圾:不用的内存对空间<br>Java会自动开启一个后台线程,此线程进行垃圾的清理,工作原理如下:<br>计数器法:<br>当new出的空间有一处引用,计数器+1;当引用结束后,计数器-1<br>垃圾回收线程,判断计数器的值;当计数器值为0时,将此对象压入栈,进入了计划删除列表.在压入栈的过程中,如果某个对象再次被引用,那么从栈中弹出,逐步清理栈中的对象地址空间.</p>
+<pre><code>Ststem.exit(status);
+</code></pre>
+<p>0:jvm正常结束,在程序退出时,会调用gc(),清理在运行过程中占用的内存;<br>非0:异常结束,没有清理占用的内存</p>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><p>一一列举<br>枚举是一种数据类型,在枚举中,声明的值<br>给枚举值声明对应的int值:</p>
+<pre><code>Mon(&quot;一&quot;, 1), Tue(&quot;二&quot;, 2);
+private EnumTest(String week, int index) &#123;
+    this.week = week;
+    this.index = index;
+&#125;
+
+public static String getWeek(int index) &#123;
+    for (EnumTest e : EnumTest.values()
+    ) &#123;
+        if (index == e.getIndex()) ;
+        return e.getWeek();
+    &#125;
+    return null;
+&#125;
+</code></pre>
+<h4 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h4><pre><code>* hasNextXxx()  判断是否还有下一个输入项,其中Xxx可以是Int,Double等。如果需要判断是否包含下一个字符串，则可以省略Xxx
+* nextXxx()  获取下一个输入项。Xxx的含义和上个方法中的Xxx相同,默认情况下，Scanner使用空格，回车等作为分隔符
+</code></pre>
+<p>1)nextInt()键盘录入整数<br>实际上录入的是数字+\r\n (回车),nextInt方法只获取数字就结束<br>2)nextLine()键盘录入字符串,可以接受任意类型,遇到\r\n就证明一行结束</p>
+<p>同时录入1)2)时字符串会直接通过nextInt()的回车;录入空<br>解决方法:<br>1)new两个Scanner;但是浪费空间<br>2)两个都用nexLtLine(),字符串转数字;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fbread.github.io/2019/07/18/20190718_%E8%A3%85%E7%AE%B1/" data-id="clwr7yfnc0012t8gbgesmd5c7" data-title="装箱" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/18/20190718_idea%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          idea使用笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/17/20190717_%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">异常处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea/" rel="tag">Idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/" rel="tag">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quartz/" rel="tag">Quartz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thymeleaf/" rel="tag">Thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/" rel="tag">session</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Idea/" style="font-size: 10px;">Idea</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Quartz/" style="font-size: 10px;">Quartz</a> <a href="/tags/Thymeleaf/" style="font-size: 10px;">Thymeleaf</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/session/" style="font-size: 10px;">session</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/30/20240530-thymeleaf-1/">thymeleaf-1</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/29/20240529_Postgres%E5%AE%9E%E7%8E%B0on%20update%20current_timestamp/">Postgres实现on update current_timestamp</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/18/20191018_quartz/">Quartz</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/20191015_shiro/">Shiro</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Ziyi Jiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

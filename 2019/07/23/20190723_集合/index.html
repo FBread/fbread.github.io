@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>集合 | 面包土豆西红柿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="集合框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合">
+<meta property="og:url" content="https://fbread.github.io/2019/07/23/20190723_%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="面包土豆西红柿">
+<meta property="og:description" content="集合框架">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-22T16:59:30.000Z">
+<meta property="article:modified_time" content="2024-05-29T02:53:04.208Z">
+<meta property="article:author" content="Ziyi Jiang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="面包土豆西红柿" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">面包土豆西红柿</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fbread.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-20190723_集合" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/07/23/20190723_%E9%9B%86%E5%90%88/" class="article-date">
+  <time class="dt-published" datetime="2019-07-22T16:59:30.000Z" itemprop="datePublished">2019-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      集合
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h4><p>数组:数据类型相同,内存空间连续,长度固定<br>Java集合框架:Java中提供的各种集合的统称<br>集合特点:<br>1.长度是随意的,动态变化<br>2.集合只能存储引用数据类型,也可以存基本数据类型(存储时自动装箱)<br>部分集合底层是由数组实现的<br>Set—&#x2F;— HashSet<br>&#x2F; — HashTree<br>Collection—–<br>\ Vector — Stack<br>\ &#x2F;<br>List—— LinkedList<br><br>ArrayList</p>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>底层由数组实现,查询快,增删慢,线程不安全,效率高</p>
+<pre><code>ArrayList arr = new ArrayList();
+arr.add(1);//添加元素
+arr.add(索引,值);//追加元素
+//add方法如果是List集合一直返回true,因为List集合可以存储重复元素;
+//如果是Set集合,当存储重复元素时,会返回false;
+
+
+arr.size();//长度
+arr.remove(1);//删除(如果是数字默认为索引,不会自动装箱)
+arr.clear();//移除所有元素
+arr.addAll(arr2);把另外一个集合加到此集合中
+arr.isEmpty();//是否为空 返回布尔值 
+arr.contains(元素);//元素是否在集合中
+arr.containsAll(arr2);//判断调用的集合是否包含传入的集合
+arr.removerAll();删除交集
+arr.retainAll(arr2);//取交集,把交集赋给arr,如果arr没有改变返回false.改变了返回true
+arr.get(1);取到索引1 的元素
+arr.set(1,&quot;aaaa&quot;);用aaaa替换索引1的元素;
+List arrNew = arr.subList(start,end);返回指定start-to的集合
+List.toArray();//转化为数组
+</code></pre>
+<p>集合的长度是由添加的元素个数决定的,与初始化的长度无关<br>特点:<br>1)有序,根据添加的顺序决定<br>2)可重复,不唯一<br>3)空间连续</p>
+<p>遍历集合</p>
+<pre><code>//1
+for(int i = 0; i &lt; arr.size();i++)&#123;
+    System.out.println(arr.get(i));
+&#125;
+//2
+for(Object o:ary)&#123;
+    System.out.println(o.toString);
+&#125;
+//3迭代器
+Iterator it = ary.iterator();
+while(it.hasNext())&#123;
+    System.out.println(it.next());
+&#125;
+</code></pre>
+<p>适用场合:遍历操作频繁时(内存空间连续)</p>
+<pre><code>//listIterator是list特有的
+ListIterator lit = list.listIterator();
+while(lit.hasNext())&#123;
+    String str = (String)lit.next();
+    if(&quot;word&quot;.equals(str)&#123;
+        lit.add(&quot;javaee&quot;);//可以在遍历的同时增加元素,并发修改ConcurrentModificationException
+    &#125;
+&#125;
+lit.hasPrevious();//指针位置是否有前一个元素;直接用的话指针在第一个位置,没有前一个元素,所以要hasNext()遍历移动指针后才能用,所以说压根儿没什么用吧
+</code></pre>
+<p>数组转集合:</p>
+<pre><code>int[] arr= &#123;11,22,33&#125;;
+List list = Arrays.asList(arr);//基本数据类型的数组转换成集合,会将整个数组当做一个元素
+Integer[] arr1 = &#123;11,22,33,44&#125;;
+List&lt;Integer&gt; list = Arrays.asList(arr);
+</code></pre>
+<p>集合转数组:</p>
+<pre><code>ArrayList&lt;String&gt; List = new ArrayList&lt;&gt;();
+String[] arr = list.toArray(new String[10]);//当集合转数组时,数组长度如果小于等于集合的size,转换后的数组长度等于集合size;如果数组长度大于size,数组长度等于分配的size;
+</code></pre>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>链表:有序,可重复,空间不连续,查询慢,增删快.<br>可以使用List接口的方法.扩展了3对 6个方法<br>适用于频繁增删<br>不适用频繁遍历<br>由于内存空间不连续,头部尾部操作方法比通过索引操作效率高</p>
+<pre><code>public class LinkedTest &#123;
+    public static void main(String[] args) &#123;
+        LinkedList ll = new LinkedList();
+        ll.add(&quot;aa&quot;);
+        ll.add(&quot;bb&quot;);
+        ll.addFirst(&quot;cc&quot;);//头部元素
+        System.out.println(ll.getFirst());//得到头部元素
+        ll.removeFirst();//删除头部元素
+        ll.addLast(&quot;dd&quot;);//尾部元素
+        System.out.println(ll.getLast());//得到尾部元素
+        ll.removeLast();//删除尾部元素
+    &#125;
+&#125;
+</code></pre>
+<h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>用法及存储结构和ArrayList相同,是一个古老的集合<br>底层由数组实现,查询快<br>Vector线程安全,效率低<br>ArrayList线程不安全,效率高</p>
+<pre><code>Vector v = new Vector();
+v.addElement(&quot;a&quot;);
+Enumeration en = v.elements();    //获取枚举
+while(en.hasMoreElements())&#123;    //判断集合中是否有下一个元素
+    System.out.println(en.nextElement());    //获取元素
+&#125;
+</code></pre>
+<h4 id="泛型集合"><a href="#泛型集合" class="headerlink" title="泛型集合"></a>泛型集合</h4><p>List下的集合:<br>1.存入的数据都会转换为Object<br>2.取出数据时容易发生异常<br>使用泛型集合来提升集合的安全性:<br>泛型集合是对集合中存放数据的类型的约束,非约定的类型<br>提高安全性,省去强转的麻烦.<br>1.7新特性:前面写了泛型后面写&lt;&gt;即可<br>&lt;&gt;中存放的必须是引用类型</p>
+<pre><code>//LeetCode上的
+// &quot;static void main&quot; must be defined in a public class.
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        // 1. initialize
+        List&lt;Integer&gt; v0 = new ArrayList&lt;&gt;();
+        List&lt;Integer&gt; v1;                           // v1 == null
+        // 2. cast an array to a vector
+        Integer[] a = &#123;0, 1, 2, 3, 4&#125;;
+        v1 = new ArrayList&lt;&gt;(Arrays.asList(a));
+        // 3. make a copy
+        List&lt;Integer&gt; v2 = v1;                      // another reference to v1
+        List&lt;Integer&gt; v3 = new ArrayList&lt;&gt;(v1);     // make an actual copy of v1
+        // 3. get length
+        System.out.println(&quot;The size of v1 is: &quot; + v1.size());;
+        // 4. access element
+        System.out.println(&quot;The first element in v1 is: &quot; + v1.get(0));
+        // 5. iterate the vector
+        System.out.print(&quot;[Version 1] The contents of v1 are:&quot;);
+        for (int i = 0; i &lt; v1.size(); ++i) &#123;
+            System.out.print(&quot; &quot; + v1.get(i));
+        &#125;
+        System.out.println();
+        System.out.print(&quot;[Version 2] The contents of v1 are:&quot;);
+        for (int item : v1) &#123;
+            System.out.print(&quot; &quot; + item);
+        &#125;
+        System.out.println();
+        // 6. modify element
+        v2.set(0, 5);       // modify v2 will actually modify v1
+        System.out.println(&quot;The first element in v1 is: &quot; + v1.get(0));
+        v3.set(0, -1);
+        System.out.println(&quot;The first element in v1 is: &quot; + v1.get(0));
+        // 7. sort
+        Collections.sort(v1);
+        // 8. add new element at the end of the vector
+        v1.add(-1);
+        v1.add(1, 6);
+        // 9. delete the last element
+        v1.remove(v1.size() - 1);
+    &#125;
+&#125;
+</code></pre>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p>无序,不能重复,没有索引<br>无序:存放的顺序和遍历取出的顺序不一致;<br>HashSet:根据哈希表存储</p>
+<p>TreeSet:根据二叉树存储</p>
+<p>值唯一性的原理分析:判断的是对象的存放地址,存放时,首先获取地址的hashCode()值,根据hashcode判断是否重复.<br>可以重写类的hashcode方法,根据自定义的属性值产生hashcode<br>Java判断对象是否相同的过程:<br>1.先判断hashCode();如果hashCode不同,加入集合中;<br>如果hashCode不同,进一步判断equals<br>2.重写equals()<br>setStu.add(stu1);<br>自动调用stu1对象的hashCode(),系统自动判断此hashCode值在HashSet集合中是否已经存值<br>如果没有存值，则存入到HashSet中<br>如果有，再次调用eqals()方法，根据equals返回的结果true<br>:值相同，不添加到HashSet<br>false :值不同，则添加到HashSet</p>
+<p>Map:无索引<br>提供key-value的存储方式<br>键 值 对<br>CN - 中华人民共和国<br>USA - 美国<br>JP -日本<br>共同特点：无序<br>key唯一（key重复后，会进行覆盖）</p>
+<pre><code>重点：Map集合的遍历
+
+Map 接口
+实现类：HashMap  HashTable  TreeMap(可以自动以排序规则)
+</code></pre>
+<p>总结：集合框架<br>一：Collection<br>1.1、List<br>ArrayList:内存连续 有序 可重复<br>Vector:线程安全，效率低<br>LinkedList: 有序 可重复 内存不连续 6个方法</p>
+<p>1.2、Set ：不连续 无索引 无序 唯一<br>HashSet:Hash表结构存放数据<br>子类LinkedHashSet 有序<br>TreeSet:以Tree结构存放数据<br>由于实现了SortedSet接口，可以自定义排序规则</p>
+<p>二：Map：无索引 无序 key唯一 value可重复<br>2.1、HashMap<br>LinkedHashMap有序<br>2.2、HashTable<br>2.3、TreeMap 实现了SortedMap接口，可以自定义排序规则</p>
+<p>三:Collections 封装了工具类<br>辅助操作集合</p>
+<h4 id="类集框架"><a href="#类集框架" class="headerlink" title="类集框架"></a>类集框架</h4><p>1.类集框架是一组类和接口<br>2.位于java.util包当中<br>3.主要用于存储和管理对象<br>4.主要分为三大类–集合,列表,映射;</p>
+<h4 id="集合-Set"><a href="#集合-Set" class="headerlink" title="集合(Set)"></a>集合(Set)</h4><p>集合中的对象不按特定方式排序,并且没有重复对象.<br>继承了Collection接口.有一个实现类HashSet</p>
+<pre><code>public class Test&#123;
+    public static void main (String[] args)&#123;
+        Set&lt;String&gt; set = new HashSet&lt;String&gt;();
+        set.add(&quot;a&quot;);//添加元素
+        set.add(&quot;b&quot;);
+        set.add(&quot;a&quot;);//重复的元素会被忽略掉
+        System.out.println(set.size());//长度
+        set.remove(&quot;a&quot;);//删除a元素
+        set.clear();//清除
+        set.isEmpty();//返回值为布尔值,是否为空
+
+        //Iterator&lt;---Collection&lt;---Set&lt;---HashSet
+        //                        &lt;---List&lt;---ArrayList
+        //Iterator:hasNext(); next();
+        //调用Set对象的Iterator方法,会生成一个迭代器对象,该对象用于遍历整个Set
+        Iterator&lt;String&gt; it = set.iterator();
+        while(it.hasNext())&#123;
+            String s = it.next();//判断当前游标位置有没有下一个元素
+            System.out.println(s);//把当前游标的下一个元素取出来并将游标移动到下一个位置
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="列表-List"><a href="#列表-List" class="headerlink" title="列表(List)"></a>列表(List)</h4><p>集合中对象按照索引位置排序,可以有重复的对象.</p>
+<h4 id="映射-Map"><a href="#映射-Map" class="headerlink" title="映射(Map)"></a>映射(Map)</h4><p>集合中的每一个元素包含一个键对象和一个值对象,键不可以重复,值可以重复.每一个元素都是一个键值对<br>HashMap是Map的实现类</p>
+<pre><code>Map&lt;String,String&gt; ary = new HashMap&lt;&gt;();
+ary.put(&quot;去&quot;,&quot;死&quot;) //添加一个元素,如果key重复,覆盖之前的
+ary.get(&quot;去&quot;);    //通过键找值
+</code></pre>
+<h4 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h4><h4 id="Hash算法"><a href="#Hash算法" class="headerlink" title="Hash算法"></a>Hash算法</h4><p>输入数据,通过hash算法得到一个唯一的散列值.<br>存储数据,数据与散列值关联.查找数据</p>
+<h4 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h4><p>&#x3D;&#x3D; 比较两个引用指向的地址.<br>equals比较对象的内容.通常在重写后:<br>1)对象的类型相等(intanceof比较)<br>2)两个对象的成员变量的值完全相等<br>重写equals方法</p>
+<pre><code>public boolean equals(Object o)&#123;
+    if(this == o)&#123;
+        return true;
+    &#125;
+    if(o instanceof User)&#123;
+        User u = (User)o;
+        if(this.age == u.age &amp;&amp; this.name.equals(u.name))&#123;//name调用的equals方法
+            return true;
+        &#125;else&#123;
+            return false;
+        &#125;
+    &#125;else&#123;
+        return false;
+    &#125;
+&#125;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fbread.github.io/2019/07/23/20190723_%E9%9B%86%E5%90%88/" data-id="clwr8ev9r0005wggb3u9sggp8" data-title="集合" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/31/20190731_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          网络编程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/22/20190722_%E7%BA%BF%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">线程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea/" rel="tag">Idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/" rel="tag">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quartz/" rel="tag">Quartz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thymeleaf/" rel="tag">Thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/" rel="tag">session</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Idea/" style="font-size: 10px;">Idea</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Quartz/" style="font-size: 10px;">Quartz</a> <a href="/tags/Thymeleaf/" style="font-size: 10px;">Thymeleaf</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/session/" style="font-size: 10px;">session</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/30/20240530-thymeleaf-1/">thymeleaf-1</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/29/20240529_Postgres%E5%AE%9E%E7%8E%B0on%20update%20current_timestamp/">Postgres实现on update current_timestamp</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/18/20191018_quartz/">Quartz</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/15/20191015_shiro/">Shiro</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Ziyi Jiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
